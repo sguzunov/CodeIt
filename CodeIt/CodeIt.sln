@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeIt.UnitTests", "CodeIt.UnitTests\CodeIt.UnitTests.csproj", "{FEBB2753-C359-4F07-AA21-E1562652A5E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeIt.Web.Auth", "CodeIt.Web.Auth\CodeIt.Web.Auth.csproj", "{6C412B2B-2E6C-400E-B415-1D2B02A78623}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{FEBB2753-C359-4F07-AA21-E1562652A5E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEBB2753-C359-4F07-AA21-E1562652A5E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEBB2753-C359-4F07-AA21-E1562652A5E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C412B2B-2E6C-400E-B415-1D2B02A78623}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C412B2B-2E6C-400E-B415-1D2B02A78623}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C412B2B-2E6C-400E-B415-1D2B02A78623}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C412B2B-2E6C-400E-B415-1D2B02A78623}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,5 +38,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1D6E60BF-C2D8-4971-B29E-0B57570438EF} = {F97BA473-A071-4C36-AC2F-B0B8C638133E}
 		{FEBB2753-C359-4F07-AA21-E1562652A5E0} = {50ED1A28-2051-4389-BBD9-64B568004A8B}
+		{6C412B2B-2E6C-400E-B415-1D2B02A78623} = {F97BA473-A071-4C36-AC2F-B0B8C638133E}
 	EndGlobalSection
 EndGlobal
