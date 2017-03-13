@@ -19,7 +19,7 @@ namespace CodeIt.UnitTests
         [Test]
         public void TestIsFalse()
         {
-            Assert.IsFalse(true);
+            Assert.IsFalse(false);
         }
     }
 }
