@@ -208,12 +208,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
-    <Compile Include="App_Start\NinjectWebCommon.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Config\BundleConfig.cs" />
+    <Compile Include="Config\FilterConfig.cs" />
+    <Compile Include="Config\IdentityConfig.cs" />
+    <Compile Include="Config\NinjectConfig.cs" />
+    <Compile Include="Config\RouteConfig.cs" />
+    <Compile Include="Config\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
