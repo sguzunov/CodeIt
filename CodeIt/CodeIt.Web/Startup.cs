@@ -1,6 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
+using CodeIt.Web.Config;
+
 [assembly: OwinStartup(typeof(CodeIt.Web.Startup))]
 namespace CodeIt.Web
 {
@@ -8,7 +10,7 @@ namespace CodeIt.Web
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
+            AuthConfig.Configure(app);
         }
     }
 }

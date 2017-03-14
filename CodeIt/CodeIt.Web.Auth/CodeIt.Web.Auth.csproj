@@ -74,7 +74,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationSignInManager.cs" />
+    <Compile Include="CodeItSignInManager.cs" />
     <Compile Include="ApplicationUserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

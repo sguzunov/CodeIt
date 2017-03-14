@@ -21,21 +21,21 @@ namespace CodeIt.Data
             return new CodeItDbContext();
         }
 
-        public IDbSet<User> Users { get; set; }
+        //public IDbSet<User> Users { get; set; }
 
         public new IDbSet<T> Set<T>() where T : class
         {
-            throw new NotImplementedException();
+            return base.Set<T>();
         }
 
         public new DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class
         {
-            throw new NotImplementedException();
+            return base.Entry<TEntity>(entity);
         }
 
         public new int SaveChanges()
         {
-            throw new NotImplementedException();
+            return base.SaveChanges();
         }
     }
 }

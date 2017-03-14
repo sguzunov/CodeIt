@@ -9,15 +9,15 @@ using CodeIt.Data.Models;
 
 namespace CodeIt.Web.Auth
 {
-    public class ApplicationUserManager : UserManager<User>
+    public class CodeItUserManager : UserManager<User>
     {
-        public ApplicationUserManager(IUserStore<User> store) : base(store)
+        public CodeItUserManager(IUserStore<User> store) : base(store)
         {
         }
 
-        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
+        public static CodeItUserManager Create(IdentityFactoryOptions<CodeItUserManager> options, IOwinContext context)
         {
-            var manager = new ApplicationUserManager(new Microsoft.AspNet.Identity.EntityFramework.UserStore<User>(context.Get<CodeItDbContext>()));
+            var manager = new CodeItUserManager(new Microsoft.AspNet.Identity.EntityFramework.UserStore<User>(context.Get<CodeItDbContext>()));
 
             manager.UserValidator = new UserValidator<User>(manager)
             {

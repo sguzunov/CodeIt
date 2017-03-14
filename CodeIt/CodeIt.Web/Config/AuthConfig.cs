@@ -1,25 +1,25 @@
 ﻿using System;
+
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
-using CodeIt.Web.Models;
-using CodeIt.Web.Auth;
-using CodeIt.Data.Models;
-using CodeIt.Data;
 
-namespace CodeIt.Web
+using CodeIt.Data;
+using CodeIt.Data.Models;
+using CodeIt.Web.Auth;
+
+namespace CodeIt.Web.Config
 {
-    public partial class Startup
+    public class AuthConfig
     {
-        // For more information on configuring authentication, please visit https://go.microsoft.com/fwlink/?LinkId=301864
-        public void ConfigureAuth(IAppBuilder app)
+        public static void Configure(IAppBuilder app)
         {
             // Configure the db context, user manager and signin manager to use a single instance per request
             app.CreatePerOwinContext(CodeItDbContext.Create);
-            app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
-            app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
+            app.CreatePerOwinContext<CodeItUserManager>(CodeItUserManager.Create);
+            app.CreatePerOwinContext<CodeItSignInManager>(CodeItSignInManager.Create);
 
             // Enable the application to use a cookie to store information for the signed in user
             // and to use a cookie to temporarily store information about a user logging in with a third party login provider
@@ -32,7 +32,7 @@ namespace CodeIt.Web
                 {
                     // Enables the application to validate the security stamp when the user logs in.
                     // This is a security feature which is used when you change a password or add an external login to your account.  
-                    OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<ApplicationUserManager, User>(
+                    OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<CodeItUserManager, User>(
                         validateInterval: TimeSpan.FromMinutes(30),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
