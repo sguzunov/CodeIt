@@ -17,6 +17,7 @@ namespace CodeIt.Web.Auth
         public AuthenticationService(IOwinContext owinContext)
         {
             Guard.WhenArgument(owinContext, nameof(owinContext)).IsNull().Throw();
+            this.owinContext = owinContext;
         }
 
         public Task<SignInStatus> SignInAsync(string username, string password, bool isPersistent)

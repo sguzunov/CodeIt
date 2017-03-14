@@ -9,6 +9,8 @@ namespace CodeIt.Web
     {
         protected void Application_Start()
         {
+            ControllerBuilder.Current.DefaultNamespaces.Add("CodeIt.Web.Controllers");
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
