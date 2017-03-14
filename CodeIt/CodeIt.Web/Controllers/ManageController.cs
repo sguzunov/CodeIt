@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using CodeIt.Web.Models;
+using CodeIt.Web.Auth;
 
 namespace CodeIt.Web.Controllers
 {

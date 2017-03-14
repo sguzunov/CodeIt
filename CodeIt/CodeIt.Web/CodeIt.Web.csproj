@@ -210,7 +210,6 @@
   <ItemGroup>
     <Compile Include="Config\BundleConfig.cs" />
     <Compile Include="Config\FilterConfig.cs" />
-    <Compile Include="Config\IdentityConfig.cs" />
     <Compile Include="Config\NinjectConfig.cs" />
     <Compile Include="Config\RouteConfig.cs" />
     <Compile Include="Config\Startup.Auth.cs" />
@@ -310,6 +309,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeIt.Data.Models\CodeIt.Data.Models.csproj">
+      <Project>{9736BCE1-4E36-4AB5-BB35-066F8FAD2061}</Project>
+      <Name>CodeIt.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CodeIt.Data\CodeIt.Data.csproj">
+      <Project>{1FAAB3E6-1B71-4F4A-94C9-E0D03F286F6D}</Project>
+      <Name>CodeIt.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CodeIt.Web.Auth\CodeIt.Web.Auth.csproj">
+      <Project>{6c412b2b-2e6c-400e-b415-1d2b02a78623}</Project>
+      <Name>CodeIt.Web.Auth</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
