@@ -5,7 +5,7 @@ using System.Web.Routing;
 
 namespace CodeIt.Web
 {
-    public class MvcApplication : HttpApplication
+    public class CodeItApplication : HttpApplication
     {
         protected void Application_Start()
         {
