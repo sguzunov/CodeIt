@@ -7,11 +7,11 @@ using Moq;
 using AuthService = CodeIt.Web.Auth.AuthenticationService;
 using Microsoft.Owin;
 using CodeIt.Web.Auth;
-using CodeIt.UnitTests.AuthTests.Mocks;
+using CodeIt.UnitTests.Authentication.Mocks;
 using Microsoft.AspNet.Identity;
 using CodeIt.Data.Models;
 
-namespace CodeIt.UnitTests.AuthTests.AuthenticationService
+namespace CodeIt.UnitTests.Authentication.AuthenticationService
 {
     [TestFixture]
     public class SignUpAsyncShould

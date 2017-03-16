@@ -10,7 +10,7 @@ using AuthService = CodeIt.Web.Auth.AuthenticationService;
 using Microsoft.Owin;
 using CodeIt.Web.Auth;
 
-namespace CodeIt.UnitTests.AuthTests.AuthenticationService
+namespace CodeIt.UnitTests.Authentication.AuthenticationService
 {
     [TestFixture]
     public class SignInAsyncShould

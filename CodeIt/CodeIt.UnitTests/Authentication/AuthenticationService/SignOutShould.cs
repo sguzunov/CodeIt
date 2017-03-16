@@ -6,7 +6,7 @@ using Moq;
 using AuthService = CodeIt.Web.Auth.AuthenticationService;
 using Microsoft.Owin.Security;
 
-namespace CodeIt.UnitTests.AuthTests.AuthenticationService
+namespace CodeIt.UnitTests.Authentication.AuthenticationService
 {
     [TestFixture]
     public class SignOutShould

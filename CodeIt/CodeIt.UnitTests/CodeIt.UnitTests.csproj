@@ -68,12 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthTests\AuthenticationService\ConstructorShould.cs" />
-    <Compile Include="AuthTests\AuthenticationService\SignInAsyncShould.cs" />
-    <Compile Include="AuthTests\AuthenticationService\SignOutShould.cs" />
-    <Compile Include="AuthTests\AuthenticationService\SignUpAsyncShould.cs" />
-    <Compile Include="AuthTests\Mocks\MockOwinContext.cs" />
-    <Compile Include="AuthTests\Mocks\MockUserManager.cs" />
+    <Compile Include="Authentication\AuthenticationService\ConstructorShould.cs" />
+    <Compile Include="Authentication\AuthenticationService\SignInAsyncShould.cs" />
+    <Compile Include="Authentication\AuthenticationService\SignOutShould.cs" />
+    <Compile Include="Authentication\AuthenticationService\SignUpAsyncShould.cs" />
+    <Compile Include="Authentication\Mocks\MockOwinContext.cs" />
+    <Compile Include="Authentication\Mocks\MockUserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

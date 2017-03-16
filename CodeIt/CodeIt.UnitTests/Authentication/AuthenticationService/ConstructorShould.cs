@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 using AuthService = CodeIt.Web.Auth.AuthenticationService;
 
-namespace CodeIt.UnitTests.AuthTests.AuthenticationService
+namespace CodeIt.UnitTests.Authentication.AuthenticationService
 {
     [TestFixture]
     public class ConstructorShould

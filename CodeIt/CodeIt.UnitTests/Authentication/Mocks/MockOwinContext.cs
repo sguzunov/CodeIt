@@ -9,7 +9,7 @@ using CodeIt.Web.Auth;
 using Microsoft.AspNet.Identity;
 using CodeIt.Data.Models;
 
-namespace CodeIt.UnitTests.AuthTests.Mocks
+namespace CodeIt.UnitTests.Authentication.Mocks
 {
     public class MockOwinContext : IOwinContext
     {

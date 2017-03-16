@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 using CodeIt.Data.Models;
 
-namespace CodeIt.UnitTests.AuthTests.Mocks
+namespace CodeIt.UnitTests.Authentication.Mocks
 {
     public class MockUserManager : UserManager<User>
     {
