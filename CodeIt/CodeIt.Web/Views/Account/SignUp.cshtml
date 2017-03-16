@@ -9,7 +9,7 @@
 @using (Html.BeginForm(nameof(AccountController.SignUp), "Account", FormMethod.Post, new { @class = "form-account", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    <h4 class="form-account-heading">Create a new account</h4>
+    <h2 class="form-account-heading">Create a new account</h2>
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(m => m.Username, new { @class = "sr-only" })
