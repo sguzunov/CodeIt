@@ -6,7 +6,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Bytes2you.Validation;
 
-using CodeIt.Web.Models;
+using CodeIt.Web.Models.Account;
 using CodeIt.Web.Auth.Contracts;
 
 namespace CodeIt.Web.Controllers
@@ -33,7 +33,7 @@ namespace CodeIt.Web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> SignIn(LoginViewModel vModel, string returnUrl)
+        public async Task<ActionResult> SignIn(SignInViewModel vModel, string returnUrl)
         {
             if (!ModelState.IsValid)
             {
@@ -64,7 +64,7 @@ namespace CodeIt.Web.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<ActionResult> SignUp(RegisterViewModel vModel)
+        public async Task<ActionResult> SignUp(SignUpViewModel vModel)
         {
             if (ModelState.IsValid)
             {

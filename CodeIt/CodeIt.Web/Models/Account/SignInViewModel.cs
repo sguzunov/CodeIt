@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CodeIt.Web.Models
+namespace CodeIt.Web.Models.Account
 {
-    public class LoginViewModel
+    public class SignInViewModel
     {
         [Required]
         public string Username { get; set; }
