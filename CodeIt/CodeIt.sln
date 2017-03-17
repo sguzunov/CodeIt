@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeIt.Data", "CodeIt.Data\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeIt.Web.Infrastructure", "CodeIt.Web.Infrastructure\CodeIt.Web.Infrastructure.csproj", "{EA2CEBFB-DE91-4192-876E-C172A667ED51}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logic", "Logic", "{96F1FAB4-42DF-4D2C-A8F8-62CA970413FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeIt.CodeExecution", "CodeIt.CodeExecution\CodeIt.CodeExecution.csproj", "{C3308208-9E0F-4F73-BC10-34ECB01D12AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,10 @@ Global
 		{EA2CEBFB-DE91-4192-876E-C172A667ED51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA2CEBFB-DE91-4192-876E-C172A667ED51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA2CEBFB-DE91-4192-876E-C172A667ED51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3308208-9E0F-4F73-BC10-34ECB01D12AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3308208-9E0F-4F73-BC10-34ECB01D12AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3308208-9E0F-4F73-BC10-34ECB01D12AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3308208-9E0F-4F73-BC10-34ECB01D12AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,5 +70,6 @@ Global
 		{9736BCE1-4E36-4AB5-BB35-066F8FAD2061} = {F7ED54A1-D13F-4AED-8CE6-CC0BEF7D4055}
 		{1FAAB3E6-1B71-4F4A-94C9-E0D03F286F6D} = {F7ED54A1-D13F-4AED-8CE6-CC0BEF7D4055}
 		{EA2CEBFB-DE91-4192-876E-C172A667ED51} = {F97BA473-A071-4C36-AC2F-B0B8C638133E}
+		{C3308208-9E0F-4F73-BC10-34ECB01D12AB} = {96F1FAB4-42DF-4D2C-A8F8-62CA970413FA}
 	EndGlobalSection
 EndGlobal
