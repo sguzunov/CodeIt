@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+using CodeIt.Data.Models.Contracts;
+
 namespace CodeIt.Data.Models
 {
-    public class Test
+    public class Test : IEntity
     {
         public int Id { get; set; }
 
@@ -10,6 +12,6 @@ namespace CodeIt.Data.Models
         public string Input { get; set; }
 
         [Required]
-        public string Output { get; set; }
+        public string ExpectedOutput { get; set; }
     }
 }

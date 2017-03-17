@@ -1,9 +1,11 @@
-﻿using CodeIt.Data.Models.Constants;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+
+using CodeIt.Data.Models.Constants;
+using CodeIt.Data.Models.Contracts;
 
 namespace CodeIt.Data.Models
 {
-    public class Challenge
+    public class Challenge : IEntity
     {
         public int Id { get; set; }
 

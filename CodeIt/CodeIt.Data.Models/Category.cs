@@ -2,10 +2,11 @@
 using System.ComponentModel.DataAnnotations;
 
 using CodeIt.Data.Models.Constants;
+using CodeIt.Data.Models.Contracts;
 
 namespace CodeIt.Data.Models
 {
-    public class Category
+    public class Category : IEntity
     {
         private ICollection<Challenge> challenges;
 

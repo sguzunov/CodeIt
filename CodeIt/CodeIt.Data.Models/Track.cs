@@ -3,10 +3,11 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 using CodeIt.Data.Models.Constants;
+using CodeIt.Data.Models.Contracts;
 
 namespace CodeIt.Data.Models
 {
-    public class Track
+    public class Track : IEntity
     {
         private ICollection<Category> categories;
         private ICollection<Challenge> challenges;
@@ -14,6 +15,7 @@ namespace CodeIt.Data.Models
         public Track()
         {
             this.categories = new HashSet<Category>();
+            this.challenges = new HashSet<Challenge>();
         }
 
         public int Id { get; set; }
@@ -22,7 +24,7 @@ namespace CodeIt.Data.Models
         [MinLength(ValidationConstants.NamesMinLenght)]
         [MaxLength(ValidationConstants.NamesMaxLenght)]
         public string Name { get; set; }
-        
+
         public virtual ICollection<Category> Categories
         {
             get { return this.categories; }

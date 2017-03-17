@@ -6,10 +6,11 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 using CodeIt.Data.Models.Constants;
+using CodeIt.Data.Models.Contracts;
 
 namespace CodeIt.Data.Models
 {
-    public class User : IdentityUser
+    public class User : IdentityUser, IEntity
     {
         [Required]
         [MinLength(ValidationConstants.NamesMinLenght)]
