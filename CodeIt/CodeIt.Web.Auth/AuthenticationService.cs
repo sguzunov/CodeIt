@@ -20,10 +20,10 @@ namespace CodeIt.Web.Auth
             this.owinContext = owinContext;
         }
 
-        public Task<SignInStatus> SignInAsync(string username, string password, bool isPersistent)
+        public async Task<SignInStatus> SignInAsync(string username, string password, bool isPersistent)
         {
             var signInManager = this.owinContext.Get<CodeItSignInManager>();
-            return signInManager.PasswordSignInAsync(
+            return await signInManager.PasswordSignInAsync(
                 userName: username,
                 password: password,
                 isPersistent: isPersistent,
