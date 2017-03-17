@@ -56,6 +56,7 @@ namespace CodeIt.Web.Controllers
             }
         }
 
+        [HttpGet]
         [AllowAnonymous]
         public ActionResult SignUp()
         {
