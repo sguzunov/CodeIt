@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 using CodeIt.Data.Models.Contracts;
 using CodeIt.Common.Constants;
@@ -7,14 +8,16 @@ namespace CodeIt.Data.Models
 {
     public class Challenge : IEntity
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required]
         [MinLength(ValidationConstants.ChallengeTitleMinLength)]
         [MaxLength(ValidationConstants.ChallengeTitleMaxLength)]
         public string Title { get; set; }
 
-        public ChallengeProblem Problem { get; set; }
+        public Language Language { get; set; }
+
+        public ChallengeDecription ChallengeDecription { get; set; }
 
         public int CategoryId { get; set; }
 

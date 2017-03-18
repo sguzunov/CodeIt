@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-using CodeIt.Data.Models.Constants;
 using CodeIt.Data.Models.Contracts;
 
 namespace CodeIt.Data.Models
@@ -18,11 +18,9 @@ namespace CodeIt.Data.Models
             this.challenges = new HashSet<Challenge>();
         }
 
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required]
-        [MinLength(ValidationConstants.NamesMinLenght)]
-        [MaxLength(ValidationConstants.NamesMaxLenght)]
         public string Name { get; set; }
 
         public virtual ICollection<Category> Categories
