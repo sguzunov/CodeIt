@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="CodeItDbContext.cs" />
     <Compile Include="Contracts\ICodeItDbContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
