@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using CodeIt.Web.Config;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -9,7 +10,8 @@ namespace CodeIt.Web
     {
         protected void Application_Start()
         {
-            ControllerBuilder.Current.DefaultNamespaces.Add("CodeIt.Web.Controllers");
+            // Only Razor Engine
+            ViewEnginesConfig.Configure();
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

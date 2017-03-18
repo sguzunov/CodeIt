@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace CodeIt.Web
+namespace CodeIt.Web.Config
 {
     public class RouteConfig
     {

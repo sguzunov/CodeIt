@@ -1,7 +1,7 @@
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(CodeIt.Web.App_Start.NinjectConfig), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(CodeIt.Web.App_Start.NinjectConfig), "Stop")]
 
-namespace CodeIt.Web.App_Start
+namespace CodeIt.Web.Config
 {
     using System;
     using System.Web;
