@@ -19,7 +19,7 @@ namespace CodeIt.Data.Models
 
         public ChallengeDecription ChallengeDecription { get; set; }
 
-        public int CategoryId { get; set; }
+        public Guid CategoryId { get; set; }
 
         [Required]
         public Category Category { get; set; }
