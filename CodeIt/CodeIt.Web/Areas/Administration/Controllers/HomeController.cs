@@ -2,7 +2,7 @@
 
 namespace CodeIt.Web.Areas.Administration.Controllers
 {
-    public class DashboardController : AdministrationController
+    public class HomeController : AdministrationController
     {
         public ActionResult Index()
         {

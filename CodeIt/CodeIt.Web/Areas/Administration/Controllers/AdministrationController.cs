@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-using CodeIt.Common;
+using CodeIt.Common.Constants;
 
 namespace CodeIt.Web.Areas.Administration.Controllers
 {

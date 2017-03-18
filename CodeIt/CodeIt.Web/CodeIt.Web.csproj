@@ -214,7 +214,7 @@
     <Compile Include="Areas\Administration\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\ChallengeController.cs" />
-    <Compile Include="Areas\Administration\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Administration\Controllers\HomeController.cs" />
     <Compile Include="Areas\Administration\ViewModels\ChallengeTestViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\ChallengeViewModel.cs" />
     <Compile Include="Config\AuthConfig.cs" />
@@ -258,7 +258,7 @@
     <Content Include="Areas\Administration\Views\Web.config" />
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_AdministrationLayout.cshtml" />
-    <Content Include="Areas\Administration\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Home\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_AdministrationNavigation.cshtml" />
     <Content Include="Areas\Administration\Views\Challenge\Create.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
