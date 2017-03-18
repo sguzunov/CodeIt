@@ -6,7 +6,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Bytes2you.Validation;
 
-using CodeIt.Web.Models.Account;
+using CodeIt.Web.ViewModels.Account;
 using CodeIt.Web.Auth.Contracts;
 
 namespace CodeIt.Web.Controllers
