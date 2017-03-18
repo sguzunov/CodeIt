@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-using CodeIt.Data.Models.Constants;
 using CodeIt.Data.Models.Contracts;
+using CodeIt.Common.Constants;
 
 namespace CodeIt.Data.Models
 {
@@ -10,8 +10,8 @@ namespace CodeIt.Data.Models
         public int Id { get; set; }
 
         [Required]
-        [MinLength(ValidationConstants.ChallengeTitleMinLenght)]
-        [MaxLength(ValidationConstants.ChallengeTitleMaxLenght)]
+        [MinLength(ValidationConstants.ChallengeTitleMinLength)]
+        [MaxLength(ValidationConstants.ChallengeTitleMaxLength)]
         public string Title { get; set; }
 
         public ChallengeProblem Problem { get; set; }
