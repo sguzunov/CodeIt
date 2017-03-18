@@ -14,6 +14,7 @@ namespace CodeIt.Web
             // Only Razor Engine
             ViewEnginesConfig.Configure();
 
+            DbConfig.Initialize();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

@@ -219,6 +219,7 @@
     <Compile Include="Areas\Administration\ViewModels\ChallengeViewModel.cs" />
     <Compile Include="Config\AuthConfig.cs" />
     <Compile Include="Config\BundleConfig.cs" />
+    <Compile Include="Config\DbConfig.cs" />
     <Compile Include="Config\FilterConfig.cs" />
     <Compile Include="Config\NinjectConfig.cs" />
     <Compile Include="Config\RouteConfig.cs" />
