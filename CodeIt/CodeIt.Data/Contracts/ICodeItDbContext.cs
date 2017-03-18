@@ -9,6 +9,16 @@ namespace CodeIt.Data.Contracts
     {
         IDbSet<User> Users { get; set; }
 
+        IDbSet<Category> Categories { get; set; }
+
+        IDbSet<Challenge> Challenges { get; set; }
+
+        IDbSet<ChallengeDecription> ChallengeDecriptions { get; set; }
+
+        IDbSet<Test> Tests { get; set; }
+
+        IDbSet<Track> Tracks { get; set; }
+
         IDbSet<T> Set<T>() where T : class;
 
         DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;
