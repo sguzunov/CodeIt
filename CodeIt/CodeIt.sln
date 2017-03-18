@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logic", "Logic", "{96F1FAB4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeIt.CodeExecution", "CodeIt.CodeExecution\CodeIt.CodeExecution.csproj", "{C3308208-9E0F-4F73-BC10-34ECB01D12AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeIt.Common", "CodeIt.Common\CodeIt.Common.csproj", "{229627E1-1DA4-4D34-844C-76B93B461EC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{C3308208-9E0F-4F73-BC10-34ECB01D12AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3308208-9E0F-4F73-BC10-34ECB01D12AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3308208-9E0F-4F73-BC10-34ECB01D12AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{229627E1-1DA4-4D34-844C-76B93B461EC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{229627E1-1DA4-4D34-844C-76B93B461EC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{229627E1-1DA4-4D34-844C-76B93B461EC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{229627E1-1DA4-4D34-844C-76B93B461EC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

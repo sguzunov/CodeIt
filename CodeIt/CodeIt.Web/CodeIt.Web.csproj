@@ -213,7 +213,10 @@
   <ItemGroup>
     <Compile Include="Areas\Administration\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
-    <Compile Include="Areas\Administration\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ChallengeController.cs" />
+    <Compile Include="Areas\Administration\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Administration\ViewModels\ChallengeTestViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\ChallengeViewModel.cs" />
     <Compile Include="Config\AuthConfig.cs" />
     <Compile Include="Config\BundleConfig.cs" />
     <Compile Include="Config\FilterConfig.cs" />
@@ -251,6 +254,12 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Areas\Administration\Views\Web.config" />
+    <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\_AdministrationLayout.cshtml" />
+    <Content Include="Areas\Administration\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\_AdministrationNavigation.cshtml" />
+    <Content Include="Areas\Administration\Views\Challenge\Create.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -294,8 +303,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\ViewModels\" />
-    <Folder Include="Areas\Administration\Views\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

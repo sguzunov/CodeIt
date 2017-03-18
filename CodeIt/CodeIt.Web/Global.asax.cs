@@ -1,8 +1,9 @@
-﻿using CodeIt.Web.Config;
-using System.Web;
+﻿using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+
+using CodeIt.Web.Config;
 
 namespace CodeIt.Web
 {

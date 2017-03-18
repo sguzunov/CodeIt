@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        @Html.Partial("_AdministrationNavigation")
+        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+            @RenderBody()
+        </main>
+    </div>
+</div>
