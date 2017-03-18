@@ -1,4 +1,4 @@
-﻿namespace CodeIt.Common
+﻿namespace CodeIt.Common.Constants
 {
     public class GlobalConstants
     {
