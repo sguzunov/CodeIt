@@ -212,6 +212,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Areas\Administration\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\HomeController.cs" />
     <Compile Include="Config\AuthConfig.cs" />
     <Compile Include="Config\BundleConfig.cs" />
     <Compile Include="Config\FilterConfig.cs" />
@@ -292,7 +294,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Controllers\" />
     <Folder Include="Areas\Administration\ViewModels\" />
     <Folder Include="Areas\Administration\Views\" />
   </ItemGroup>
@@ -306,6 +307,10 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CodeIt.Common\CodeIt.Common.csproj">
+      <Project>{229627e1-1da4-4d34-844c-76b93b461ec4}</Project>
+      <Name>CodeIt.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CodeIt.Data.Models\CodeIt.Data.Models.csproj">
       <Project>{9736BCE1-4E36-4AB5-BB35-066F8FAD2061}</Project>
       <Name>CodeIt.Data.Models</Name>
