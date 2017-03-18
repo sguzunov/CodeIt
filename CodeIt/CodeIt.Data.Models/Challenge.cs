@@ -24,9 +24,9 @@ namespace CodeIt.Data.Models
         [Required]
         public Category Category { get; set; }
 
-        public int TrackId { get; set; }
+        //public Guid TrackId { get; set; }
 
-        [Required]
-        public Track Track { get; set; }
+        //[Required]
+        //public Track Track { get; set; }
     }
 }

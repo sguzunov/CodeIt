@@ -29,13 +29,13 @@ namespace CodeIt.Data.Models
             set { this.categories = value; }
         }
 
-        public virtual ICollection<Challenge> Challenges
-        {
-            get { return this.challenges; }
-            set { this.challenges = value; }
-        }
+        //public virtual ICollection<Challenge> Challenges
+        //{
+        //    get { return this.challenges; }
+        //    set { this.challenges = value; }
+        //}
 
-        [NotMapped]
-        public int ChallengesCount => this.Challenges.Count;
+        //[NotMapped]
+        //public int ChallengesCount => this.Challenges.Count;
     }
 }
