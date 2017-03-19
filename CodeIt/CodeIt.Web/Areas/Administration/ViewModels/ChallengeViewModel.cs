@@ -17,11 +17,10 @@ namespace CodeIt.Web.Areas.Administration.ViewModels
 
         public string Track { get; set; }
 
+        [Required]
         public int Language { get; set; }
 
-        [MinLength(ValidationConstants.ChallengeDescriptionMinLength)]
-        public string Description { get; set; }
-
+        [Required]
         public HttpPostedFileBase FileDescription { get; set; }
 
         public IEnumerable<ChallengeTestViewModel> Tests { get; set; }
