@@ -19,9 +19,11 @@ namespace CodeIt.Data.Contracts
 
         IDbSet<Track> Tracks { get; set; }
 
-        IDbSet<T> Set<T>() where T : class;
+        IDbSet<T> Set<T>()
+            where T : class;
 
-        DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;
+        DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity)
+            where TEntity : class;
 
         int SaveChanges();
     }
