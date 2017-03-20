@@ -4,6 +4,6 @@ namespace CodeIt.Web.Infrastructure.Mapping
 {
     public interface IHaveCustomMappings
     {
-        void CreateMappings(IConfigurationProvider configuration);
+        void CreateMappings(IMapperConfigurationExpression configuration);
     }
 }

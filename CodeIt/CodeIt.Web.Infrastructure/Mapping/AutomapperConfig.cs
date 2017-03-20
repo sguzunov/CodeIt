@@ -13,18 +13,18 @@ namespace CodeIt.Web.Infrastructure.Mapping
 
         public void Execute(Assembly assembly)
         {
-            var types = assembly.GetExportedTypes();
-
 
             Configuration = new MapperConfiguration(
                 cfg =>
                 {
+                    var types = assembly.GetExportedTypes();
+
                     //LoadBothWaysMapping(types, cfg);
                     LoadStandardMappings(types, cfg);
+                    LoadCustomMappings(types, cfg);
+
                     //LoadReverseMappings(types, cfg);
                 });
-
-            LoadCustomMappings(types, Configuration);
         }
 
         //private static void LoadBothWaysMapping(IEnumerable<Type> types, IMapperConfiguration mapperConfiguration)
@@ -85,7 +85,7 @@ namespace CodeIt.Web.Infrastructure.Mapping
         //    }
         //}
 
-        private static void LoadCustomMappings(IEnumerable<Type> types, IConfigurationProvider mapperConfiguration)
+        private static void LoadCustomMappings(IEnumerable<Type> types, IMapperConfigurationExpression mapperConfiguration)
         {
             var maps = (from t in types
                         from i in t.GetInterfaces()
