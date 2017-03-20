@@ -4,7 +4,7 @@ using CodeIt.Data.Models;
 
 namespace CodeIt.Services.Data.Contracts
 {
-    public interface ITracksService
+    public interface ITracksService : IDataService
     {
         IEnumerable<Track> GetAll();
     }

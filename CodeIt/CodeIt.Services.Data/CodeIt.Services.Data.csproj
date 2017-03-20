@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IDataService.cs" />
     <Compile Include="Contracts\ITracksService.cs" />
     <Compile Include="TracksService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
