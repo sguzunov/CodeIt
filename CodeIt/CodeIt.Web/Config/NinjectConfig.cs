@@ -17,6 +17,9 @@ namespace CodeIt.Web.Config
 
     using Ninject;
     using Ninject.Web.Common;
+    using AutoMapper;
+
+    using CodeIt.Web.Infrastructure.Mapping;
 
     public static class NinjectConfig
     {
@@ -78,7 +81,7 @@ namespace CodeIt.Web.Config
                 var registryInstance = (INinjectBinding)Activator.CreateInstance(registry);
                 registryInstance.Bind(kernel);
             }
-
+            
             kernel.Bind<IAuthenticationService>().To<AuthenticationService>();
             kernel.Bind<IOwinContext>().ToMethod(x => HttpContext.Current.GetOwinContext())
                 .WhenInjectedInto(typeof(IAuthenticationService));

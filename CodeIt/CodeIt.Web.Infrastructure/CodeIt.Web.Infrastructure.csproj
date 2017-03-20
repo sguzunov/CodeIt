@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bindings\AutomapperBindings.cs" />
     <Compile Include="Bindings\DataServicesBindings.cs" />
     <Compile Include="Bindings\DbBindings.cs" />
     <Compile Include="Bindings\INinjectBinding.cs" />
@@ -85,6 +86,10 @@
     <ProjectReference Include="..\CodeIt.Services.Data\CodeIt.Services.Data.csproj">
       <Project>{f7152ae6-0317-4247-b017-2096e4410a3f}</Project>
       <Name>CodeIt.Services.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CodeIt.Services.Logic\CodeIt.Services.Logic.csproj">
+      <Project>{a23009d5-f2bc-4f60-96de-b7b96888b28a}</Project>
+      <Name>CodeIt.Services.Logic</Name>
     </ProjectReference>
     <ProjectReference Include="..\CodeIt.Web.Auth\CodeIt.Web.Auth.csproj">
       <Project>{6C412B2B-2E6C-400E-B415-1D2B02A78623}</Project>

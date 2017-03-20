@@ -9,11 +9,10 @@ namespace CodeIt.Web.Infrastructure.Mapping
 {
     public class AutoMapperConfig
     {
-        public static MapperConfiguration Configuration { get; private set; }
+        public static IConfigurationProvider Configuration { get; private set; }
 
         public void Execute(Assembly assembly)
         {
-
             Configuration = new MapperConfiguration(
                 cfg =>
                 {
