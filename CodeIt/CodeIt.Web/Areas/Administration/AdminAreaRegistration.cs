@@ -12,7 +12,7 @@ namespace CodeIt.Web.Areas.Administration
         {
             context.MapRoute(
                 name: "Administration_Default",
-                url: "Administration/Dashboard/{controller}/{action}/{id}",
+                url: "Administration/{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = nameof(HomeController.Index), id = UrlParameter.Optional });
         }
     }

@@ -215,8 +215,8 @@
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\ChallengeController.cs" />
     <Compile Include="Areas\Administration\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Administration\ViewModels\ChallengeTestViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\ChallengeViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\ChallengeTestAdministrationViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\ChallengeAdministrationViewModel.cs" />
     <Compile Include="Config\AuthConfig.cs" />
     <Compile Include="Config\BundleConfig.cs" />
     <Compile Include="Config\DbConfig.cs" />

@@ -2,7 +2,7 @@
 
 namespace CodeIt.Web.Areas.Administration.ViewModels
 {
-    public class ChallengeTestViewModel
+    public class ChallengeTestAdministrationViewModel
     {
         [Required]
         public string Input { get; set; }

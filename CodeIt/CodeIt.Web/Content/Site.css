@@ -75,3 +75,6 @@ textarea {
         border-top-right-radius: 0;
     }
 
+select#langs-dropdown {
+    height: 35px;
+}
