@@ -9,5 +9,7 @@
 
         public const int UserNamesMinLength = 6;
         public const int UserNamesMaxLength = 20;
+
+        public const int TrackNameMaxLength = 50;
     }
 }
