@@ -1,25 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 using CodeIt.Data.Models.Contracts;
+using CodeIt.Common.Constants;
 
 namespace CodeIt.Data.Models
 {
     public class Track : IEntity
     {
         private ICollection<Category> categories;
-        private ICollection<Challenge> challenges;
+        //private ICollection<Challenge> challenges;
 
         public Track()
         {
             this.categories = new HashSet<Category>();
-            this.challenges = new HashSet<Challenge>();
+            //this.challenges = new HashSet<Challenge>();
         }
 
         public Guid Id { get; set; }
 
         [Required]
+        [Index(IsUnique = true)]
+        [MaxLength(ValidationConstants.TrackNameMaxLength)]
         public string Name { get; set; }
 
         public virtual ICollection<Category> Categories
