@@ -4,7 +4,7 @@
 @model CreateChallengeViewModel
 
 <h1>Add Challenge</h1>
-@using (Html.BeginForm(nameof(ChallengeController.Create), "Challenge", FormMethod.Post, new { role = "form" }))
+@using (Html.BeginForm(nameof(ChallengeController.Create), "Challenge", FormMethod.Post, new { role = "form", encType = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary("", new { @class = "text-danger" })
@@ -18,21 +18,29 @@
     <div class="form-group">
         @Html.LabelFor(x => x.Challenge.FileDescription, new { @class = "col-2 col-form-label" })
         <div class="col-10">
-            <input type="file" class="col-6 col-form-label" />
+            @Html.TextBoxFor(x => x.Challenge.FileDescription, new { type = "file", @class = "col-6 col-form-label" })
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(x => x.Challenge.Language, new { @class = "col-2 col-form-label" })
         <div class="col-10">
-            @Html.EnumDropDownListFor(x => x.Challenge.Language, new { id = "langs-dropdown", @class = "form-control" })
+            @Html.EnumDropDownListFor(x => x.Challenge.Language, new { id = "langs-dropdown", @class = "form-control dropdown-menu" })
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(x => x.Challenge.Language, new { @class = "col-2 col-form-label" })
         <div class="col-10">
-            @Html.DropDownListFor(x => x.Challenge.Track, Model.Tracks, "Select track", new { @class = "form-control" });
+            @Html.DropDownListFor(x => x.Challenge.TrackId, Model.Tracks, "Select track", new { @class = "form-control" });
         </div>
     </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Challenge.CategoryId, new { @class = "col-2 col-form-label" })
+        <div class="col-10">
+            @Html.DropDownListFor(x => x.Challenge.CategoryId, null, "Select categoty", new { @class = "form-control" });
+        </div>
+    </div>
+
+    <input type="submit" value="Submit" />
 }
 
 @section Scripts {

@@ -15,16 +15,18 @@ namespace CodeIt.Web.Areas.Administration.ViewModels
         public string Title { get; set; }
 
         [Required]
-        public string Track { get; set; }
+        [Display(Name = "Track")]
+        public string TrackId { get; set; }
 
         [Required]
-        public string Category { get; set; }
+        [Display(Name = "Category")]
+        public string CategoryId { get; set; }
 
         [Required]
         public Language Language { get; set; }
 
         [Required]
-        [Display(Description = "Description")]
+        [Display(Name = "Description")]
         public HttpPostedFileBase FileDescription { get; set; }
 
         public IEnumerable<ChallengeTestAdministrationViewModel> Tests { get; set; }
