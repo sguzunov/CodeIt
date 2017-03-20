@@ -1,8 +1,7 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-
+﻿using CodeIt.Common.Constants;
 using CodeIt.Data.Models.Contracts;
-using CodeIt.Common.Constants;
+using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace CodeIt.Data.Models
 {

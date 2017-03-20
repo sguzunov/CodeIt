@@ -1,12 +1,12 @@
-﻿using System.Security.Claims;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
+
+using CodeIt.Common.Constants;
+using CodeIt.Data.Models.Contracts;
 
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-
-using CodeIt.Data.Models.Contracts;
-using CodeIt.Common.Constants;
 
 namespace CodeIt.Data.Models
 {
@@ -26,6 +26,7 @@ namespace CodeIt.Data.Models
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
+
             // Add custom user claims here
             return userIdentity;
         }
