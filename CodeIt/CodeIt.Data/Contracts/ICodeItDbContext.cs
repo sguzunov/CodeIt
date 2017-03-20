@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Threading.Tasks;
 
 using CodeIt.Data.Models;
 
@@ -26,5 +27,7 @@ namespace CodeIt.Data.Contracts
             where TEntity : class;
 
         int SaveChanges();
+
+        Task<int> SaveChangesAsync();
     }
 }
