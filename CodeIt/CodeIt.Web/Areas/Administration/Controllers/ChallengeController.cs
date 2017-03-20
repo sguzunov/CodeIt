@@ -1,31 +1,35 @@
-﻿using CodeIt.Web.Areas.Administration.ViewModels;
+﻿using System;
 using System.Web.Mvc;
-using System;
-using System.Collections.Generic;
+
+using Bytes2you.Validation;
+
+using CodeIt.Data.Models;
+using CodeIt.Services.Data.Contracts;
+using CodeIt.Web.Areas.Administration.ViewModels;
 
 namespace CodeIt.Web.Areas.Administration.Controllers
 {
     public class ChallengeController : AdministrationController
     {
-        public ChallengeController()
-        {
+        private readonly ITracksService tracks;
 
+        public ChallengeController(ITracksService tracks)
+        {
+            Guard.WhenArgument(tracks, nameof(tracks)).IsNull().Throw();
+
+            this.tracks = tracks;
         }
 
         [HttpGet]
         public ActionResult Create()
         {
-            var vModel = new ChallengeAdministrationViewModel()
+            var allTracks = this.tracks.GetAll();
+            var viewModel = new CreateChallengeViewModel
             {
-                Tracks = new SelectList(new List<SelectListItem>
-                {
-                    new SelectListItem { Value = "1", Text = "Strings" },
-                    new SelectListItem { Value = "2", Text = "Loops" },
-                    new SelectListItem { Value = "3", Text = "Fors" },
-                }, "Value", "Text")
+                Tracks = new SelectList(allTracks, nameof(Track.Id), nameof(Track.Name))
             };
 
-            return this.View(vModel);
+            return this.View(viewModel);
         }
 
         [HttpPost]

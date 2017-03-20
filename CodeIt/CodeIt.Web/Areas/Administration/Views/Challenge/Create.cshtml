@@ -1,7 +1,7 @@
 ﻿@using CodeIt.Web.Areas.Administration.ViewModels;
 @using CodeIt.Web.Areas.Administration.Controllers;
 
-@model ChallengeAdministrationViewModel
+@model CreateChallengeViewModel
 
 <h1>Add Challenge</h1>
 @using (Html.BeginForm(nameof(ChallengeController.Create), "Challenge", FormMethod.Post, new { role = "form" }))
@@ -10,27 +10,27 @@
     @Html.ValidationSummary("", new { @class = "text-danger" })
 
     <div class="form-group">
-        @Html.LabelFor(x => x.Title, new { @class = "col-2 col-form-label" })
+        @Html.LabelFor(x => x.Challenge.Title, new { @class = "col-2 col-form-label" })
         <div class="col-10">
-            @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+            @Html.TextBoxFor(x => x.Challenge.Title, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(x => x.FileDescription, new { @class = "col-2 col-form-label" })
+        @Html.LabelFor(x => x.Challenge.FileDescription, new { @class = "col-2 col-form-label" })
         <div class="col-10">
             <input type="file" class="col-6 col-form-label" />
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(x => x.Language, new { @class = "col-2 col-form-label" })
+        @Html.LabelFor(x => x.Challenge.Language, new { @class = "col-2 col-form-label" })
         <div class="col-10">
-            @Html.EnumDropDownListFor(x => x.Language, new { id = "langs-dropdown", @class = "form-control" })
+            @Html.EnumDropDownListFor(x => x.Challenge.Language, new { id = "langs-dropdown", @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(x => x.Language, new { @class = "col-2 col-form-label" })
+        @Html.LabelFor(x => x.Challenge.Language, new { @class = "col-2 col-form-label" })
         <div class="col-10">
-            @Html.DropDownListFor(x => x.Track, Model.Tracks, "Select track", new { @class = "form-control"});
+            @Html.DropDownListFor(x => x.Challenge.Track, Model.Tracks, "Select track", new { @class = "form-control" });
         </div>
     </div>
 }

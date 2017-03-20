@@ -4,7 +4,6 @@ using System.Web;
 
 using CodeIt.Common.Constants;
 using CodeIt.Data.Models;
-using System.Web.Mvc;
 
 namespace CodeIt.Web.Areas.Administration.ViewModels
 {
@@ -14,15 +13,18 @@ namespace CodeIt.Web.Areas.Administration.ViewModels
         [MinLength(ValidationConstants.ChallengeTitleMinLength)]
         [MaxLength(ValidationConstants.ChallengeTitleMaxLength)]
         public string Title { get; set; }
-        
+
+        [Required]
         public string Track { get; set; }
 
-        public IEnumerable<SelectListItem> Tracks { get; set; }
+        [Required]
+        public string Category { get; set; }
 
         [Required]
         public Language Language { get; set; }
 
         [Required]
+        [Display(Description = "Description")]
         public HttpPostedFileBase FileDescription { get; set; }
 
         public IEnumerable<ChallengeTestAdministrationViewModel> Tests { get; set; }

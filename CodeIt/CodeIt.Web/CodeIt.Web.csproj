@@ -225,6 +225,7 @@
     <Compile Include="Areas\Administration\Controllers\HomeController.cs" />
     <Compile Include="Areas\Administration\ViewModels\ChallengeTestAdministrationViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\ChallengeAdministrationViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\CreateChallengeViewModel.cs" />
     <Compile Include="Config\AuthConfig.cs" />
     <Compile Include="Config\BundleConfig.cs" />
     <Compile Include="Config\DbConfig.cs" />
