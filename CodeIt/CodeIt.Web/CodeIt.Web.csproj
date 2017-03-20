@@ -226,6 +226,8 @@
     <Compile Include="Areas\Administration\ViewModels\ChallengeTestAdministrationViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\ChallengeAdministrationViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\CreateChallengeViewModel.cs" />
+    <Compile Include="Areas\Api\ApiAreaRegistration.cs" />
+    <Compile Include="Areas\Api\Controllers\CategoryController.cs" />
     <Compile Include="Config\AuthConfig.cs" />
     <Compile Include="Config\BundleConfig.cs" />
     <Compile Include="Config\DbConfig.cs" />
@@ -313,6 +315,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Api\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
