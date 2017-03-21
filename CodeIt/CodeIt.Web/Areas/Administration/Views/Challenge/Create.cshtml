@@ -3,7 +3,7 @@
 
 @model CreateChallengeViewModel
 
-<h1>Add Challenge</h1>
+<h1>Create Challenge</h1>
 @using (Html.BeginForm(nameof(ChallengeController.Create), "Challenge", FormMethod.Post, new { role = "form", encType = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
@@ -12,37 +12,102 @@
     <div class="form-group">
         @Html.LabelFor(x => x.Challenge.Title, new { @class = "col-2 col-form-label" })
         <div class="col-10">
-            @Html.TextBoxFor(x => x.Challenge.Title, new { @class = "form-control" })
+            @Html.TextBoxFor(x => x.Challenge.Title, new { @class = "col-12 form-control" })
+            @Html.ValidationMessageFor(x => x.Challenge.Title, null, new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(x => x.Challenge.FileDescription, new { @class = "col-2 col-form-label" })
+        @Html.LabelFor(x => x.Challenge.Description, new { @class = "col-2 col-form-label" })
+        <div class="col-10">
+            @Html.TextAreaFor(x => x.Challenge.Description, new { @class = "col-12 col-form-label" })
+            @Html.ValidationMessageFor(x => x.Challenge.Description, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Challenge.FileDescription, new { @class = "col-4 col-form-label" })
         <div class="col-10">
             @Html.TextBoxFor(x => x.Challenge.FileDescription, new { type = "file", @class = "col-6 col-form-label" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(x => x.Challenge.Language, new { @class = "col-2 col-form-label" })
+        @Html.LabelFor(x => x.Challenge.TrackId, new { @class = "col-2 col-form-label" })
         <div class="col-10">
-            @Html.EnumDropDownListFor(x => x.Challenge.Language, new { id = "langs-dropdown", @class = "form-control dropdown-menu" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(x => x.Challenge.Language, new { @class = "col-2 col-form-label" })
-        <div class="col-10">
-            @Html.DropDownListFor(x => x.Challenge.TrackId, Model.Tracks, "Select track", new { @class = "form-control" });
+            @Html.DropDownListFor(x => x.Challenge.TrackId, Model.Tracks, "Select track", new { id = "tracks-list", @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Challenge.TrackId, null, new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(x => x.Challenge.CategoryId, new { @class = "col-2 col-form-label" })
         <div class="col-10">
-            @Html.DropDownListFor(x => x.Challenge.CategoryId, null, "Select categoty", new { @class = "form-control" });
+            <select class="form-control" id="categories-list" name="Challenge.CategoryId"></select>
+            @Html.ValidationMessageFor(x => x.Challenge.CategoryId, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <tr />
+    <div class="form-group">
+        @Html.LabelFor(x => x.Challenge.Language, new { @class = "col-2 col-form-label" })
+        <div class="col-10">
+            @Html.EnumDropDownListFor(x => x.Challenge.Language, new { id = "langs-dropdown", @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Challenge.TimeLimitInMs, new { @class = "col-3 col-form-label" })
+        <div class="col-10">
+            @Html.TextBoxFor(x => x.Challenge.TimeLimitInMs, new { type = "number", @class = "col-3 form-control" })
+            @Html.ValidationMessageFor(x => x.Challenge.TimeLimitInMs, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Challenge.MemoryInMb, new { @class = "col-3 col-form-label" })
+        <div class="col-10">
+            @Html.TextBoxFor(x => x.Challenge.MemoryInMb, new { type = "number", @class = "col-3 form-control" })
+            @Html.ValidationMessageFor(x => x.Challenge.MemoryInMb, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div id="tests-container" class="col-10">
+
         </div>
     </div>
 
-    <input type="submit" value="Submit" />
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#test-modal">Add test</button>
+    <input type="submit" class="btn" value="Submit" />
 }
+
+<div class="modal fade" id="test-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New test</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    @*<div class="form-group">
+                        <label for="test-modal-issample" class="form-control-label">Is Sample test:</label>
+                        <input type="checkbox" class="form-control" id="test-modal-issample">
+                    </div>*@
+                    <div class="form-group">
+                        <label for="test-modal-input" class="form-control-label">Test input:</label>
+                        <textarea class="form-control" id="test-modal-input"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="test-modal-output" class="form-control-label">Test output:</label>
+                        <textarea class="form-control" id="test-modal-output"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="save-test" type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/Admin/creating-challenge.js")
 }

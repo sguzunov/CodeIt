@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Web;
 
+using CodeIt.Common.Attributes;
 using CodeIt.Common.Constants;
 using CodeIt.Data.Models;
 
@@ -23,12 +24,25 @@ namespace CodeIt.Web.Areas.Administration.ViewModels
         public string CategoryId { get; set; }
 
         [Required]
+        public string Description { get; set; }
+
+        [Display(Name = "Upload file description (optional)")]
+        public HttpPostedFileBase FileDescription { get; set; }
+
+        [Required]
         public Language Language { get; set; }
 
         [Required]
-        [Display(Name = "Description")]
-        public HttpPostedFileBase FileDescription { get; set; }
+        [Display(Name = "Time limit in ms")]
+        [MinValue(ValidationConstants.ChallengeTimeinMsMin)]
+        public int TimeLimitInMs { get; set; }
 
+        [Required]
+        [Display(Name = "Memory (MB)")]
+        [MinValue(ValidationConstants.ChallengeMemotyinMbMin)]
+        public int MemoryInMb { get; set; }
+
+        [Required]
         public IEnumerable<ChallengeTestAdministrationViewModel> Tests { get; set; }
     }
 }

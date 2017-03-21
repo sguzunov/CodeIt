@@ -1,10 +1,10 @@
-﻿using Bytes2you.Validation;
-using CodeIt.Services.Data.Contracts;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+
+using Bytes2you.Validation;
+
+using CodeIt.Services.Data.Contracts;
 
 namespace CodeIt.Web.Areas.Api.Controllers
 {
@@ -20,10 +20,10 @@ namespace CodeIt.Web.Areas.Api.Controllers
         }
 
         [HttpGet]
-        public JsonResult ByTrackId(string trackId)
+        public JsonResult ByTrackId(string id)
         {
-            var categories = this.tracks.GetCategoriesByTrackId(Guid.Parse(trackId));
-            return this.Json(null, JsonRequestBehavior.AllowGet);
+            var categories = this.tracks.GetCategoriesByTrackId(Guid.Parse(id)).Select(x => new { Id = x.Id, Category = x.Name }).ToList();
+            return this.Json(categories, JsonRequestBehavior.AllowGet);
         }
     }
 }

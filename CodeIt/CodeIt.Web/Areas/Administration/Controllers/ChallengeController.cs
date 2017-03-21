@@ -6,8 +6,6 @@ using Bytes2you.Validation;
 using CodeIt.Data.Models;
 using CodeIt.Services.Data.Contracts;
 using CodeIt.Web.Areas.Administration.ViewModels;
-using System.Web;
-using System.Linq;
 
 namespace CodeIt.Web.Areas.Administration.Controllers
 {
@@ -31,15 +29,20 @@ namespace CodeIt.Web.Areas.Administration.Controllers
                 Tracks = new SelectList(allTracks, nameof(Track.Id), nameof(Track.Name))
             };
 
-            var cate = this.tracks.GetCategoriesByTrackId(allTracks.First().Id);
-
             return this.View(viewModel);
         }
 
         [HttpPost]
         public ActionResult Create(ChallengeAdministrationViewModel challenge)
         {
-            throw new NotImplementedException();
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(new CreateChallengeViewModel() { Challenge = challenge, Tracks = new SelectList(new[] { new SelectListItem() }) });
+            }
+
+
+
+            return this.Redirect("/");
         }
     }
 }
