@@ -1,7 +1,11 @@
-﻿using System.Web;
+﻿using System.Reflection;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+
+using CodeIt.Web.Config;
+using CodeIt.Web.Infrastructure.Mapping;
 
 namespace CodeIt.Web
 {
@@ -9,12 +13,17 @@ namespace CodeIt.Web
     {
         protected void Application_Start()
         {
-            ControllerBuilder.Current.DefaultNamespaces.Add("CodeIt.Web.Controllers");
+            // Only Razor Engine
+            ViewEnginesConfig.Configure();
 
+            DbConfig.Initialize();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            var mapConfig = new AutoMapperConfig();
+            mapConfig.Execute(Assembly.GetExecutingAssembly());
         }
     }
 }

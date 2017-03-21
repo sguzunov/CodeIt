@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CodeIt.Web.Models.Account
+namespace CodeIt.Web.ViewModels.Account
 {
     public class SignInViewModel
     {

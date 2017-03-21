@@ -9,7 +9,7 @@ using CodeIt.Web.Controllers;
 using NUnit.Framework;
 using Moq;
 using TestStack.FluentMVCTesting;
-using CodeIt.Web.Models.Account;
+using CodeIt.Web.ViewModels.Account;
 using CodeIt.Web.Auth.Contracts;
 
 namespace CodeIt.UnitTests.Web.AccountControllerTests

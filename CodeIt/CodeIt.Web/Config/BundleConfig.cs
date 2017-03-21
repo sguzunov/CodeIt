@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace CodeIt.Web
+namespace CodeIt.Web.Config
 {
     public class BundleConfig
     {

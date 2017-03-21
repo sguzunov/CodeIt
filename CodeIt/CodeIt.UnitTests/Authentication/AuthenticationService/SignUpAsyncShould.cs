@@ -82,9 +82,9 @@ namespace CodeIt.UnitTests.Authentication.AuthenticationService
             Assert.ThrowsAsync<ArgumentException>(async () => await authService.SignUpAsync(username: "John", email: "somemail", password: ""));
         }
 
-        [Test]
-        public async Task CallUserManager_CreateAsync()
-        {
+        //[Test]
+        //public async Task CallUserManager_CreateAsync()
+        //{
             // Arrange
             //var fakeUserStore = new Mock<IUserStore<User>>();
             //var fakeUserManager = new MockUserManager(fakeUserStore.Object);
@@ -96,6 +96,6 @@ namespace CodeIt.UnitTests.Authentication.AuthenticationService
 
             //// Assert
             //Assert.IsTrue(fakeUserManager.IsUserCreated);
-        }
+        //}
     }
 }

@@ -1,18 +1,29 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(CodeIt.Web.App_Start.NinjectConfig), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(CodeIt.Web.App_Start.NinjectConfig), "Stop")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(CodeIt.Web.Config.NinjectConfig), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethod(typeof(CodeIt.Web.Config.NinjectConfig), "Stop")]
 
-namespace CodeIt.Web.App_Start
+namespace CodeIt.Web.Config
 {
     using System;
+    using System.Linq;
+    using System.Reflection;
     using System.Web;
 
+    using CodeIt.Web.Auth;
+    using CodeIt.Web.Auth.Contracts;
+    using CodeIt.Web.Infrastructure.Bindings;
+
+    using Microsoft.Owin;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
     using Ninject;
     using Ninject.Web.Common;
-    using Microsoft.Owin;
-    using CodeIt.Web.Auth.Contracts;
-    using CodeIt.Web.Auth;
+    using AutoMapper;
+
+    using CodeIt.Web.Infrastructure.Mapping;
+    using CodeIt.Services.Logic;
+    using CodeIt.Services.Logic.Contracts;
+    using CodeIt.Data.Contracts;
+    using CodeIt.Data;
 
     public static class NinjectConfig
     {
@@ -64,6 +75,18 @@ namespace CodeIt.Web.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            var registries =
+                Assembly.Load("CodeIt.Web.Infrastructure")
+                    .GetExportedTypes()
+                    .Where(t => t.IsClass && typeof(INinjectBinding).IsAssignableFrom(t));
+
+            foreach (var registry in registries)
+            {
+                var registryInstance = (INinjectBinding)Activator.CreateInstance(registry);
+                registryInstance.Bind(kernel);
+            }
+            kernel.Bind<IFileSystemService>().To<FileSystemService>();
+            kernel.Bind<IMappingProvider>().To<MappingProvider>();
             kernel.Bind<IAuthenticationService>().To<AuthenticationService>();
             kernel.Bind<IOwinContext>().ToMethod(x => HttpContext.Current.GetOwinContext())
                 .WhenInjectedInto(typeof(IAuthenticationService));

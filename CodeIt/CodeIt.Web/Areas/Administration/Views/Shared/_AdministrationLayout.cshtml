@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/Shared/_ContainerLayout.cshtml";
+}
+
+<div class="row">
+    @Html.Partial("_AdministrationNavigation")
+    <main class="col-sm-7 offset-sm-3 col-md-8 offset-md-0 pt-3">
+        @RenderBody()
+    </main>
+</div>
+
+@RenderSection("scripts", required: false);
