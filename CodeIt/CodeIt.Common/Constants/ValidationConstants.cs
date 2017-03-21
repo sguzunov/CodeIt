@@ -14,6 +14,6 @@
         public const int TrackNameMaxLength = 50;
 
         public const double ChallengeTimeinMsMin = 1;
-        public const double ChallengeMemotyinMbMin = 0.001;
+        public const double ChallengeMemotyinMbMin = 1;
     }
 }
