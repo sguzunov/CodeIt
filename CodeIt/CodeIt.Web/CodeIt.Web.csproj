@@ -317,6 +317,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Api\Models\" />
+    <Folder Include="Files\ChallengesDescription\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -343,6 +344,10 @@
     <ProjectReference Include="..\CodeIt.Services.Data\CodeIt.Services.Data.csproj">
       <Project>{f7152ae6-0317-4247-b017-2096e4410a3f}</Project>
       <Name>CodeIt.Services.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CodeIt.Services.Logic\CodeIt.Services.Logic.csproj">
+      <Project>{A23009D5-F2BC-4F60-96DE-B7B96888B28A}</Project>
+      <Name>CodeIt.Services.Logic</Name>
     </ProjectReference>
     <ProjectReference Include="..\CodeIt.Web.Auth\CodeIt.Web.Auth.csproj">
       <Project>{6c412b2b-2e6c-400e-b415-1d2b02a78623}</Project>

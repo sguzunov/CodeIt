@@ -20,6 +20,10 @@ namespace CodeIt.Web.Config
     using AutoMapper;
 
     using CodeIt.Web.Infrastructure.Mapping;
+    using CodeIt.Services.Logic;
+    using CodeIt.Services.Logic.Contracts;
+    using CodeIt.Data.Contracts;
+    using CodeIt.Data;
 
     public static class NinjectConfig
     {
@@ -81,7 +85,8 @@ namespace CodeIt.Web.Config
                 var registryInstance = (INinjectBinding)Activator.CreateInstance(registry);
                 registryInstance.Bind(kernel);
             }
-            
+            kernel.Bind<IFileSystemService>().To<FileSystemService>();
+            kernel.Bind<IMappingProvider>().To<MappingProvider>();
             kernel.Bind<IAuthenticationService>().To<AuthenticationService>();
             kernel.Bind<IOwinContext>().ToMethod(x => HttpContext.Current.GetOwinContext())
                 .WhenInjectedInto(typeof(IAuthenticationService));
