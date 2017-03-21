@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChallengesService.cs" />
+    <Compile Include="Contracts\IChallengesService.cs" />
     <Compile Include="Contracts\IDataService.cs" />
     <Compile Include="Contracts\ITracksService.cs" />
     <Compile Include="TracksService.cs" />
