@@ -1,12 +1,27 @@
-﻿using System;
+﻿using AutoMapper;
+using System.Linq;
+using System.Collections.Generic;
+using AutoMapper.QueryableExtensions;
 
 namespace CodeIt.Services.Logic
 {
     public class MappingProvider : IMappingProvider
     {
-        public void MapObject<TSource, TDestination>()
+        private readonly IMapper mapper;
+
+        public MappingProvider(IMapper mapper)
         {
-            throw new NotImplementedException();
+            this.mapper = mapper;
+        }
+
+        public IEnumerable<TDestination> ProjectTo<TSource, TDestination>(IQueryable<TSource> source)
+        {
+            return source.ProjectTo<TDestination>().ToList();
+        }
+
+        TDestination IMappingProvider.MapObject<TSource, TDestination>(TSource source)
+        {
+            return this.mapper.Map<TSource, TDestination>(source);
         }
     }
 }
