@@ -20,7 +20,7 @@ namespace CodeIt.Data
 
         public IDbSet<Challenge> Challenges { get; set; }
 
-        public IDbSet<ChallengeDecription> ChallengeDecriptions { get; set; }
+        public IDbSet<FileDecription> ChallengeDecriptions { get; set; }
 
         public IDbSet<Test> Tests { get; set; }
 
@@ -59,7 +59,7 @@ namespace CodeIt.Data
 
             // Challenge - ChallengeDescription (one-to-one)
             modelBuilder.Entity<Challenge>()
-                .HasOptional(x => x.ChallengeDecription)
+                .HasOptional(x => x.FileDecription)
                 .WithRequired(x => x.Challenge);
         }
     }

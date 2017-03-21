@@ -1,8 +1,9 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 
 namespace CodeIt.Data.Contracts
 {
-    public interface IEfData
+    public interface IEfData : IDisposable
     {
         int Commit();
 

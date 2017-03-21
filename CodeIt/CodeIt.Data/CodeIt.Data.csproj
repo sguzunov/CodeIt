@@ -64,6 +64,10 @@
     <Compile Include="Contracts\IEfRepository.cs" />
     <Compile Include="EfData.cs" />
     <Compile Include="EfRepository.cs" />
+    <Compile Include="Migrations\201703212244583_Challenges with guid id.cs" />
+    <Compile Include="Migrations\201703212244583_Challenges with guid id.Designer.cs">
+      <DependentUpon>201703212244583_Challenges with guid id.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -81,6 +85,11 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201703212244583_Challenges with guid id.resx">
+      <DependentUpon>201703212244583_Challenges with guid id.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

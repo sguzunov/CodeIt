@@ -19,12 +19,18 @@ namespace CodeIt.Data
 
         public int Commit()
         {
-            return this.dbContext.SaveChanges();
+            int changes = this.dbContext.SaveChanges();
+            return changes;
         }
 
         public async Task<int> CommitAsync()
         {
-            return await this.dbContext.SaveChangesAsync();
+            int changes = await this.dbContext.SaveChangesAsync();
+            return changes;
+        }
+
+        public void Dispose()
+        {
         }
     }
 }

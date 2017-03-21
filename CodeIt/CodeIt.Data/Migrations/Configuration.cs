@@ -10,13 +10,13 @@ namespace CodeIt.Data.Migrations
     {
         public Configuration()
         {
-            this.AutomaticMigrationsEnabled = true;
-            this.AutomaticMigrationDataLossAllowed = true;
+            this.AutomaticMigrationsEnabled = false;
+            this.AutomaticMigrationDataLossAllowed = false;
         }
 
         protected override void Seed(CodeItDbContext context)
         {
-            context.Tracks.AddOrUpdate(new Track[]
+            context.Tracks.AddOrUpdate(x => x.Name, new Track[]
             {
                 new Track()
                 {

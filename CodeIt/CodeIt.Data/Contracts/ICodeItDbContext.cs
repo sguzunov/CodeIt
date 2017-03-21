@@ -14,7 +14,7 @@ namespace CodeIt.Data.Contracts
 
         IDbSet<Challenge> Challenges { get; set; }
 
-        IDbSet<ChallengeDecription> ChallengeDecriptions { get; set; }
+        IDbSet<FileDecription> ChallengeDecriptions { get; set; }
 
         IDbSet<Test> Tests { get; set; }
 
