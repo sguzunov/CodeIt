@@ -13,6 +13,10 @@ namespace CodeIt.Data.Models
         public string Input { get; set; }
 
         [Required]
-        public string ExpectedOutput { get; set; }
+        public string Output { get; set; }
+
+        public Guid ChallengeId { get; set; }
+
+        public Challenge Challenge { get; set; }
     }
 }

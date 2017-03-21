@@ -58,7 +58,7 @@
   <ItemGroup>
     <Compile Include="Category.cs" />
     <Compile Include="Challenge.cs" />
-    <Compile Include="ChallengeDecription.cs" />
+    <Compile Include="FileDecription.cs" />
     <Compile Include="Contracts\IEntity.cs" />
     <Compile Include="FileInfo.cs" />
     <Compile Include="Language.cs" />

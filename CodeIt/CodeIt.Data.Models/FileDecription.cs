@@ -2,7 +2,7 @@
 
 namespace CodeIt.Data.Models
 {
-    public class ChallengeDecription : FileInfo
+    public class FileDecription : FileInfo
     {
         public Guid ChallengeId { get; set; }
 
