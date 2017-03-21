@@ -21,8 +21,7 @@ namespace CodeIt.Web.Infrastructure.Mapping
                     //LoadBothWaysMapping(types, cfg);
                     LoadStandardMappings(types, cfg);
                     LoadCustomMappings(types, cfg);
-
-                    //LoadReverseMappings(types, cfg);
+                    LoadReverseMappings(types, cfg);
                 });
         }
 
@@ -65,24 +64,24 @@ namespace CodeIt.Web.Infrastructure.Mapping
             }
         }
 
-        //private static void LoadReverseMappings(IEnumerable<Type> types, IMapperConfiguration mapperConfiguration)
-        //{
-        //    var maps = (from t in types
-        //                from i in t.GetInterfaces()
-        //                where i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IMapTo<>) &&
-        //                      !t.IsAbstract &&
-        //                      !t.IsInterface
-        //                select new
-        //                {
-        //                    Destination = i.GetGenericArguments()[0],
-        //                    Source = t
-        //                }).ToArray();
+        private static void LoadReverseMappings(IEnumerable<Type> types, IMapperConfigurationExpression mapperConfiguration)
+        {
+            var maps = (from t in types
+                        from i in t.GetInterfaces()
+                        where i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IMapTo<>) &&
+                              !t.IsAbstract &&
+                              !t.IsInterface
+                        select new
+                        {
+                            Destination = i.GetGenericArguments()[0],
+                            Source = t
+                        }).ToArray();
 
-        //    foreach (var map in maps)
-        //    {
-        //        mapperConfiguration.CreateMap(map.Source, map.Destination);
-        //    }
-        //}
+            foreach (var map in maps)
+            {
+                mapperConfiguration.CreateMap(map.Source, map.Destination);
+            }
+        }
 
         private static void LoadCustomMappings(IEnumerable<Type> types, IMapperConfigurationExpression mapperConfiguration)
         {

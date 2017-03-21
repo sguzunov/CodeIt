@@ -2,6 +2,7 @@
 using CodeIt.Data.Contracts;
 
 using Ninject;
+using Ninject.Web.Common;
 
 namespace CodeIt.Web.Infrastructure.Bindings
 {
@@ -9,7 +10,7 @@ namespace CodeIt.Web.Infrastructure.Bindings
     {
         public void Bind(IKernel kernel)
         {
-            kernel.Bind<ICodeItDbContext>().To<CodeItDbContext>();
+            kernel.Bind<ICodeItDbContext>().To<CodeItDbContext>().InRequestScope();
             kernel.Bind(typeof(IEfRepository<>)).To(typeof(EfRepository<>));
             kernel.Bind<IEfData>().To<EfData>();
         }
