@@ -1,11 +1,38 @@
 ﻿$(function () {
-    $('#tracks-list').on('change', function (ev) {
-        var trackId = $(this).val();
+    function requestData(url, success, error) {
         $.ajax({
             method: "Get",
-            url: `/Api/Category/ByTrackId/${trackId}`,
+            url: url,
             contentType: 'application/json; charset=utf-8',
-            success: function (result) {
+            success: success,
+            error: error
+        });
+    }
+
+    function getAllTracks() {
+        requestData(
+            `/Api/Track/GetAll`,
+            function (result) {
+                var $tracksList = $('#tracks-list');
+                for (var item of result) {
+                    var $trackOption = $('<option />')
+                        .attr('value', item.Id)
+                        .text(item.Track);
+                    $tracksList.append($trackOption);
+                }
+            },
+            function (err) {
+                console.log('Error');
+            });
+    }
+
+    getAllTracks();
+
+    $('#tracks-list').on('change', function (ev) {
+        var trackId = $(this).val();
+        requestData(
+            `/Api/Category/ByTrackId/${trackId}`,
+            function (result) {
                 var $categoriesList = $('#categories-list');
                 for (var item of result) {
                     var $categoryOption = $('<option />')
@@ -14,10 +41,9 @@
                     $categoriesList.append($categoryOption);
                 }
             },
-            error: function (err) {
+            function (err) {
                 console.log('Error');
-            }
-        });
+            });
     })
 
     $('#myModal').on('shown.bs.modal', function () {
@@ -29,7 +55,7 @@
         var inputTestValue = $('#test-modal-input').val();
         var outputTestValue = $('#test-modal-output').val();
 
-        createTest(null , inputTestValue, outputTestValue);
+        createTest(null, inputTestValue, outputTestValue);
     })
 
     function createTest(_, input, output) {

@@ -32,7 +32,7 @@
     <div class="form-group">
         @Html.LabelFor(x => x.Challenge.TrackId, new { @class = "col-2 col-form-label" })
         <div class="col-10">
-            @Html.DropDownListFor(x => x.Challenge.TrackId, Model.Tracks, "Select track", new { id = "tracks-list", @class = "form-control" })
+            <select class="form-control" id="tracks-list" name="Challenge.TrackId"></select>
             @Html.ValidationMessageFor(x => x.Challenge.TrackId, null, new { @class = "text-danger" })
         </div>
     </div>
@@ -86,9 +86,9 @@
             <div class="modal-body">
                 <form>
                     @*<div class="form-group">
-                        <label for="test-modal-issample" class="form-control-label">Is Sample test:</label>
-                        <input type="checkbox" class="form-control" id="test-modal-issample">
-                    </div>*@
+                            <label for="test-modal-issample" class="form-control-label">Is Sample test:</label>
+                            <input type="checkbox" class="form-control" id="test-modal-issample">
+                        </div>*@
                     <div class="form-group">
                         <label for="test-modal-input" class="form-control-label">Test input:</label>
                         <textarea class="form-control" id="test-modal-input"></textarea>

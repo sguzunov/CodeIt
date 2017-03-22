@@ -1,13 +1,14 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Web.Mvc;
+
 using Bytes2you.Validation;
 
 using CodeIt.Data.Models;
 using CodeIt.Services.Data.Contracts;
-using CodeIt.Web.Areas.Administration.ViewModels;
 using CodeIt.Services.Logic;
-using System.Collections.Generic;
 using CodeIt.Services.Logic.Contracts;
-using System.Threading.Tasks;
+using CodeIt.Web.Areas.Administration.ViewModels;
 using CodeIt.Web.Infrastructure.FileSystem;
 
 namespace CodeIt.Web.Areas.Administration.Controllers
@@ -45,13 +46,7 @@ namespace CodeIt.Web.Areas.Administration.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            var allTracks = this.tracks.GetAll();
-            var viewModel = new CreateChallengeViewModel
-            {
-                Tracks = new SelectList(allTracks, nameof(Track.Id), nameof(Track.Name))
-            };
-
-            return this.View(viewModel);
+            return this.View();
         }
 
         [HttpPost]
@@ -59,7 +54,7 @@ namespace CodeIt.Web.Areas.Administration.Controllers
         {
             if (!this.ModelState.IsValid)
             {
-                return this.View(new CreateChallengeViewModel() { Challenge = challenge, Tracks = new SelectList(new[] { new SelectListItem() }) });
+                return this.View(challenge);
             }
 
             var tests = this.mapper.MapObject<IEnumerable<ChallengeTestAdministrationViewModel>, IEnumerable<Test>>(challenge.Tests);
