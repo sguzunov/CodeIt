@@ -63,6 +63,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -75,6 +76,8 @@
     <Compile Include="Bindings\DataServicesBindings.cs" />
     <Compile Include="Bindings\DbBindings.cs" />
     <Compile Include="Bindings\INinjectBinding.cs" />
+    <Compile Include="FileSystem\FileSystemService.cs" />
+    <Compile Include="FileSystem\IFileSystemService.cs" />
     <Compile Include="Mapping\AutomapperConfig.cs" />
     <Compile Include="Mapping\IHaveCustomMappings.cs" />
     <Compile Include="Mapping\IMapFrom.cs" />
