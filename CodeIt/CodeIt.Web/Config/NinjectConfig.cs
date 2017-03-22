@@ -24,6 +24,7 @@ namespace CodeIt.Web.Config
     using CodeIt.Services.Logic.Contracts;
     using CodeIt.Data.Contracts;
     using CodeIt.Data;
+    using CodeIt.Web.Infrastructure.FileSystem;
 
     public static class NinjectConfig
     {
@@ -85,6 +86,8 @@ namespace CodeIt.Web.Config
                 var registryInstance = (INinjectBinding)Activator.CreateInstance(registry);
                 registryInstance.Bind(kernel);
             }
+
+            kernel.Bind<IFileUnits>().To<FileUnits>();
             kernel.Bind<IFileSystemService>().To<FileSystemService>();
             kernel.Bind<IMappingProvider>().To<MappingProvider>();
             kernel.Bind<IAuthenticationService>().To<AuthenticationService>();
