@@ -68,8 +68,8 @@
 
         var $challengeTest = $('<div />').addClass('challenge-test').attr('id', id).text(`Test ${id}`).addClass('form-control');
         //var $testIsSampleElement = $('<input />').attr('name', `Challenge.Tests[${id}].IsSample`).attr('type', 'checkbox').attr('checked', isSample).addClass('hidden').appendTo($challengeTest);
-        var $testInputElement = $('<input />').attr('name', `Challenge.Tests[${id}].Input`).attr('value', input).addClass('hidden').appendTo($challengeTest);
-        var $testInputElement = $('<input />').attr('name', `Challenge.Tests[${id}].Output`).attr('value', output).addClass('hidden').appendTo($challengeTest);
+        var $testInputElement = $('<input />').attr('name', `Tests[${id}].Input`).attr('value', input).addClass('hidden').appendTo($challengeTest);
+        var $testInputElement = $('<input />').attr('name', `Tests[${id}].Output`).attr('value', output).addClass('hidden').appendTo($challengeTest);
 
         //var $removeTestBtn = $('<button />')
         //    .text("Remove")

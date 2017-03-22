@@ -3,7 +3,7 @@ namespace CodeIt.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Challengeswithguidid : DbMigration
+    public partial class Challengefieldschanges : DbMigration
     {
         public override void Up()
         {
@@ -27,7 +27,7 @@ namespace CodeIt.Data.Migrations
                         Title = c.String(nullable: false, maxLength: 50),
                         Language = c.Int(nullable: false),
                         TimeInMs = c.Double(nullable: false),
-                        MemoryInMb = c.Double(nullable: false),
+                        MemoryInKb = c.Int(nullable: false),
                         Description = c.String(nullable: false),
                         CategoryId = c.Guid(nullable: false),
                     })

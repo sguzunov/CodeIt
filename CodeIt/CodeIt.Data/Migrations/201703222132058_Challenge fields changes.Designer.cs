@@ -7,13 +7,13 @@ namespace CodeIt.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class Challengeswithguidid : IMigrationMetadata
+    public sealed partial class Challengefieldschanges : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Challengeswithguidid));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Challengefieldschanges));
         
         string IMigrationMetadata.Id
         {
-            get { return "201703212244583_Challenges with guid id"; }
+            get { return "201703222132058_Challenge fields changes"; }
         }
         
         string IMigrationMetadata.Source

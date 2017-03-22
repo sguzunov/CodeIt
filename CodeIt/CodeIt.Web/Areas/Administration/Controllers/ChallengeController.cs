@@ -62,14 +62,14 @@ namespace CodeIt.Web.Areas.Administration.Controllers
 
             if (file == null)
             {
-                this.challenges.Create(challenge.Title, challenge.Description, challenge.CategoryId, challenge.Language, challenge.TimeLimitInMs, challenge.MemoryInMb, tests);
+                this.challenges.Create(challenge.Title, challenge.Description, challenge.CategoryId, challenge.Language, challenge.TimeLimitInMs, challenge.MemoryInKb, tests);
             }
             else
             {
                 string fileName = this.fileUtils.ExtractFileName(file.FileName);
                 string fileExtension = this.fileUtils.ExtractFileExtension(file.FileName);
 
-                var dbChallenge = this.challenges.CreateWithFileDescription(challenge.Title, challenge.Description, challenge.CategoryId, challenge.Language, challenge.TimeLimitInMs, challenge.MemoryInMb, tests, fileName, fileExtension, FileDescriptionSystemPath);
+                var dbChallenge = this.challenges.CreateWithFileDescription(challenge.Title, challenge.Description, challenge.CategoryId, challenge.Language, challenge.TimeLimitInMs, challenge.MemoryInKb, tests, fileName, fileExtension, FileDescriptionSystemPath);
                 await this.fileSystem.SaveFileAsync(FileDescriptionSystemPath + dbChallenge.FileDecription.FileName + "." + fileExtension, file.InputStream);
             }
 
