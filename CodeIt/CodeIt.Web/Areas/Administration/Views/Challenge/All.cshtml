@@ -1,0 +1,32 @@
+﻿@model  IEnumerable<ChallengeEditableViewModel>
+
+@(Html.Kendo().Grid(Model)
+    .Name("Challenges")
+    .Columns(columns =>
+    {
+        columns.Bound(x => x.Title).Title("Title");
+        columns.Bound(x => x.TrackName).Title("Track");
+        columns.Bound(x => x.CategoryName).Title("Category");
+        columns.Bound(x => x.Language).Title("Language");
+        columns.Bound(x => x.MemoryInMb).Title("Memory in MB");
+        columns.Bound(x => x.TimeLimitInMs).Title("Time in ms");
+        columns.Bound(x => x.Description).Title("Description");
+    })
+    .HtmlAttributes(new { style = "height: 550px;" })
+    .Pageable(pageable => pageable
+       .Input(true)
+       .Numeric(false)
+     )
+    .Sortable()
+    .Scrollable(scr => scr.Height(430))
+    .Filterable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .ServerOperation(false)
+     )
+)
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval");
+}

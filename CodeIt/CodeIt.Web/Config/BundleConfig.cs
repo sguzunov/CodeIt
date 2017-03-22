@@ -11,12 +11,13 @@ namespace CodeIt.Web.Config
 
             RegisterScripts(bundles);
             RegisterStyles(bundles);
+            bundles.IgnoreList.Clear();
         }
 
         private static void RegisterScripts(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+            //bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+            //            "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -35,7 +36,7 @@ namespace CodeIt.Web.Config
 
             bundles.Add(new ScriptBundle("~/bundles/kendo")
                 .Include(
-                    "~/Scripts/Kendo/kendo.web.min.js",
+                    "~/Scripts/Kendo/kendo.all.min.js",
                     "~/Scripts/Kendo/kendo.aspnetmvc.min.js"));
         }
 
@@ -45,10 +46,11 @@ namespace CodeIt.Web.Config
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
-            bundles.Add(new StyleBundle("~/Content/kendo")
+            bundles.Add(new StyleBundle("~/Content/kendo/css")
                 .Include(
-                "~/Content/kendo.common.*",
-                "~/Content/kendo.default.*"));
+                "~/Content/Kendo/kendo.common.*",
+                "~/Content/Kendo/kendo.default.*",
+                "~/Content/kendo/kendo.bootstrap.min.css"));
         }
     }
 }

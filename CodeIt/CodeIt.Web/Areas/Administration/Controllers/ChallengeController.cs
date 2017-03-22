@@ -1,19 +1,13 @@
 ﻿using System.Web.Mvc;
-using System.Linq;
 using Bytes2you.Validation;
-
-using System.Web.Hosting;
 
 using CodeIt.Data.Models;
 using CodeIt.Services.Data.Contracts;
 using CodeIt.Web.Areas.Administration.ViewModels;
 using CodeIt.Services.Logic;
-using System.Collections;
 using System.Collections.Generic;
 using CodeIt.Services.Logic.Contracts;
 using System.Threading.Tasks;
-using System;
-using System.IO;
 using CodeIt.Web.Infrastructure.FileSystem;
 
 namespace CodeIt.Web.Areas.Administration.Controllers
@@ -85,6 +79,12 @@ namespace CodeIt.Web.Areas.Administration.Controllers
             }
 
             return this.Redirect("/");
+        }
+
+        public ActionResult All()
+        {
+            var allChallenges = this.challenges.GetAll<ChallengeEditableViewModel>();
+            return this.View(allChallenges);
         }
     }
 }
