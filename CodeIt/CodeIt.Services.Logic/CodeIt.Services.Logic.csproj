@@ -49,8 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\IFileSystemService.cs" />
-    <Compile Include="FileSystemService.cs" />
+    <Compile Include="Contracts\IFileUnits.cs" />
+    <Compile Include="FileUnits.cs" />
     <Compile Include="IMappingProvider.cs" />
     <Compile Include="MappingProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
