@@ -64,9 +64,9 @@
     <Compile Include="Contracts\IEfRepository.cs" />
     <Compile Include="EfData.cs" />
     <Compile Include="EfRepository.cs" />
-    <Compile Include="Migrations\201703222132058_Challenge fields changes.cs" />
-    <Compile Include="Migrations\201703222132058_Challenge fields changes.Designer.cs">
-      <DependentUpon>201703222132058_Challenge fields changes.cs</DependentUpon>
+    <Compile Include="Migrations\201703222255405_Challenge prop TimeInMs is now of type %27int%27.cs" />
+    <Compile Include="Migrations\201703222255405_Challenge prop TimeInMs is now of type %27int%27.Designer.cs">
+      <DependentUpon>201703222255405_Challenge prop TimeInMs is now of type %27int%27.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,8 +87,8 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703222132058_Challenge fields changes.resx">
-      <DependentUpon>201703222132058_Challenge fields changes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703222255405_Challenge prop TimeInMs is now of type %27int%27.resx">
+      <DependentUpon>201703222255405_Challenge prop TimeInMs is now of type %27int%27.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
