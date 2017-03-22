@@ -29,7 +29,7 @@ namespace CodeIt.Data.Models
         public double TimeInMs { get; set; }
 
         [Required]
-        public double MemoryInMb { get; set; }
+        public int MemoryInKb { get; set; }
 
         [Required]
         public string Description { get; set; }

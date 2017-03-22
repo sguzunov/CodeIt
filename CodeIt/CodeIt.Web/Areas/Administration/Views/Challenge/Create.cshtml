@@ -1,7 +1,7 @@
 ﻿@using CodeIt.Web.Areas.Administration.ViewModels;
 @using CodeIt.Web.Areas.Administration.Controllers;
 
-@model CreateChallengeViewModel
+@model ChallengeAdministrationViewModel
 
 <h1>Create Challenge</h1>
 @using (Html.BeginForm(nameof(ChallengeController.Create), "Challenge", FormMethod.Post, new { role = "form", encType = "multipart/form-data" }))
@@ -10,58 +10,60 @@
     @Html.ValidationSummary("", new { @class = "text-danger" })
 
     <div class="form-group">
-        @Html.LabelFor(x => x.Challenge.Title, new { @class = "col-2 col-form-label" })
+        @Html.LabelFor(x => x.Title, new { @class = "col-2 col-form-label" })
         <div class="col-10">
-            @Html.TextBoxFor(x => x.Challenge.Title, new { @class = "col-12 form-control" })
-            @Html.ValidationMessageFor(x => x.Challenge.Title, null, new { @class = "text-danger" })
+            @Html.TextBoxFor(x => x.Title, new { @class = "col-12 form-control" })
+            @Html.ValidationMessageFor(x => x.Title, null, new { @class = "text-danger" })
+        </div>
+    </div>
+
+    // Kendo editor
+    <div class="form-group">
+        @(Html.Kendo().Editor()
+      .Name(nameof(Model.Description))
+      .HtmlAttributes(new { style = "height:200px" })
+      .Resizable(resizable => resizable.Content(true).Toolbar(true)));
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.FileDescription, new { @class = "col-4 col-form-label" })
+        <div class="col-10">
+            @Html.TextBoxFor(x => x.FileDescription, new { type = "file", @class = "col-6 col-form-label" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(x => x.Challenge.Description, new { @class = "col-2 col-form-label" })
+        @Html.LabelFor(x => x.TrackId, new { @class = "col-2 col-form-label" })
         <div class="col-10">
-            @Html.TextAreaFor(x => x.Challenge.Description, new { @class = "col-12 col-form-label" })
-            @Html.ValidationMessageFor(x => x.Challenge.Description, null, new { @class = "text-danger" })
+            <select class="form-control" id="tracks-list" name="TrackId"></select>
+            @Html.ValidationMessageFor(x => x.TrackId, null, new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(x => x.Challenge.FileDescription, new { @class = "col-4 col-form-label" })
+        @Html.LabelFor(x => x.CategoryId, new { @class = "col-2 col-form-label" })
         <div class="col-10">
-            @Html.TextBoxFor(x => x.Challenge.FileDescription, new { type = "file", @class = "col-6 col-form-label" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(x => x.Challenge.TrackId, new { @class = "col-2 col-form-label" })
-        <div class="col-10">
-            @Html.DropDownListFor(x => x.Challenge.TrackId, Model.Tracks, "Select track", new { id = "tracks-list", @class = "form-control" })
-            @Html.ValidationMessageFor(x => x.Challenge.TrackId, null, new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(x => x.Challenge.CategoryId, new { @class = "col-2 col-form-label" })
-        <div class="col-10">
-            <select class="form-control" id="categories-list" name="Challenge.CategoryId"></select>
-            @Html.ValidationMessageFor(x => x.Challenge.CategoryId, null, new { @class = "text-danger" })
+            <select class="form-control" id="categories-list" name="CategoryId"></select>
+            @Html.ValidationMessageFor(x => x.CategoryId, null, new { @class = "text-danger" })
         </div>
     </div>
     <tr />
     <div class="form-group">
-        @Html.LabelFor(x => x.Challenge.Language, new { @class = "col-2 col-form-label" })
+        @Html.LabelFor(x => x.Language, new { @class = "col-2 col-form-label" })
         <div class="col-10">
-            @Html.EnumDropDownListFor(x => x.Challenge.Language, new { id = "langs-dropdown", @class = "form-control" })
+            @Html.EnumDropDownListFor(x => x.Language, new { id = "langs-dropdown", @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(x => x.Challenge.TimeLimitInMs, new { @class = "col-3 col-form-label" })
+        @Html.LabelFor(x => x.TimeLimitInMs, new { @class = "col-3 col-form-label" })
         <div class="col-10">
-            @Html.TextBoxFor(x => x.Challenge.TimeLimitInMs, new { type = "number", @class = "col-3 form-control" })
-            @Html.ValidationMessageFor(x => x.Challenge.TimeLimitInMs, null, new { @class = "text-danger" })
+            @Html.TextBoxFor(x => x.TimeLimitInMs, new { type = "number", @class = "col-3 form-control" })
+            @Html.ValidationMessageFor(x => x.TimeLimitInMs, null, new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(x => x.Challenge.MemoryInMb, new { @class = "col-3 col-form-label" })
+        @Html.LabelFor(x => x.MemoryInKb, new { @class = "col-3 col-form-label" })
         <div class="col-10">
-            @Html.TextBoxFor(x => x.Challenge.MemoryInMb, new { type = "number", @class = "col-3 form-control" })
-            @Html.ValidationMessageFor(x => x.Challenge.MemoryInMb, null, new { @class = "text-danger" })
+            @Html.TextBoxFor(x => x.MemoryInKb, new { type = "number", @class = "col-3 form-control" })
+            @Html.ValidationMessageFor(x => x.MemoryInKb, null, new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
@@ -86,9 +88,9 @@
             <div class="modal-body">
                 <form>
                     @*<div class="form-group">
-                        <label for="test-modal-issample" class="form-control-label">Is Sample test:</label>
-                        <input type="checkbox" class="form-control" id="test-modal-issample">
-                    </div>*@
+                            <label for="test-modal-issample" class="form-control-label">Is Sample test:</label>
+                            <input type="checkbox" class="form-control" id="test-modal-issample">
+                        </div>*@
                     <div class="form-group">
                         <label for="test-modal-input" class="form-control-label">Test input:</label>
                         <textarea class="form-control" id="test-modal-input"></textarea>

@@ -1,19 +1,14 @@
-﻿using System.Web.Mvc;
-using System.Linq;
-using Bytes2you.Validation;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Web.Mvc;
 
-using System.Web.Hosting;
+using Bytes2you.Validation;
 
 using CodeIt.Data.Models;
 using CodeIt.Services.Data.Contracts;
-using CodeIt.Web.Areas.Administration.ViewModels;
 using CodeIt.Services.Logic;
-using System.Collections;
-using System.Collections.Generic;
 using CodeIt.Services.Logic.Contracts;
-using System.Threading.Tasks;
-using System;
-using System.IO;
+using CodeIt.Web.Areas.Administration.ViewModels;
 using CodeIt.Web.Infrastructure.FileSystem;
 
 namespace CodeIt.Web.Areas.Administration.Controllers
@@ -51,13 +46,7 @@ namespace CodeIt.Web.Areas.Administration.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            var allTracks = this.tracks.GetAll();
-            var viewModel = new CreateChallengeViewModel
-            {
-                Tracks = new SelectList(allTracks, nameof(Track.Id), nameof(Track.Name))
-            };
-
-            return this.View(viewModel);
+            return this.View();
         }
 
         [HttpPost]
@@ -65,7 +54,7 @@ namespace CodeIt.Web.Areas.Administration.Controllers
         {
             if (!this.ModelState.IsValid)
             {
-                return this.View(new CreateChallengeViewModel() { Challenge = challenge, Tracks = new SelectList(new[] { new SelectListItem() }) });
+                return this.View(challenge);
             }
 
             var tests = this.mapper.MapObject<IEnumerable<ChallengeTestAdministrationViewModel>, IEnumerable<Test>>(challenge.Tests);
@@ -73,18 +62,24 @@ namespace CodeIt.Web.Areas.Administration.Controllers
 
             if (file == null)
             {
-                this.challenges.Create(challenge.Title, challenge.Description, challenge.CategoryId, challenge.Language, challenge.TimeLimitInMs, challenge.MemoryInMb, tests);
+                this.challenges.Create(challenge.Title, challenge.Description, challenge.CategoryId, challenge.Language, challenge.TimeLimitInMs, challenge.MemoryInKb, tests);
             }
             else
             {
                 string fileName = this.fileUtils.ExtractFileName(file.FileName);
                 string fileExtension = this.fileUtils.ExtractFileExtension(file.FileName);
 
-                var dbChallenge = this.challenges.CreateWithFileDescription(challenge.Title, challenge.Description, challenge.CategoryId, challenge.Language, challenge.TimeLimitInMs, challenge.MemoryInMb, tests, fileName, fileExtension, FileDescriptionSystemPath);
+                var dbChallenge = this.challenges.CreateWithFileDescription(challenge.Title, challenge.Description, challenge.CategoryId, challenge.Language, challenge.TimeLimitInMs, challenge.MemoryInKb, tests, fileName, fileExtension, FileDescriptionSystemPath);
                 await this.fileSystem.SaveFileAsync(FileDescriptionSystemPath + dbChallenge.FileDecription.FileName + "." + fileExtension, file.InputStream);
             }
 
             return this.Redirect("/");
+        }
+
+        public ActionResult All()
+        {
+            var allChallenges = this.challenges.GetAll<ChallengeEditableViewModel>();
+            return this.View(allChallenges);
         }
     }
 }

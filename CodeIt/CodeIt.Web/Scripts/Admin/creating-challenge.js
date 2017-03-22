@@ -1,12 +1,39 @@
 ﻿$(function () {
-    $('#tracks-list').on('change', function (ev) {
-        var trackId = $(this).val();
+    function requestData(url, success, error) {
         $.ajax({
             method: "Get",
-            url: `/Api/Category/ByTrackId/${trackId}`,
+            url: url,
             contentType: 'application/json; charset=utf-8',
-            success: function (result) {
-                var $categoriesList = $('#categories-list');
+            success: success,
+            error: error
+        });
+    }
+
+    function getAllTracks() {
+        requestData(
+            `/Api/Track/GetAll`,
+            function (result) {
+                var $tracksList = $('#tracks-list').append($('<option />').text('Select track'));
+                for (var item of result) {
+                    var $trackOption = $('<option />')
+                        .attr('value', item.Id)
+                        .text(item.Track);
+                    $tracksList.append($trackOption);
+                }
+            },
+            function (err) {
+                console.log('Error');
+            });
+    }
+
+    getAllTracks();
+
+    $('#tracks-list').on('change', function (ev) {
+        var trackId = $(this).val();
+        requestData(
+            `/Api/Category/ByTrackId/${trackId}`,
+            function (result) {
+                var $categoriesList = $('#categories-list').html('').append($('<option />').text('Select category'));
                 for (var item of result) {
                     var $categoryOption = $('<option />')
                         .attr('value', item.Id)
@@ -14,10 +41,9 @@
                     $categoriesList.append($categoryOption);
                 }
             },
-            error: function (err) {
+            function (err) {
                 console.log('Error');
-            }
-        });
+            });
     })
 
     $('#myModal').on('shown.bs.modal', function () {
@@ -29,7 +55,7 @@
         var inputTestValue = $('#test-modal-input').val();
         var outputTestValue = $('#test-modal-output').val();
 
-        createTest(null , inputTestValue, outputTestValue);
+        createTest(null, inputTestValue, outputTestValue);
     })
 
     function createTest(_, input, output) {
@@ -42,8 +68,8 @@
 
         var $challengeTest = $('<div />').addClass('challenge-test').attr('id', id).text(`Test ${id}`).addClass('form-control');
         //var $testIsSampleElement = $('<input />').attr('name', `Challenge.Tests[${id}].IsSample`).attr('type', 'checkbox').attr('checked', isSample).addClass('hidden').appendTo($challengeTest);
-        var $testInputElement = $('<input />').attr('name', `Challenge.Tests[${id}].Input`).attr('value', input).addClass('hidden').appendTo($challengeTest);
-        var $testInputElement = $('<input />').attr('name', `Challenge.Tests[${id}].Output`).attr('value', output).addClass('hidden').appendTo($challengeTest);
+        var $testInputElement = $('<input />').attr('name', `Tests[${id}].Input`).attr('value', input).addClass('hidden').appendTo($challengeTest);
+        var $testInputElement = $('<input />').attr('name', `Tests[${id}].Output`).attr('value', output).addClass('hidden').appendTo($challengeTest);
 
         //var $removeTestBtn = $('<button />')
         //    .text("Remove")

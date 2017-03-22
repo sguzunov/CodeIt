@@ -75,6 +75,6 @@ textarea {
         border-top-right-radius: 0;
     }
 
-select#langs-dropdown, select#CategoryId, select#tracks-list {
+select#langs-dropdown, select#categories-list, select#tracks-list {
     height: 35px;
 }

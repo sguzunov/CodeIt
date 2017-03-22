@@ -34,13 +34,13 @@ namespace CodeIt.Web.Areas.Administration.ViewModels
 
         [Required]
         [Display(Name = "Time limit in ms")]
-        [MinValue(ValidationConstants.ChallengeTimeinMsMin)]
-        public double TimeLimitInMs { get; set; }
+        [MinValue(ValidationConstants.MinimumMemoryInKb)]
+        public int TimeLimitInMs { get; set; }
 
         [Required]
-        [Display(Name = "Memory (MB)")]
-        [MinValue(ValidationConstants.ChallengeMemotyinMbMin)]
-        public double MemoryInMb { get; set; }
+        [Display(Name = "Memory (KB)")]
+        [MinValue(ValidationConstants.MinimumMemoryInKb)]
+        public double MemoryInKb { get; set; }
 
         [Required]
         public IEnumerable<ChallengeTestAdministrationViewModel> Tests { get; set; }

@@ -18,5 +18,7 @@ namespace CodeIt.Services.Data.Contracts
             string fileOriginalName,
             string fileExtension,
             string filePath);
+
+        IEnumerable<TDestination> GetAll<TDestination>();
     }
 }

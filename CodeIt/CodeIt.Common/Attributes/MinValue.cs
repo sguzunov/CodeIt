@@ -1,19 +1,21 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace CodeIt.Common.Attributes
 {
     public class MinValueAttribute : ValidationAttribute
     {
-        private readonly double minValue;
+        private readonly int minValue;
 
-        public MinValueAttribute(double minValue)
+        public MinValueAttribute(int minValue)
         {
             this.minValue = minValue;
         }
 
         public override bool IsValid(object value)
         {
-            return (double)value <= this.minValue;
+            int castedValue = Convert.ToInt32(value);
+            return castedValue >= this.minValue;
         }
     }
 }

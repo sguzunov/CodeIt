@@ -64,9 +64,9 @@
     <Compile Include="Contracts\IEfRepository.cs" />
     <Compile Include="EfData.cs" />
     <Compile Include="EfRepository.cs" />
-    <Compile Include="Migrations\201703212244583_Challenges with guid id.cs" />
-    <Compile Include="Migrations\201703212244583_Challenges with guid id.Designer.cs">
-      <DependentUpon>201703212244583_Challenges with guid id.cs</DependentUpon>
+    <Compile Include="Migrations\201703222132058_Challenge fields changes.cs" />
+    <Compile Include="Migrations\201703222132058_Challenge fields changes.Designer.cs">
+      <DependentUpon>201703222132058_Challenge fields changes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,8 +87,8 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703212244583_Challenges with guid id.resx">
-      <DependentUpon>201703212244583_Challenges with guid id.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703222132058_Challenge fields changes.resx">
+      <DependentUpon>201703222132058_Challenge fields changes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -12,6 +12,7 @@ namespace CodeIt.Web.Infrastructure.Bindings
         public void Bind(IKernel kernel)
         {
             kernel.Bind<IMapper>().ToMethod(x => AutoMapperConfig.Configuration.CreateMapper()).WhenInjectedInto(typeof(MappingProvider));
+            kernel.Bind<IConfigurationProvider>().ToMethod(x => AutoMapperConfig.Configuration).WhenInjectedInto(typeof(MappingProvider));
         }
     }
 }
