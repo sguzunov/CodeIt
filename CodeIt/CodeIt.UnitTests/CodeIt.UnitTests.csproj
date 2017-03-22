@@ -105,7 +105,12 @@
     <Compile Include="DbModels\CategoryTests\Id_Should.cs" />
     <Compile Include="DbModels\CategoryTests\Name_Should.cs" />
     <Compile Include="DbModels\CategoryTests\TrackNavigation_Should.cs" />
+    <Compile Include="DbModels\ChallengeTests\CategoryNavigation_Should.cs" />
+    <Compile Include="DbModels\ChallengeTests\Description_Should.cs" />
     <Compile Include="DbModels\ChallengeTests\Id_Should.cs" />
+    <Compile Include="DbModels\ChallengeTests\MemoryInKb_Should.cs" />
+    <Compile Include="DbModels\ChallengeTests\Test_Should.cs" />
+    <Compile Include="DbModels\ChallengeTests\TimeInMs_Should.cs" />
     <Compile Include="DbModels\ChallengeTests\Title_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Web\AccountControllerTests\ConstructorShould.cs" />
