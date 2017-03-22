@@ -229,7 +229,6 @@
     <Compile Include="Areas\Administration\ViewModels\ChallengeEditableViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\ChallengeTestAdministrationViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\ChallengeAdministrationViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\CreateChallengeViewModel.cs" />
     <Compile Include="Areas\Api\ApiAreaRegistration.cs" />
     <Compile Include="Areas\Api\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Api\Controllers\TrackController.cs" />

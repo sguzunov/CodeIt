@@ -13,7 +13,7 @@
         requestData(
             `/Api/Track/GetAll`,
             function (result) {
-                var $tracksList = $('#tracks-list');
+                var $tracksList = $('#tracks-list').append($('<option />').text('Select track'));
                 for (var item of result) {
                     var $trackOption = $('<option />')
                         .attr('value', item.Id)
@@ -33,7 +33,7 @@
         requestData(
             `/Api/Category/ByTrackId/${trackId}`,
             function (result) {
-                var $categoriesList = $('#categories-list');
+                var $categoriesList = $('#categories-list').html('').append($('<option />').text('Select category'));
                 for (var item of result) {
                     var $categoryOption = $('<option />')
                         .attr('value', item.Id)
