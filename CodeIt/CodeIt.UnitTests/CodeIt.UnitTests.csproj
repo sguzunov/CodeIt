@@ -122,6 +122,8 @@
     <Compile Include="DbModels\TestModelTests\Input_Should.cs" />
     <Compile Include="DbModels\TestModelTests\Output_Should.cs" />
     <Compile Include="DbModels\TestModelTests\Test_Should.cs" />
+    <Compile Include="DbModels\TrackTests\Id_Should.cs" />
+    <Compile Include="DbModels\TrackTests\Name_Should.cs" />
     <Compile Include="DbModels\UserTests\FirstName_Should.cs" />
     <Compile Include="DbModels\UserTests\LastName_Should.cs" />
     <Compile Include="DbModels\UserTests\User_Should.cs" />
