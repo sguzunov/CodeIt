@@ -102,6 +102,7 @@
     <Compile Include="Authentication\Mocks\MockOwinContext.cs" />
     <Compile Include="Authentication\Mocks\MockUserManager.cs" />
     <Compile Include="Services.Data\ChallengesServiceTests\Constructor_Should.cs" />
+    <Compile Include="Services.Data\ChallengesServiceTests\Create_Should.cs" />
     <Compile Include="Services.Data\TracksServiceTests\Constructor_Should.cs" />
     <Compile Include="Services.Data\TracksServiceTests\GetAll_Should.cs" />
     <Compile Include="Services.Data\TracksServiceTests\GetCategoriesByTrackId_Should.cs" />
