@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeIt.Services.Data", "Cod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeIt.Services.Logic", "CodeIt.Services.Logic\CodeIt.Services.Logic.csproj", "{A23009D5-F2BC-4F60-96DE-B7B96888B28A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeIt.CoverAll", "CodeIt.CoverAll\CodeIt.CoverAll.csproj", "{47805A60-4CF2-49ED-BBCE-47A8CCB76A01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{A23009D5-F2BC-4F60-96DE-B7B96888B28A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A23009D5-F2BC-4F60-96DE-B7B96888B28A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A23009D5-F2BC-4F60-96DE-B7B96888B28A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47805A60-4CF2-49ED-BBCE-47A8CCB76A01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47805A60-4CF2-49ED-BBCE-47A8CCB76A01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47805A60-4CF2-49ED-BBCE-47A8CCB76A01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47805A60-4CF2-49ED-BBCE-47A8CCB76A01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
