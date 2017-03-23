@@ -40,7 +40,7 @@ namespace CodeIt.Web.Areas.Administration.ViewModels
         [Required]
         [Display(Name = "Memory (KB)")]
         [MinValue(ValidationConstants.MinimumMemoryInKb)]
-        public double MemoryInKb { get; set; }
+        public int MemoryInKb { get; set; }
 
         [Required]
         public IEnumerable<ChallengeTestAdministrationViewModel> Tests { get; set; }

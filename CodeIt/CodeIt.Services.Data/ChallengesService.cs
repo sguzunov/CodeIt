@@ -47,8 +47,8 @@ namespace CodeIt.Services.Data
             string description,
             string categoryId,
             Language language,
-            double timeInMs,
-            double memoryInMb,
+            int timeInMs,
+            int memoryInKb,
             IEnumerable<Test> tests)
         {
             var category = this.categoriesRepository.GetById(Guid.Parse(categoryId));
@@ -66,8 +66,10 @@ namespace CodeIt.Services.Data
                     Title = title,
                     Description = description,
                     Language = language,
-                    CategoryId = category.Id,
-                    Category = category
+                    CategoryId = Guid.Parse(categoryId),
+                    Category = category,
+                    MemoryInKb = memoryInKb,
+                    TimeInMs = timeInMs
                 };
                 this.challengesRepository.Add(challenge);
                 this.AddChallengeTests(tests, challenge);
@@ -78,19 +80,20 @@ namespace CodeIt.Services.Data
             return challenge;
         }
 
+        // TODO: Unit tests!
         public Challenge CreateWithFileDescription(
             string title,
             string description,
             string categoryId,
             Language language,
-            double timeInMs,
-            double memoryInMb,
+            int timeInMs,
+            int memoryInKb,
             IEnumerable<Test> tests,
             string fileOriginalName,
             string fileExtension,
             string filePath)
         {
-            var challenge = this.Create(title, description, categoryId, language, timeInMs, memoryInMb, tests);
+            var challenge = this.Create(title, description, categoryId, language, timeInMs, memoryInKb, tests);
             if (challenge != null)
             {
                 using (this.efData)
