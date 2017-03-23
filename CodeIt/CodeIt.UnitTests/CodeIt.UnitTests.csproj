@@ -118,6 +118,10 @@
     <Compile Include="DbModels\FileInfoTests\FileName_Should.cs" />
     <Compile Include="DbModels\FileInfoTests\FileSystemPath_Should.cs" />
     <Compile Include="DbModels\FileInfoTests\Id_Should.cs" />
+    <Compile Include="DbModels\TestModelTests\Id_Should.cs" />
+    <Compile Include="DbModels\TestModelTests\Input_Should.cs" />
+    <Compile Include="DbModels\TestModelTests\Output_Should.cs" />
+    <Compile Include="DbModels\TestModelTests\Test_Should.cs" />
     <Compile Include="DbModels\UserTests\FirstName_Should.cs" />
     <Compile Include="DbModels\UserTests\LastName_Should.cs" />
     <Compile Include="DbModels\UserTests\User_Should.cs" />
