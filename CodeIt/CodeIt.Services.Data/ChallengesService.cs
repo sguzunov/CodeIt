@@ -23,7 +23,8 @@ namespace CodeIt.Services.Data
             IEfRepository<Challenge> challengesRepository,
             IEfRepository<Test> testsRepository,
             IEfRepository<FileDecription> fileDescriptionRepository,
-            IEfRepository<Category> categoriesRepository, IEfData efData,
+            IEfRepository<Category> categoriesRepository,
+            IEfData efData,
             IMappingProvider mapper)
         {
             Guard.WhenArgument(challengesRepository, nameof(challengesRepository)).IsNull().Throw();
