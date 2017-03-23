@@ -17,4 +17,4 @@ environment:
 after_test:
   - CodeIt\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:"CodeIt\packages\NUnit.ConsoleRunner.3.6.0\tools\nunit3-console.exe" -targetargs:"/domain:single CodeIt\CodeIt.UnitTests\bin\Debug\CodeIt.UnitTests.dll" -output:cover.xml
 
-  - Goomer\packages\coveralls.io.1.3.4\tools\coveralls.net.exe --opencover cover.xml
+  - CodeIt\packages\coveralls.io.1.3.4\tools\coveralls.net.exe --opencover cover.xml
