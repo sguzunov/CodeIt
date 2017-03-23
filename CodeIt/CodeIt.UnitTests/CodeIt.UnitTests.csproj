@@ -101,6 +101,7 @@
     <Compile Include="Authentication\AuthenticationService\SignUpAsyncShould.cs" />
     <Compile Include="Authentication\Mocks\MockOwinContext.cs" />
     <Compile Include="Authentication\Mocks\MockUserManager.cs" />
+    <Compile Include="Services.Data\ChallengesServiceTests\Constructor_Should.cs" />
     <Compile Include="Services.Data\TracksServiceTests\Constructor_Should.cs" />
     <Compile Include="Services.Data\TracksServiceTests\GetAll_Should.cs" />
     <Compile Include="Services.Data\TracksServiceTests\GetCategoriesByTrackId_Should.cs" />
@@ -155,6 +156,10 @@
     <ProjectReference Include="..\CodeIt.Services.Data\CodeIt.Services.Data.csproj">
       <Project>{f7152ae6-0317-4247-b017-2096e4410a3f}</Project>
       <Name>CodeIt.Services.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CodeIt.Services.Logic\CodeIt.Services.Logic.csproj">
+      <Project>{a23009d5-f2bc-4f60-96de-b7b96888b28a}</Project>
+      <Name>CodeIt.Services.Logic</Name>
     </ProjectReference>
     <ProjectReference Include="..\CodeIt.Web.Auth\CodeIt.Web.Auth.csproj">
       <Project>{6c412b2b-2e6c-400e-b415-1d2b02a78623}</Project>
