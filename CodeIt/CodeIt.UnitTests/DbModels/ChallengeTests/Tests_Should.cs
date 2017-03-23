@@ -5,7 +5,7 @@ using CodeIt.Data.Models;
 namespace CodeIt.UnitTests.DbModels.ChallengeTests
 {
     [TestFixture]
-    public class Test_Should
+    public class Tests_Should
     {
         [Test]
         public void Have_GetterAndSetterWorking_Correctly()
