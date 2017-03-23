@@ -64,9 +64,9 @@
     <Compile Include="Contracts\IEfRepository.cs" />
     <Compile Include="EfData.cs" />
     <Compile Include="EfRepository.cs" />
-    <Compile Include="Migrations\201703222132058_Challenge fields changes.cs" />
-    <Compile Include="Migrations\201703222132058_Challenge fields changes.Designer.cs">
-      <DependentUpon>201703222132058_Challenge fields changes.cs</DependentUpon>
+    <Compile Include="Migrations\201703231014570_Users firstname and lastname are not required fields any more..cs" />
+    <Compile Include="Migrations\201703231014570_Users firstname and lastname are not required fields any more..Designer.cs">
+      <DependentUpon>201703231014570_Users firstname and lastname are not required fields any more..cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,8 +87,8 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703222132058_Challenge fields changes.resx">
-      <DependentUpon>201703222132058_Challenge fields changes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703231014570_Users firstname and lastname are not required fields any more..resx">
+      <DependentUpon>201703231014570_Users firstname and lastname are not required fields any more..cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

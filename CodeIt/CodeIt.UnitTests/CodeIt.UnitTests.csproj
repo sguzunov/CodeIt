@@ -101,6 +101,32 @@
     <Compile Include="Authentication\AuthenticationService\SignUpAsyncShould.cs" />
     <Compile Include="Authentication\Mocks\MockOwinContext.cs" />
     <Compile Include="Authentication\Mocks\MockUserManager.cs" />
+    <Compile Include="DbModels\CategoryTests\Challenges_Should.cs" />
+    <Compile Include="DbModels\CategoryTests\Id_Should.cs" />
+    <Compile Include="DbModels\CategoryTests\Name_Should.cs" />
+    <Compile Include="DbModels\CategoryTests\TrackNavigation_Should.cs" />
+    <Compile Include="DbModels\ChallengeTests\CategoryNavigation_Should.cs" />
+    <Compile Include="DbModels\ChallengeTests\Description_Should.cs" />
+    <Compile Include="DbModels\ChallengeTests\Id_Should.cs" />
+    <Compile Include="DbModels\ChallengeTests\MemoryInKb_Should.cs" />
+    <Compile Include="DbModels\ChallengeTests\Tests_Should.cs" />
+    <Compile Include="DbModels\ChallengeTests\TimeInMs_Should.cs" />
+    <Compile Include="DbModels\ChallengeTests\Title_Should.cs" />
+    <Compile Include="DbModels\FileDescriptionTests\FileDescription_Should.cs" />
+    <Compile Include="DbModels\FileInfoTests\FileExtension_Should.cs" />
+    <Compile Include="DbModels\FileInfoTests\FileInfo_Should.cs" />
+    <Compile Include="DbModels\FileInfoTests\FileName_Should.cs" />
+    <Compile Include="DbModels\FileInfoTests\FileSystemPath_Should.cs" />
+    <Compile Include="DbModels\FileInfoTests\Id_Should.cs" />
+    <Compile Include="DbModels\TestModelTests\Id_Should.cs" />
+    <Compile Include="DbModels\TestModelTests\Input_Should.cs" />
+    <Compile Include="DbModels\TestModelTests\Output_Should.cs" />
+    <Compile Include="DbModels\TestModelTests\Test_Should.cs" />
+    <Compile Include="DbModels\TrackTests\Id_Should.cs" />
+    <Compile Include="DbModels\TrackTests\Name_Should.cs" />
+    <Compile Include="DbModels\UserTests\FirstName_Should.cs" />
+    <Compile Include="DbModels\UserTests\LastName_Should.cs" />
+    <Compile Include="DbModels\UserTests\User_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Web\AccountControllerTests\ConstructorShould.cs" />
     <Compile Include="Web\AccountControllerTests\SignInHttpGetShould.cs" />
@@ -133,5 +159,6 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

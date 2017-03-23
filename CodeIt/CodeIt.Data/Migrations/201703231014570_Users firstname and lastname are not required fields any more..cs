@@ -3,7 +3,7 @@ namespace CodeIt.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Challengefieldschanges : DbMigration
+    public partial class Usersfirstnameandlastnamearenotrequiredfieldsanymore : DbMigration
     {
         public override void Up()
         {
@@ -26,7 +26,7 @@ namespace CodeIt.Data.Migrations
                         Id = c.Guid(nullable: false),
                         Title = c.String(nullable: false, maxLength: 50),
                         Language = c.Int(nullable: false),
-                        TimeInMs = c.Double(nullable: false),
+                        TimeInMs = c.Int(nullable: false),
                         MemoryInKb = c.Int(nullable: false),
                         Description = c.String(nullable: false),
                         CategoryId = c.Guid(nullable: false),
@@ -100,8 +100,8 @@ namespace CodeIt.Data.Migrations
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
-                        FirstName = c.String(nullable: false, maxLength: 20),
-                        LastName = c.String(nullable: false, maxLength: 20),
+                        FirstName = c.String(maxLength: 20),
+                        LastName = c.String(maxLength: 20),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),

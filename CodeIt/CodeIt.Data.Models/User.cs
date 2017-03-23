@@ -12,12 +12,10 @@ namespace CodeIt.Data.Models
 {
     public class User : IdentityUser, IEntity
     {
-        [Required]
         [MinLength(ValidationConstants.UserNamesMinLength)]
         [MaxLength(ValidationConstants.UserNamesMaxLength)]
         public string FirstName { get; set; }
 
-        [Required]
         [MinLength(ValidationConstants.UserNamesMinLength)]
         [MaxLength(ValidationConstants.UserNamesMaxLength)]
         public string LastName { get; set; }
