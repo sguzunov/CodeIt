@@ -221,6 +221,7 @@
     <Compile Include="Areas\Administration\Controllers\ChallengeController.cs" />
     <Compile Include="Areas\Administration\Controllers\ChallengeGridController.cs" />
     <Compile Include="Areas\Administration\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Administration\Controllers\TestController.cs" />
     <Compile Include="Areas\Administration\ViewModels\ChallengeEditableViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\ChallengeTestAdministrationViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\ChallengeAdministrationViewModel.cs" />
@@ -706,6 +707,7 @@
     <Content Include="Content\Kendo\kendo.uniform.min.css.map" />
     <Content Include="Content\Kendo\kendo.uniform.mobile.min.css.map" />
     <Content Include="Areas\Administration\Views\ChallengeGrid\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Test\ByChallengeId.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\Admin\creating-challenge.js" />

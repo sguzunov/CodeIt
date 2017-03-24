@@ -23,7 +23,7 @@ namespace CodeIt.Web.Areas.Administration.Controllers
             var allChallenges = this.challenges.GetAll<ChallengeEditableViewModel>();
             return this.View(allChallenges);
         }
-        
+
         public ActionResult Read([DataSourceRequest] DataSourceRequest request)
         {
             var allChallenges = this.challenges.GetAll<ChallengeEditableViewModel>();
