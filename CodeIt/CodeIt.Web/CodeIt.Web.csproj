@@ -219,6 +219,7 @@
     <Compile Include="Areas\Administration\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\ChallengeController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ChallengeGridController.cs" />
     <Compile Include="Areas\Administration\Controllers\HomeController.cs" />
     <Compile Include="Areas\Administration\ViewModels\ChallengeEditableViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\ChallengeTestAdministrationViewModel.cs" />
@@ -607,7 +608,6 @@
     <Content Include="Areas\Administration\Views\Home\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_AdministrationNavigation.cshtml" />
     <Content Include="Areas\Administration\Views\Challenge\Create.cshtml" />
-    <Content Include="Areas\Administration\Views\Challenge\All.cshtml" />
     <Content Include="Content\Kendo\fonts\DejaVu\DejaVuSans-Bold.ttf" />
     <Content Include="Content\Kendo\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
     <Content Include="Content\Kendo\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
@@ -705,6 +705,7 @@
     <Content Include="Content\Kendo\kendo.silver.mobile.min.css.map" />
     <Content Include="Content\Kendo\kendo.uniform.min.css.map" />
     <Content Include="Content\Kendo\kendo.uniform.mobile.min.css.map" />
+    <Content Include="Areas\Administration\Views\ChallengeGrid\Index.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\Admin\creating-challenge.js" />
@@ -750,7 +751,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Api\Models\" />
     <Folder Include="Files\ChallengesDescription\" />
   </ItemGroup>
   <ItemGroup>

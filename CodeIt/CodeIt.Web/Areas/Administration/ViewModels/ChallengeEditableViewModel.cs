@@ -1,5 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using AutoMapper;
 using CodeIt.Common.Attributes;
 using CodeIt.Common.Constants;
 using CodeIt.Data.Models;
@@ -7,8 +8,10 @@ using CodeIt.Web.Infrastructure.Mapping;
 
 namespace CodeIt.Web.Areas.Administration.ViewModels
 {
-    public class ChallengeEditableViewModel : IMapFrom<Challenge>
+    public class ChallengeEditableViewModel : IMapFrom<Challenge>, IHaveCustomMappings
     {
+        public Guid Id { get; set; }
+
         [Required]
         [MinLength(ValidationConstants.ChallengeTitleMinLength)]
         [MaxLength(ValidationConstants.ChallengeTitleMaxLength)]
@@ -23,22 +26,22 @@ namespace CodeIt.Web.Areas.Administration.ViewModels
         public string CategoryName { get; set; }
 
         [Required]
-        public string Description { get; set; }
-
-        //[Display(Name = "Upload file description (optional)")]
-        //public HttpPostedFileBase FileDescription { get; set; }
-
-        [Required]
         public Language Language { get; set; }
 
         [Required]
         [Display(Name = "Time limit in ms")]
         [MinValue(ValidationConstants.MinimumMemoryInKb)]
-        public int TimeLimitInMs { get; set; }
+        public int TimeInMs { get; set; }
 
         [Required]
-        [Display(Name = "Memory (MB)")]
+        [Display(Name = "Memory (KB)")]
         [MinValue(ValidationConstants.MinimumMemoryInKb)]
-        public int MemoryInMb { get; set; }
+        public int MemoryInKb { get; set; }
+
+        public void CreateMappings(IMapperConfigurationExpression configuration)
+        {
+            configuration.CreateMap<Challenge, ChallengeEditableViewModel>()
+                .ForMember(x => x.TrackName, opt => opt.MapFrom(x => x.Category.Track.Name));
+        }
     }
 }

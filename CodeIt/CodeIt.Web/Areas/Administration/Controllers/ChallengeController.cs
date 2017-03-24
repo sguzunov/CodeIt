@@ -10,6 +10,8 @@ using CodeIt.Services.Logic;
 using CodeIt.Services.Logic.Contracts;
 using CodeIt.Web.Areas.Administration.ViewModels;
 using CodeIt.Web.Infrastructure.FileSystem;
+using Kendo.Mvc.UI;
+using System.Linq;
 
 namespace CodeIt.Web.Areas.Administration.Controllers
 {
@@ -74,12 +76,6 @@ namespace CodeIt.Web.Areas.Administration.Controllers
             }
 
             return this.Redirect("/");
-        }
-
-        public ActionResult All()
-        {
-            var allChallenges = this.challenges.GetAll<ChallengeEditableViewModel>();
-            return this.View(allChallenges);
         }
     }
 }
