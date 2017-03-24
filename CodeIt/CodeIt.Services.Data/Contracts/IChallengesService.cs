@@ -20,5 +20,7 @@ namespace CodeIt.Services.Data.Contracts
             string filePath);
 
         IEnumerable<TDestination> GetAll<TDestination>();
+
+        void Update(string id, string title, Language language, int timeInMs, int memoryInKb);
     }
 }
