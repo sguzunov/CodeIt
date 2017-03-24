@@ -55,7 +55,9 @@
     <Compile Include="ChallengesService.cs" />
     <Compile Include="Contracts\IChallengesService.cs" />
     <Compile Include="Contracts\IDataService.cs" />
+    <Compile Include="Contracts\ITestsService.cs" />
     <Compile Include="Contracts\ITracksService.cs" />
+    <Compile Include="TestsService.cs" />
     <Compile Include="TracksService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

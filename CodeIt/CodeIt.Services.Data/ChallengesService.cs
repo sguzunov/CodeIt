@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-
-using System.Data.Entity.Infrastructure;
 
 using Bytes2you.Validation;
 
@@ -10,7 +7,6 @@ using CodeIt.Data.Models;
 using CodeIt.Data.Contracts;
 using CodeIt.Services.Data.Contracts;
 using CodeIt.Services.Logic;
-using System.Data.Entity;
 
 namespace CodeIt.Services.Data
 {
