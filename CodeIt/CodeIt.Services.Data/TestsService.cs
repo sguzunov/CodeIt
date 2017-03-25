@@ -46,9 +46,24 @@ namespace CodeIt.Services.Data.Contracts
             return allTests;
         }
 
-        public void Update(string input, string output)
+        public void Update(string id, string input, string output)
         {
-            throw new NotImplementedException();
+            var idAsGuid = Guid.Parse(id);
+            var test = this.testsRepository.GetById(idAsGuid);
+            if (test == null)
+            {
+                throw new ArgumentException($"Test with id = {idAsGuid} is not found!");
+            }
+
+            using (this.efData)
+            {
+                test.Input = input;
+                test.Output = output;
+                test.Challenge = test.Challenge;
+
+                this.testsRepository.Update(test);
+                this.efData.Commit();
+            }
         }
     }
 }

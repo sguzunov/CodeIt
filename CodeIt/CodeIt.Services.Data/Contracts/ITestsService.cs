@@ -8,6 +8,6 @@ namespace CodeIt.Services.Data.Contracts
 
         void DeleteById(string id);
 
-        void Update(string input, string output);
+        void Update(string id, string input, string output);
     }
 }
