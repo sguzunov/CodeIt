@@ -7,13 +7,13 @@ namespace CodeIt.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class Usersfirstnameandlastnamearenotrequiredfieldsanymore : IMigrationMetadata
+    public sealed partial class NewModelstosupportuserssubmissions : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Usersfirstnameandlastnamearenotrequiredfieldsanymore));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(NewModelstosupportuserssubmissions));
         
         string IMigrationMetadata.Id
         {
-            get { return "201703231014570_Users firstname and lastname are not required fields any more."; }
+            get { return "201703251556001_New Models to support user's submissions"; }
         }
         
         string IMigrationMetadata.Source
