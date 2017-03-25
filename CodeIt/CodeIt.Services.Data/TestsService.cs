@@ -25,14 +25,9 @@ namespace CodeIt.Services.Data.Contracts
             this.mapper = mapper;
         }
 
-        public void DeleteById(string id)
+        public void DeleteById(Guid id)
         {
-            var idAsGuid = Guid.Parse(id);
-            var test = this.testsRepository.GetById(idAsGuid);
-            if (test == null)
-            {
-                throw new ArgumentException($"Test with id = {idAsGuid} is not found!");
-            }
+            var test = this.GetTestById(id);
 
             using (this.efData)
             {
@@ -41,22 +36,15 @@ namespace CodeIt.Services.Data.Contracts
             }
         }
 
-        public IEnumerable<TDestination> GetByChallenge<TDestination>(string challengeId)
+        public IEnumerable<TDestination> GetByChallenge<TDestination>(Guid challengeId)
         {
-            var challengeIdGuid = Guid.Parse(challengeId);
-            var allTests = this.mapper.ProjectTo<Test, TDestination>(this.testsRepository.All.Where(x => x.ChallengeId == challengeIdGuid));
+            var allTests = this.mapper.ProjectTo<Test, TDestination>(this.testsRepository.All.Where(x => x.ChallengeId == challengeId));
             return allTests;
         }
 
-        public void Update(string id, string input, string output)
+        public void Update(Guid id, string input, string output)
         {
-            var idAsGuid = Guid.Parse(id);
-            var test = this.testsRepository.GetById(idAsGuid);
-            if (test == null)
-            {
-                throw new ArgumentException($"Test with id = {idAsGuid} is not found!");
-            }
-
+            var test = this.GetTestById(id);
             using (this.efData)
             {
                 test.Input = input;
@@ -66,6 +54,17 @@ namespace CodeIt.Services.Data.Contracts
                 this.testsRepository.Update(test);
                 this.efData.Commit();
             }
+        }
+
+        private Test GetTestById(Guid id)
+        {
+            var test = this.testsRepository.GetById(id);
+            if (test == null)
+            {
+                throw new ArgumentException($"Test with id = {id} is not found!");
+            }
+
+            return test;
         }
     }
 }

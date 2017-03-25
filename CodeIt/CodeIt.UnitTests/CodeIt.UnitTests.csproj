@@ -105,6 +105,9 @@
     <Compile Include="Services.Data\ChallengesServiceTests\CreateWithFileDescription_Should.cs" />
     <Compile Include="Services.Data\ChallengesServiceTests\Create_Should.cs" />
     <Compile Include="Services.Data\ChallengesServiceTests\GetAll_Should.cs" />
+    <Compile Include="Services.Data\TestsServiceTests\Constructor_Should.cs" />
+    <Compile Include="Services.Data\TestsServiceTests\DeleteById_Should.cs" />
+    <Compile Include="Services.Data\TestsServiceTests\Update_Should.cs" />
     <Compile Include="Services.Data\TracksServiceTests\Constructor_Should.cs" />
     <Compile Include="Services.Data\TracksServiceTests\GetAll_Should.cs" />
     <Compile Include="Services.Data\TracksServiceTests\GetCategoriesByTrackId_Should.cs" />

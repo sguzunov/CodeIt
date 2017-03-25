@@ -4,6 +4,7 @@ using Bytes2you.Validation;
 
 using CodeIt.Services.Data.Contracts;
 using CodeIt.Web.Areas.Administration.ViewModels;
+using System;
 
 namespace CodeIt.Web.Areas.Administration.Controllers
 {
@@ -21,21 +22,21 @@ namespace CodeIt.Web.Areas.Administration.Controllers
         [HttpGet]
         public ActionResult ByChallengeId(string id)
         {
-            var tests = this.tests.GetByChallenge<ChallengeTestAdministrationViewModel>(id);
+            var tests = this.tests.GetByChallenge<ChallengeTestAdministrationViewModel>(Guid.Parse(id));
             return this.View(tests);
         }
 
         [HttpPost]
         public ActionResult Update(ChallengeTestAdministrationViewModel challenge, string returnUrlId)
         {
-            this.tests.Update(challenge.Id.ToString(), challenge.Input, challenge.Output);
+            this.tests.Update(challenge.Id, challenge.Input, challenge.Output);
 
             return this.RedirectToAction(nameof(TestController.ByChallengeId), new { id = returnUrlId });
         }
 
         public ActionResult Delete(string id)
         {
-            this.tests.DeleteById(id);
+            this.tests.DeleteById(Guid.Parse(id));
 
             return new HttpStatusCodeResult(200);
         }

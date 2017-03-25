@@ -1,13 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace CodeIt.Services.Data.Contracts
 {
     public interface ITestsService
     {
-        IEnumerable<TDestination> GetByChallenge<TDestination>(string challengeId);
+        IEnumerable<TDestination> GetByChallenge<TDestination>(Guid challengeId);
 
-        void DeleteById(string id);
+        void DeleteById(Guid id);
 
-        void Update(string id, string input, string output);
+        void Update(Guid id, string input, string output);
     }
 }
