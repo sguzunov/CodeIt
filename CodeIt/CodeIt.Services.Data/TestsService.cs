@@ -17,6 +17,8 @@ namespace CodeIt.Services.Data.Contracts
         public TestsService(IEfRepository<Test> testsRepository, IEfData efData, IMappingProvider mapper)
         {
             Guard.WhenArgument(testsRepository, nameof(testsRepository)).IsNull().Throw();
+            Guard.WhenArgument(efData, nameof(efData)).IsNull().Throw();
+            Guard.WhenArgument(mapper, nameof(mapper)).IsNull().Throw();
 
             this.testsRepository = testsRepository;
             this.efData = efData;
