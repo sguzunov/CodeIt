@@ -1,0 +1,57 @@
+﻿@using CodeIt.Web.Areas.Administration.Controllers;
+
+@model  IEnumerable<ChallengeEditableViewModel>
+
+@(Html.Kendo().Grid(Model)
+    .Name("Challenges")
+    .Columns(columns =>
+    {
+        columns.Bound(x => x.Title).Title("Title");
+        columns.Bound(x => x.TrackName).Title("Track");
+        columns.Bound(x => x.CategoryName).Title("Category");
+        columns.Bound(x => x.Language).Title("Language");
+        columns.Bound(x => x.MemoryInKb).Title("Memory in MB");
+        columns.Bound(x => x.TimeInMs).Title("Time in ms");
+        columns.Command(command => { command.Edit(); }).Width(100);
+    })
+    .Editable(editable => editable.Mode(GridEditMode.PopUp))
+    .Pageable()
+    .Sortable()
+    .Scrollable()
+    .HtmlAttributes(new { style = "height:250px;" })
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(1)
+        .Events(events => events.Error("error_handler"))
+        .Model(model =>
+        {
+            model.Id(x => x.Id);
+            model.Field(x => x.Id).Editable(false);
+            model.Field(x => x.TrackName).Editable(false);
+            model.Field(x => x.CategoryName).Editable(false);
+            model.Field(x => x.Language).Editable(false);
+        })
+        .Read(read => read.Action("Read", "ChallengeGrid"))
+        .Update(update => update.Action("Update", "ChallengeGrid"))
+    )
+)
+
+<script type="text/javascript">
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval");
+}

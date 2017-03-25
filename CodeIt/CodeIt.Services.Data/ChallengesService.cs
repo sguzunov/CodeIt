@@ -121,6 +121,30 @@ namespace CodeIt.Services.Data
             return allChallenges;
         }
 
+        public void Update(string id, string title, Language language, int timeInMs, int memoryInKb)
+        {
+            var idAsGuid = Guid.Parse(id);
+            var challenge = this.challengesRepository.GetById(idAsGuid);
+            if (challenge == null)
+            {
+                throw new ArgumentException($"Challenge with id = {id} does not exists!");
+            }
+
+            using (this.efData)
+            {
+                challenge.Title = title;
+                challenge.Language = language;
+                challenge.TimeInMs = timeInMs;
+                challenge.MemoryInKb = memoryInKb;
+                challenge.Tests = challenge.Tests;
+                challenge.Category = challenge.Category;
+
+                this.challengesRepository.Update(challenge);
+
+                this.efData.Commit();
+            }
+        }
+
         private void AddChallengeTests(IEnumerable<Test> tests, Challenge challenge)
         {
             foreach (var test in tests)

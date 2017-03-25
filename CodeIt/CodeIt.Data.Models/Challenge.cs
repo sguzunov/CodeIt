@@ -39,7 +39,7 @@ namespace CodeIt.Data.Models
         public Guid CategoryId { get; set; }
 
         [Required]
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
 
         [Required]
         public virtual ICollection<Test> Tests
