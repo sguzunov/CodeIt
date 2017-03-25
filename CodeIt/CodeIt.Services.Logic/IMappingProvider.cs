@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-using AutoMapper;
-
 namespace CodeIt.Services.Logic
 {
     public interface IMappingProvider
