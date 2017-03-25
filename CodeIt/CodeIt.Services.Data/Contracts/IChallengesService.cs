@@ -22,5 +22,7 @@ namespace CodeIt.Services.Data.Contracts
         IEnumerable<TDestination> GetAll<TDestination>();
 
         void Update(string id, string title, Language language, int timeInMs, int memoryInKb);
+
+        TDestination GetByTitle<TDestination>(string title);
     }
 }
