@@ -5,6 +5,7 @@ using System.Web;
 using CodeIt.Common.Attributes;
 using CodeIt.Common.Constants;
 using CodeIt.Data.Models;
+using System.Web.Mvc;
 
 namespace CodeIt.Web.Areas.Administration.ViewModels.Challenge
 {
@@ -24,6 +25,7 @@ namespace CodeIt.Web.Areas.Administration.ViewModels.Challenge
         public string CategoryId { get; set; }
 
         [Required]
+        [AllowHtml]
         public string Description { get; set; }
 
         [Display(Name = "Upload file description (optional)")]

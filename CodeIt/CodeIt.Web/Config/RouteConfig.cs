@@ -12,6 +12,12 @@ namespace CodeIt.Web.Config
             routes.LowercaseUrls = true;
 
             routes.MapRoute(
+                name: "Challenge",
+                url: "Challenge/{title}",
+                defaults: new { controller = "Challenge", action = "Index" },
+                namespaces: new[] { "CodeIt.Web.Controllers" });
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
