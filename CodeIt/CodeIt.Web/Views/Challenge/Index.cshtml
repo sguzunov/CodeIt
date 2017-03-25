@@ -1,4 +1,8 @@
-﻿@using CodeIt.Web.ViewModels.Challenge;
+﻿@{
+    Layout = "./ChallengeLayout.cshtml";
+}
+
+@using CodeIt.Web.ViewModels.Challenge;
 
 @model ChallengeViewModel
 
@@ -6,3 +10,9 @@
 <text>
     @Html.Raw(@Model.Description);
 </text>
+<div id="code-editor"></div>
+
+<script src="~/Scripts/Code Editor/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+        var editor = ace.edit("code-editor");
+</script>
