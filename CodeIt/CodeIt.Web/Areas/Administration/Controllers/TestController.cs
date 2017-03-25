@@ -1,8 +1,9 @@
-﻿using Bytes2you.Validation;
+﻿using System.Web.Mvc;
+
+using Bytes2you.Validation;
+
 using CodeIt.Services.Data.Contracts;
 using CodeIt.Web.Areas.Administration.ViewModels;
-using System;
-using System.Web.Mvc;
 
 namespace CodeIt.Web.Areas.Administration.Controllers
 {
@@ -17,23 +18,26 @@ namespace CodeIt.Web.Areas.Administration.Controllers
             this.tests = tests;
         }
 
+        [HttpGet]
         public ActionResult ByChallengeId(string id)
         {
             var tests = this.tests.GetByChallenge<ChallengeTestAdministrationViewModel>(id);
             return this.View(tests);
         }
 
-        public ActionResult Update(ChallengeTestAdministrationViewModel challenge)
+        [HttpPost]
+        public ActionResult Update(ChallengeTestAdministrationViewModel challenge, string returnUrlId)
         {
-            //this.tests.Update()
-            throw new NotImplementedException();
+            this.tests.Update(challenge.Id.ToString(), challenge.Input, challenge.Output);
+
+            return this.RedirectToAction(nameof(TestController.ByChallengeId), new { id = returnUrlId });
         }
 
-        public ActionResult Delete(string id, string returnUrlId)
+        public ActionResult Delete(string id)
         {
             this.tests.DeleteById(id);
 
-            return this.RedirectToAction(nameof(TestController.ByChallengeId), new { id = returnUrlId });
+            return new HttpStatusCodeResult(200);
         }
     }
 }
