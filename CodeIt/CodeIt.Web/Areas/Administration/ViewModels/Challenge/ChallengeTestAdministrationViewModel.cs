@@ -1,10 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 using CodeIt.Data.Models;
 using CodeIt.Web.Infrastructure.Mapping;
-using System;
 
-namespace CodeIt.Web.Areas.Administration.ViewModels
+namespace CodeIt.Web.Areas.Administration.ViewModels.Challenge
 {
     public class ChallengeTestAdministrationViewModel : IMapTo<Test>, IMapFrom<Test>
     {

@@ -1,10 +1,8 @@
-﻿using System.Web.Mvc;
-
-using Bytes2you.Validation;
-
+﻿using Bytes2you.Validation;
 using CodeIt.Services.Data.Contracts;
-using CodeIt.Web.Areas.Administration.ViewModels;
+using CodeIt.Web.Areas.Administration.ViewModels.Challenge;
 using System;
+using System.Web.Mvc;
 
 namespace CodeIt.Web.Areas.Administration.Controllers
 {

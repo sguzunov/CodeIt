@@ -8,10 +8,8 @@ using CodeIt.Data.Models;
 using CodeIt.Services.Data.Contracts;
 using CodeIt.Services.Logic;
 using CodeIt.Services.Logic.Contracts;
-using CodeIt.Web.Areas.Administration.ViewModels;
 using CodeIt.Web.Infrastructure.FileSystem;
-using Kendo.Mvc.UI;
-using System.Linq;
+using CodeIt.Web.Areas.Administration.ViewModels.Challenge;
 
 namespace CodeIt.Web.Areas.Administration.Controllers
 {

@@ -6,7 +6,7 @@ using CodeIt.Common.Attributes;
 using CodeIt.Common.Constants;
 using CodeIt.Data.Models;
 
-namespace CodeIt.Web.Areas.Administration.ViewModels
+namespace CodeIt.Web.Areas.Administration.ViewModels.Challenge
 {
     public class ChallengeAdministrationViewModel
     {

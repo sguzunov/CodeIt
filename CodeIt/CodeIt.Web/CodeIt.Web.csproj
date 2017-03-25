@@ -222,9 +222,9 @@
     <Compile Include="Areas\Administration\Controllers\ChallengeGridController.cs" />
     <Compile Include="Areas\Administration\Controllers\HomeController.cs" />
     <Compile Include="Areas\Administration\Controllers\TestController.cs" />
-    <Compile Include="Areas\Administration\ViewModels\ChallengeEditableViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\ChallengeTestAdministrationViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\ChallengeAdministrationViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Challenge\ChallengeEditableViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Challenge\ChallengeTestAdministrationViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Challenge\ChallengeAdministrationViewModel.cs" />
     <Compile Include="Areas\Api\ApiAreaRegistration.cs" />
     <Compile Include="Areas\Api\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Api\Controllers\TrackController.cs" />
