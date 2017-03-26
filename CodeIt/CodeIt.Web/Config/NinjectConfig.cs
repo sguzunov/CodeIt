@@ -87,10 +87,6 @@ namespace CodeIt.Web.Config
                 registryInstance.Bind(kernel);
             }
 
-            kernel.Bind<IFileUnits>().To<FileUnits>();
-            kernel.Bind<IFileSystemService>().To<FileSystemService>();
-            kernel.Bind<IMappingProvider>().To<MappingProvider>();
-            kernel.Bind<IAuthenticationService>().To<AuthenticationService>();
             kernel.Bind<IOwinContext>().ToMethod(x => HttpContext.Current.GetOwinContext())
                 .WhenInjectedInto(typeof(IAuthenticationService));
         }

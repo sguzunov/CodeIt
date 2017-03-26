@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 using CodeIt.Common.Constants;
 using CodeIt.Data.Models.Contracts;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CodeIt.Data.Models
 {
@@ -19,6 +20,7 @@ namespace CodeIt.Data.Models
         public Guid Id { get; set; }
 
         [Required]
+        [Index(IsUnique = true)]
         [MinLength(ValidationConstants.ChallengeTitleMinLength)]
         [MaxLength(ValidationConstants.ChallengeTitleMaxLength)]
         public string Title { get; set; }

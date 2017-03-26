@@ -6,9 +6,11 @@ using CodeIt.Common.Constants;
 using CodeIt.Data.Models;
 using CodeIt.Web.Infrastructure.Mapping;
 
-namespace CodeIt.Web.Areas.Administration.ViewModels
+using ChallengeDb = CodeIt.Data.Models.Challenge;
+
+namespace CodeIt.Web.Areas.Administration.ViewModels.Challenge
 {
-    public class ChallengeEditableViewModel : IMapFrom<Challenge>, IHaveCustomMappings
+    public class ChallengeEditableViewModel : IMapFrom<ChallengeDb>, IHaveCustomMappings
     {
         public Guid Id { get; set; }
 
@@ -40,7 +42,7 @@ namespace CodeIt.Web.Areas.Administration.ViewModels
 
         public void CreateMappings(IMapperConfigurationExpression configuration)
         {
-            configuration.CreateMap<Challenge, ChallengeEditableViewModel>()
+            configuration.CreateMap<ChallengeDb, ChallengeEditableViewModel>()
                 .ForMember(x => x.TrackName, opt => opt.MapFrom(x => x.Category.Track.Name));
         }
     }

@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "~/Views/Shared/_ContainerLayout.cshtml";
+}
+
+@using CodeIt.Web.Controllers;
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        @Html.ActionLink("Problem", nameof(ChallengeController.Index), new { title = Model.Title })
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Submissions</a>
+    </li>
+</ul>
+
+@RenderBody()
+
+@RenderSection("scripts", required: false)

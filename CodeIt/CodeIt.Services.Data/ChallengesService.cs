@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using Bytes2you.Validation;
 
@@ -119,6 +120,22 @@ namespace CodeIt.Services.Data
         {
             var allChallenges = this.mapper.ProjectTo<Challenge, TDestination>(this.challengesRepository.All);
             return allChallenges;
+        }
+
+        public TDestination GetByTitle<TDestination>(string title)
+        {
+            var challenge = this.mapper.ProjectTo<Challenge, TDestination>(
+                this.challengesRepository
+                .All
+                .Where(x => x.Title == title))
+                .FirstOrDefault();
+
+            if (challenge == null)
+            {
+                throw new ArgumentException();
+            }
+
+            return challenge;
         }
 
         public void Update(string id, string title, Language language, int timeInMs, int memoryInKb)
