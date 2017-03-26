@@ -17,7 +17,8 @@ namespace CodeIt.Services.Data
         public SubmissionsService(
             IEfRepository<Submission> submissionRepository,
             IEfRepository<Challenge> challengeRepository,
-            IEfData efData, ITimeProvider timeProvider)
+            IEfData efData, 
+            ITimeProvider timeProvider)
         {
             Guard.WhenArgument(submissionRepository, nameof(submissionRepository)).IsNull().Throw();
             Guard.WhenArgument(challengeRepository, nameof(challengeRepository)).IsNull().Throw();

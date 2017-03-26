@@ -769,6 +769,7 @@
     <Content Include="Views\Challenge\Index.cshtml" />
     <Content Include="Views\Challenge\ChallengeLayout.cshtml" />
     <Content Include="Views\Home\Tracks.cshtml" />
+    <Content Include="Views\Home\ByTrackName.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

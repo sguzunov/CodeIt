@@ -1,6 +1,7 @@
 ﻿using CodeIt.Services.Data.Contracts;
 using CodeIt.Services.Logic;
 using CodeIt.Web.ViewModels.Home;
+using System;
 using System.Web.Mvc;
 
 namespace CodeIt.Web.Controllers
@@ -27,6 +28,11 @@ namespace CodeIt.Web.Controllers
         {
             var result = this.tracks.GetAll<TrackViewModel>();
             return this.View(result);
+        }
+
+        public ActionResult ByTrackName(string name)
+        {
+            throw new NotImplementedException();
         }
     }
 }
