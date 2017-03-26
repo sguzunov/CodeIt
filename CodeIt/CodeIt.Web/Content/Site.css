@@ -80,7 +80,7 @@ select#langs-dropdown, select#categories-list, select#tracks-list {
 }
 
 #code-editor {
-    position: absolute;
+    /*position: absolute;*/
     width: 100%;
     height: 250px;
 }

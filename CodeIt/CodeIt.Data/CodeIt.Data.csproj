@@ -72,6 +72,10 @@
     <Compile Include="Migrations\201703260838136_Added submissions table.Designer.cs">
       <DependentUpon>201703260838136_Added submissions table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703260956474_Users has many submissions..cs" />
+    <Compile Include="Migrations\201703260956474_Users has many submissions..Designer.cs">
+      <DependentUpon>201703260956474_Users has many submissions..cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -96,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703260838136_Added submissions table.resx">
       <DependentUpon>201703260838136_Added submissions table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703260956474_Users has many submissions..resx">
+      <DependentUpon>201703260956474_Users has many submissions..cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -19,9 +19,7 @@ namespace CodeIt.Data.Models
 
         [Required]
         public string SourceCode { get; set; }
-
-        public Guid UserId { get; set; }
-
+        
         [Required]
         public User User { get; set; }
 

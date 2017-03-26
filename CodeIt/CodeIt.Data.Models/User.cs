@@ -7,11 +7,19 @@ using CodeIt.Data.Models.Contracts;
 
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
 
 namespace CodeIt.Data.Models
 {
     public class User : IdentityUser, IEntity
     {
+        private ICollection<Submission> submissions;
+
+        public User()
+        {
+            this.submissions = new HashSet<Submission>();
+        }
+
         [MinLength(ValidationConstants.UserNamesMinLength)]
         [MaxLength(ValidationConstants.UserNamesMaxLength)]
         public string FirstName { get; set; }
@@ -20,9 +28,7 @@ namespace CodeIt.Data.Models
         [MaxLength(ValidationConstants.UserNamesMaxLength)]
         public string LastName { get; set; }
 
-        public int SubmissionId { get; set; }
-
-        public Submission Submission { get; set; }
+        public ICollection<Submission> Submissions { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {

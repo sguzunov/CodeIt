@@ -7,12 +7,16 @@
 @model ChallengeViewModel
 
 <h1>@Model.Title</h1>
-<text>
-    @Html.Raw(@Model.Description);
-</text>
+<div>
+    <text>
+        @Html.Raw(@Model.Description);
+    </text>
+</div>
 <div id="code-editor"></div>
-<input type="hidden" id="challengeId" value="@Model.Id" />
-<input type="button" id="btnSubmitCode" class="btn btn-info" value="Submit" />
+<div>
+    <input type="hidden" id="challengeId" value="@Model.Id" />
+    <input type="button" id="btnSubmitCode" class="btn btn-info" value="Submit" />
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/ace-code-editor")
