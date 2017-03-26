@@ -17,6 +17,7 @@ namespace CodeIt.Web.Infrastructure.Bindings
             kernel.Bind<IFileSystemService>().To<FileSystemService>();
             kernel.Bind<IMappingProvider>().To<MappingProvider>();
             kernel.Bind<IAuthenticationService>().To<AuthenticationService>();
+            kernel.Bind<ITimeProvider>().To<TimeProvider>();
         }
     }
 }

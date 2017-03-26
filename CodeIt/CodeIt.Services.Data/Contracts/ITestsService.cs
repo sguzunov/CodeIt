@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CodeIt.Services.Data.Contracts
 {
-    public interface ITestsService
+    public interface ITestsService : IDataService
     {
         IEnumerable<TDestination> GetByChallenge<TDestination>(Guid challengeId);
 

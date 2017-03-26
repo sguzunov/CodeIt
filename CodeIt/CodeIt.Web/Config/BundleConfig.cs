@@ -30,6 +30,10 @@ namespace CodeIt.Web.Config
                 .Include(
                     "~/Scripts/Kendo/kendo.all.min.js",
                     "~/Scripts/Kendo/kendo.aspnetmvc.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/ace-code-editor")
+                .Include(
+                    "~/Scripts/Code Editor/ace.js"));
         }
 
         private static void RegisterStyles(BundleCollection bundles)
