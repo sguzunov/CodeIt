@@ -68,6 +68,7 @@
     <Compile Include="Test.cs" />
     <Compile Include="TestResult.cs" />
     <Compile Include="Track.cs" />
+    <Compile Include="TrackLogo.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>

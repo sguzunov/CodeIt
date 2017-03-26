@@ -1,0 +1,17 @@
+﻿@model IEnumerable<CodeIt.Web.ViewModels.Home.TrackViewModel>
+
+<div class="container marketing">
+    <div class="row">
+        @{
+            foreach (var track in Model)
+            {
+                <div class="col-lg-6">
+                    <img class="rounded-circle" src="@track.LogoPath" alt="Generic placeholder image" width="140" height="140">
+                    <h2 style="display:inline-block">@track.Name</h2>
+                    <span>@track.NumberOfCateogries categories</span>
+                    <p><a class="btn btn-secondary" href="#" role="button">View categories »</a></p>
+                </div>
+            }
+        }
+    </div>
+</div>

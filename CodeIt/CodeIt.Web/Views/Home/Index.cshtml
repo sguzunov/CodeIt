@@ -1,27 +1,20 @@
 ﻿@{
     ViewBag.Title = "CodeIt";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="jumbotron jumbotron-fluid front-page">
-    <img src="~/Content/Assets/front.jpg" />
+    <img src="~/Content/Assets/front-computer.jpg" />
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
+<div class="container" style="text-align:center">
+    <div class="row" style="text-align:center">
+        <div class="col-md-12">
+            <img src="~/Content/Assets/devs-image.png" alt="developers" />
             <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
+                CodeIt is a free site for learning, practicing and updagrading your programming skills.
             </p>
-        </div>
-        <div class="col-md-4">
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
+            <a href="/Account/SignIn" class="btn btn-success">Practice</a>
         </div>
     </div>
 </div>

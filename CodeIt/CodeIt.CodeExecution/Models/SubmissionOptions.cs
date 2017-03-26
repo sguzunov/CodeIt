@@ -7,6 +7,9 @@ namespace CodeIt.CodeExecution.Models
         [JsonProperty("language")]
         public int Language { get; set; }
 
+        [JsonProperty("input")]
+        public int Input { get; set; }
+
         [JsonProperty("sourceCode")]
         public string SourceCode { get; set; }
     }

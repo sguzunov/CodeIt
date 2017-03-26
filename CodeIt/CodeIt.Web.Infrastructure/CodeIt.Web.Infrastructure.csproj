@@ -83,6 +83,8 @@
     <Compile Include="Bindings\DataServicesBindings.cs" />
     <Compile Include="Bindings\DbBindings.cs" />
     <Compile Include="Bindings\INinjectBinding.cs" />
+    <Compile Include="Caching\HttpCacheService.cs" />
+    <Compile Include="Caching\ICacheService.cs" />
     <Compile Include="FileSystem\FileSystemService.cs" />
     <Compile Include="FileSystem\IFileSystemService.cs" />
     <Compile Include="HtmlSanitisation\HtmlContentSanitizer.cs" />

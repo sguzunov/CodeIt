@@ -6,6 +6,7 @@ using System.Web.Routing;
 
 using CodeIt.Web.Config;
 using CodeIt.Web.Infrastructure.Mapping;
+using Microsoft.AspNet.Identity;
 
 namespace CodeIt.Web
 {
@@ -24,6 +25,16 @@ namespace CodeIt.Web
 
             var mapConfig = new AutoMapperConfig();
             mapConfig.Execute(Assembly.GetExecutingAssembly());
+        }
+
+        public override string GetVaryByCustomString(HttpContext context, string custom)
+        {
+            if (custom == "User")
+            {
+                return "User=" + context.User.Identity.GetUserId();
+            }
+
+            return base.GetVaryByCustomString(context, custom);
         }
     }
 }

@@ -7,13 +7,13 @@ namespace CodeIt.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class Usershasmanysubmissions : IMigrationMetadata
+    public sealed partial class Anothertracksupdate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Usershasmanysubmissions));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Anothertracksupdate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201703260956474_Users has many submissions."; }
+            get { return "201703262031346_Another tracks update"; }
         }
         
         string IMigrationMetadata.Source

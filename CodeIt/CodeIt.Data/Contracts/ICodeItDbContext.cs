@@ -20,6 +20,10 @@ namespace CodeIt.Data.Contracts
 
         IDbSet<Track> Tracks { get; set; }
 
+        IDbSet<TrackLogo> TrackLogos { get; set; }
+
+        IDbSet<Submission> Submissions { get; set; }
+
         IDbSet<T> Set<T>()
             where T : class;
 

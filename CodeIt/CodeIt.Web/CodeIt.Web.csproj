@@ -255,11 +255,14 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Challenge\ChallengeViewModel.cs" />
     <Compile Include="ViewModels\Challenge\SubmissionViewModel.cs" />
+    <Compile Include="ViewModels\Home\TrackViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Assets\brand.svg" />
     <Content Include="Content\Assets\codeit-logo.png" />
-    <Content Include="Content\Assets\front.jpeg" />
+    <Content Include="Content\Assets\devs-image.png" />
+    <Content Include="Content\Assets\front-computer.jpg" />
+    <Content Include="Content\Assets\front.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -752,7 +755,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\SignIn.cshtml" />
     <Content Include="Views\Account\SignUp.cshtml" />
@@ -766,9 +768,11 @@
     <Content Include="Scripts\Kendo\jquery.min.map" />
     <Content Include="Views\Challenge\Index.cshtml" />
     <Content Include="Views\Challenge\ChallengeLayout.cshtml" />
+    <Content Include="Views\Home\Tracks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Assets\TrackLogos\" />
     <Folder Include="Files\ChallengesDescription\" />
   </ItemGroup>
   <ItemGroup>
