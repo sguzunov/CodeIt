@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
 
 namespace CodeIt.CodeExecution.Models
 {
     public class SubmissionOptions
     {
+        [JsonProperty("language")]
         public int Language { get; set; }
 
+        [JsonProperty("sourceCode")]
         public string SourceCode { get; set; }
     }
 }
