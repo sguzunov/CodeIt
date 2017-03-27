@@ -253,8 +253,10 @@
     <Compile Include="ViewModels\Account\SignInViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\Challenge\ChallengeListViewModel.cs" />
     <Compile Include="ViewModels\Challenge\ChallengeViewModel.cs" />
     <Compile Include="ViewModels\Challenge\SubmissionViewModel.cs" />
+    <Compile Include="ViewModels\Home\CategoryViewModel.cs" />
     <Compile Include="ViewModels\Home\TrackViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -769,7 +771,9 @@
     <Content Include="Views\Challenge\Index.cshtml" />
     <Content Include="Views\Challenge\ChallengeLayout.cshtml" />
     <Content Include="Views\Home\Tracks.cshtml" />
-    <Content Include="Views\Home\ByTrackName.cshtml" />
+    <Content Include="Views\Home\CategoriesByTrack.cshtml" />
+    <Content Include="Views\Templates\DisplayTemplates\ChallengeSimple.cshtml" />
+    <Content Include="Views\Home\_ChallengeList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

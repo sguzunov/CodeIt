@@ -9,11 +9,13 @@ namespace CodeIt.Web.Controllers
     public class HomeController : Controller
     {
         private readonly ITracksService tracks;
+        private readonly ICategoriesService categories;
         private readonly IMappingProvider mapper;
 
-        public HomeController(ITracksService tracks, IMappingProvider mapper)
+        public HomeController(ITracksService tracks, ICategoriesService categories, IMappingProvider mapper)
         {
             this.tracks = tracks;
+            this.categories = categories;
             this.mapper = mapper;
         }
 
@@ -30,9 +32,11 @@ namespace CodeIt.Web.Controllers
             return this.View(result);
         }
 
-        public ActionResult ByTrackName(string name)
+        public ActionResult CategoriesByTrack(string track)
         {
-            throw new NotImplementedException();
+            var categories = this.categories.GetByTrack<CategoryViewModel>(track);
+
+            return this.View(categories);
         }
     }
 }

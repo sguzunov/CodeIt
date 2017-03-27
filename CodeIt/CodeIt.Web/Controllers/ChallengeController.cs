@@ -33,6 +33,7 @@ namespace CodeIt.Web.Controllers
             this.htmlSanitizer = htmlSanitizer;
         }
 
+        [HttpGet]
         public ActionResult Index(string title)
         {
             var challenge = this.challenges.GetByTitle<ChallengeViewModel>(title);
@@ -52,6 +53,14 @@ namespace CodeIt.Web.Controllers
             this.submissions.Create(this.LoggedUser, Guid.Parse(submission.ChallengeId), submission.SourceCode);
 
             return new HttpStatusCodeResult(HttpStatusCode.OK);
+        }
+
+        [HttpGet]
+        public ActionResult ChallengesByCategoryName(string categoryId)
+        {
+            var result = this.challenges.GetByCateogryId<ChallengeListViewModel>(Guid.Parse(categoryId));
+
+            return this.PartialView("~/Views/Home/_ChallengeList.cshtml", result);
         }
     }
 }

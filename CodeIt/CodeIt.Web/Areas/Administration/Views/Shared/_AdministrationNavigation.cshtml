@@ -1,14 +1,17 @@
 ﻿@using CodeIt.Web.Areas.Administration.Controllers;
 
-<nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+<nav id="admin-nav" class="col-sm-3 col-md-3 hidden-xs-down bg-faded sidebar">
     <ul class="nav nav-pills flex-column">
         <li class="nav-item">
-            @Html.ActionLink("Statistics", nameof(HomeController.Index), "Home", new { @class = "nav-link" })
+            @Html.ActionLink("Statistics", nameof(HomeController.Index), "Home", new { area = "Administration" }, new { @class = "nav-link" })
         </li>
     </ul>
     <ul class="nav nav-pills flex-column">
         <li class="nav-item">
-            @Html.ActionLink("Add Challenge", nameof(ChallengeController.Create), "Challenge", new { @class = "nav-link" })
+            @Html.ActionLink("Add Challenge", nameof(ChallengeController.Create), "Challenge", new { area = "Administration" }, new { @class = "nav-link" })
+        </li>
+        <li class="nav-item">
+            @Html.ActionLink("Edit Challanges", nameof(ChallengeGridController.Index), "ChallengeGrid", new { area = "Administration" }, new { @class = "nav-link" })
         </li>
     </ul>
 </nav>

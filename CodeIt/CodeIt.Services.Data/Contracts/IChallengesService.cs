@@ -1,4 +1,5 @@
 ﻿using CodeIt.Data.Models;
+using System;
 using System.Collections.Generic;
 
 namespace CodeIt.Services.Data.Contracts
@@ -24,5 +25,7 @@ namespace CodeIt.Services.Data.Contracts
         void Update(string id, string title, Language language, int timeInMs, int memoryInKb);
 
         TDestination GetByTitle<TDestination>(string title);
+
+        IEnumerable<TDestination> GetByCateogryId<TDestination>(Guid categoryId);
     }
 }

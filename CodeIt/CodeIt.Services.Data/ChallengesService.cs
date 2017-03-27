@@ -122,6 +122,16 @@ namespace CodeIt.Services.Data
             return allChallenges;
         }
 
+        public IEnumerable<TDestination> GetByCateogryId<TDestination>(Guid categoryId)
+        {
+            var result = this.mapper.ProjectTo<Challenge, TDestination>(
+                this.challengesRepository
+                .All
+                .Where(x => x.Category.Id == categoryId));
+
+            return result;
+        }
+
         public TDestination GetByTitle<TDestination>(string title)
         {
             var challenge = this.mapper.ProjectTo<Challenge, TDestination>(
