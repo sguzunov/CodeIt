@@ -2,9 +2,14 @@
 
 namespace CodeIt.CodeExecution.Models
 {
-    public class SubmissionIdentifyResult
+    public class SubmissionIdentifier
     {
         [JsonProperty("id")]
         public int Id { get; set; }
+
+        public override string ToString()
+        {
+            return this.Id.ToString();
+        }
     }
 }

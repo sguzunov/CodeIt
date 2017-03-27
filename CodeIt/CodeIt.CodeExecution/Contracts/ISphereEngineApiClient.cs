@@ -6,8 +6,8 @@ namespace CodeIt.CodeExecution.Contracts
 {
     public interface ISphereEngineApiClient
     {
-        Task<SubmissionIdentifyResult> Submit(SubmissionOptions options);
+        Task<SubmissionIdentifier> Submit(SubmissionOptions options);
 
-        Task<CodeExecutionResult> GetSubmissionResult(int id);
+        Task<SubmissionExecutionResult> GetSubmissionResult(int id);
     }
 }

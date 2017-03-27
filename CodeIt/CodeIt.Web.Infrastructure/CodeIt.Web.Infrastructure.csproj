@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bindings\AutomapperBindings.cs" />
+    <Compile Include="Bindings\CodeExecutionBindings.cs" />
     <Compile Include="Bindings\CommonBindings.cs" />
     <Compile Include="Bindings\DataServicesBindings.cs" />
     <Compile Include="Bindings\DbBindings.cs" />
@@ -96,6 +97,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CodeIt.CodeExecution\CodeIt.CodeExecution.csproj">
+      <Project>{c3308208-9e0f-4f73-bc10-34ecb01d12ab}</Project>
+      <Name>CodeIt.CodeExecution</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CodeIt.Data\CodeIt.Data.csproj">
       <Project>{1FAAB3E6-1B71-4F4A-94C9-E0D03F286F6D}</Project>
       <Name>CodeIt.Data</Name>

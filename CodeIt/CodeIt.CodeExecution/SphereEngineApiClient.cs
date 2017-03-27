@@ -1,7 +1,8 @@
-﻿using CodeIt.CodeExecution.Contracts;
+﻿using System.Threading.Tasks;
+
+using CodeIt.CodeExecution.Contracts;
 using CodeIt.CodeExecution.Helpers.Contracts;
 using CodeIt.CodeExecution.Models;
-using System.Threading.Tasks;
 
 namespace CodeIt.CodeExecution
 {
@@ -20,17 +21,17 @@ namespace CodeIt.CodeExecution
             this.jsonUtils = jsonUtils;
         }
 
-        public async Task<CodeExecutionResult> GetSubmissionResult(int id)
+        public async Task<SubmissionExecutionResult> GetSubmissionResult(int id)
         {
             string url = ApiBaseUrl + $"/{id}" + $"?withSource=true&withStderr=true&withCmpinfo=true&withOutput=true&access_token={this.apiAccessToken}";
-            return await this.requester.GetJsonAsync<CodeExecutionResult>(url);
+            return await this.requester.GetJsonAsync<SubmissionExecutionResult>(url);
         }
 
-        public async Task<SubmissionIdentifyResult> Submit(SubmissionOptions options)
+        public async Task<SubmissionIdentifier> Submit(SubmissionOptions options)
         {
             string url = ApiBaseUrl + $"?access_token={this.apiAccessToken}";
             string jsonData = this.jsonUtils.Serialize(options);
-            return await this.requester.PostJsonAsync<SubmissionIdentifyResult>(url, jsonData);
+            return await this.requester.PostJsonAsync<SubmissionIdentifier>(url, jsonData);
         }
     }
 }

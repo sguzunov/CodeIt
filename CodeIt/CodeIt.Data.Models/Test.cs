@@ -2,11 +2,14 @@
 using System.ComponentModel.DataAnnotations;
 
 using CodeIt.Data.Models.Contracts;
+using System.Collections.Generic;
 
 namespace CodeIt.Data.Models
 {
     public class Test : IEntity
     {
+        private ICollection<TestResult> results;
+
         public Guid Id { get; set; }
 
         [Required]
@@ -18,5 +21,7 @@ namespace CodeIt.Data.Models
         public Guid ChallengeId { get; set; }
 
         public Challenge Challenge { get; set; }
+
+        public ICollection<TestResult> Results { get; set; }
     }
 }

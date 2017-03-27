@@ -2,7 +2,7 @@
 
 namespace CodeIt.CodeExecution.Models
 {
-    public class CodeExecutionResult
+    public class SubmissionExecutionResult
     {
         [JsonProperty("time")]
         public double TimeExecution { get; set; }

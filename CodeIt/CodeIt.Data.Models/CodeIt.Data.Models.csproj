@@ -64,6 +64,7 @@
     <Compile Include="FileInfo.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SphereApiTestIdentifier.cs" />
     <Compile Include="Submission.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="TestResult.cs" />
