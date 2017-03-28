@@ -48,18 +48,19 @@ namespace CodeIt.Services.Data
                 throw new ArgumentException($"Challenge with id = {challengeId} is not found!");
             }
 
-            var submission = new Submission
-            {
-                Id = Guid.NewGuid(),
-                CreatedOn = this.timeProvider.UtcNow,
-                SourceCode = sourceCode,
-                ChallengeId = challenge.Id,
-                Challenge = challenge,
-                User = creator
-            };
-
+            Submission submission = null;
             using (this.efData)
             {
+                submission = new Submission
+                {
+                    Id = Guid.NewGuid(),
+                    CreatedOn = this.timeProvider.UtcNow,
+                    SourceCode = sourceCode,
+                    ChallengeId = challenge.Id,
+                    Challenge = challenge,
+                    User = creator
+                };
+
                 this.submissionRepository.Add(submission);
                 this.efData.Commit();
             }
@@ -83,6 +84,11 @@ namespace CodeIt.Services.Data
             using (this.efData)
             {
                 var submission = this.submissionRepository.GetById(id);
+                if (submission == null)
+                {
+                    throw new ArgumentException($"Submission with id = {id} is not found!");
+                }
+
                 submission.IsRun = true;
 
                 this.submissionRepository.Update(submission);

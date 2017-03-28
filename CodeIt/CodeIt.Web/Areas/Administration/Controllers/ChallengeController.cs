@@ -8,8 +8,8 @@ using CodeIt.Data.Models;
 using CodeIt.Services.Data.Contracts;
 using CodeIt.Services.Logic;
 using CodeIt.Services.Logic.Contracts;
-using CodeIt.Web.Infrastructure.FileSystem;
 using CodeIt.Web.Areas.Administration.ViewModels.Challenge;
+using CodeIt.Web.Infrastructure.FileSystem;
 
 namespace CodeIt.Web.Areas.Administration.Controllers
 {

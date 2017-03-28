@@ -1,4 +1,5 @@
-﻿using CodeIt.Data.Contracts;
+﻿using Bytes2you.Validation;
+using CodeIt.Data.Contracts;
 using CodeIt.Data.Models;
 using CodeIt.Services.Data.Contracts;
 using CodeIt.Services.Logic;
@@ -14,6 +15,9 @@ namespace CodeIt.Services.Data
 
         public CategoriesService(IEfRepository<Category> categoriesRepository, IMappingProvider mapper)
         {
+            Guard.WhenArgument(categoriesRepository, nameof(categoriesRepository)).IsNull().Throw();
+            Guard.WhenArgument(mapper, nameof(mapper)).IsNull().Throw();
+
             this.categoriesRepository = categoriesRepository;
             this.mapper = mapper;
         }
