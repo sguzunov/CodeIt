@@ -73,7 +73,7 @@ namespace CodeIt.Web.Areas.Administration.Controllers
                 await this.fileSystem.SaveFileAsync(FileDescriptionSystemPath + dbChallenge.FileDecription.FileName + "." + fileExtension, file.InputStream);
             }
 
-            return this.Redirect("/");
+            return this.RedirectToAction(nameof(ChallengeController.Create), "Challenge");
         }
     }
 }

@@ -20,7 +20,9 @@ namespace CodeIt.Web.Areas.Administration.Controllers
         [HttpGet]
         public ActionResult ByChallengeId(string id)
         {
-            var tests = this.tests.GetByChallenge<ChallengeTestAdministrationViewModel>(Guid.Parse(id));
+            var idAsGuid = Guid.Parse(id);
+            var tests = this.tests.GetByChallenge<ChallengeTestAdministrationViewModel>(idAsGuid);
+
             return this.View(tests);
         }
 
@@ -32,6 +34,7 @@ namespace CodeIt.Web.Areas.Administration.Controllers
             return this.RedirectToAction(nameof(TestController.ByChallengeId), new { id = returnUrlId });
         }
 
+        [HttpPost]
         public ActionResult Delete(string id)
         {
             this.tests.DeleteById(Guid.Parse(id));
