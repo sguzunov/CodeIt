@@ -3,10 +3,7 @@ using CodeIt.Services.Data.Contracts;
 using CodeIt.Web.Infrastructure.HtmlSanitisation;
 using CodeIt.Web.ViewModels.Challenge;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 
 namespace CodeIt.Web.Controllers

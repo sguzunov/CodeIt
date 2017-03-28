@@ -42,6 +42,12 @@ namespace CodeIt.Services.Data.Contracts
             return allTests;
         }
 
+        public IEnumerable<Test> GetByChallenge(Guid challengeId)
+        {
+            var tests = this.testsRepository.All.Where(x => x.ChallengeId == challengeId);
+            return tests;
+        }
+
         public void Update(Guid id, string input, string output)
         {
             var test = this.GetTestById(id);

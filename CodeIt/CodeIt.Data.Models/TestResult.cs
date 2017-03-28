@@ -18,6 +18,6 @@ namespace CodeIt.Data.Models
 
         public Guid TestId { get; set; }
 
-        public Test Test { get; set; }
+        public virtual Test Test { get; set; }
     }
 }

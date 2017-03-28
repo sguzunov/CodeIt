@@ -6,10 +6,5 @@ namespace CodeIt.CodeExecution.Models
     {
         [JsonProperty("id")]
         public int Id { get; set; }
-
-        public override string ToString()
-        {
-            return this.Id.ToString();
-        }
     }
 }

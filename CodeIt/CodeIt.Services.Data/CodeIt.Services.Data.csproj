@@ -59,10 +59,12 @@
     <Compile Include="Contracts\IChallengesService.cs" />
     <Compile Include="Contracts\IDataService.cs" />
     <Compile Include="Contracts\ISubmissionsService.cs" />
+    <Compile Include="Contracts\ITestResultsService.cs" />
     <Compile Include="Contracts\ITestsService.cs" />
     <Compile Include="Contracts\ITracksService.cs" />
     <Compile Include="Contracts\IUsersService.cs" />
     <Compile Include="SubmissionsService.cs" />
+    <Compile Include="TestResultsService.cs" />
     <Compile Include="TestsService.cs" />
     <Compile Include="TracksService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

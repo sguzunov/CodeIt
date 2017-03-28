@@ -64,9 +64,9 @@
     <Compile Include="Contracts\IEfRepository.cs" />
     <Compile Include="EfData.cs" />
     <Compile Include="EfRepository.cs" />
-    <Compile Include="Migrations\201703262031346_Another tracks update.cs" />
-    <Compile Include="Migrations\201703262031346_Another tracks update.Designer.cs">
-      <DependentUpon>201703262031346_Another tracks update.cs</DependentUpon>
+    <Compile Include="Migrations\201703280802052_Modify testresults table.cs" />
+    <Compile Include="Migrations\201703280802052_Modify testresults table.Designer.cs">
+      <DependentUpon>201703280802052_Modify testresults table.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,8 +87,8 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703262031346_Another tracks update.resx">
-      <DependentUpon>201703262031346_Another tracks update.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703280802052_Modify testresults table.resx">
+      <DependentUpon>201703280802052_Modify testresults table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
