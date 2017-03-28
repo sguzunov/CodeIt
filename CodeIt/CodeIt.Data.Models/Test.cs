@@ -2,7 +2,6 @@
 using System.ComponentModel.DataAnnotations;
 
 using CodeIt.Data.Models.Contracts;
-using System.Collections.Generic;
 
 namespace CodeIt.Data.Models
 {
@@ -18,6 +17,6 @@ namespace CodeIt.Data.Models
 
         public Guid ChallengeId { get; set; }
 
-        public Challenge Challenge { get; set; }
+        public virtual Challenge Challenge { get; set; }
     }
 }

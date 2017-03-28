@@ -104,7 +104,7 @@ namespace CodeIt.Data.Migrations
             //context.Tracks.AddOrUpdate(javaTrack);
             //context.Tracks.AddOrUpdate(csharpTrack);
 
-            //// Save tracks
+            //Save tracks
             //context.SaveChanges();
 
             //var algorithmsLogo = new TrackLogo

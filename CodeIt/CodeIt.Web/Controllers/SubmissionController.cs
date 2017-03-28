@@ -64,6 +64,8 @@ namespace CodeIt.Web.Controllers
             var results = this.testResults.GetBySubmission(Guid.Parse(id));
             var apiIds = results.Select(x => x.ApiIdentifier.Identifier).ToList();
             var executionResults = await this.executionService.GetExecutionResults(apiIds);
+            this.testResults.UpdateTests(results.ToList(), executionResults.ToList());
+            this.submissions.RunSubmission(Guid.Parse(id));
 
             return new HttpStatusCodeResult(HttpStatusCode.OK);
         }

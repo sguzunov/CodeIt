@@ -49,28 +49,33 @@ namespace CodeIt.Services.Data
 
         public IEnumerable<TestResult> GetBySubmission(Guid submissionId)
         {
-            return this.testResultsRepository.All.Where(x => x.SubmissionId == submissionId).ToList();
+            var result = this.testResultsRepository.All.Where(x => x.SubmissionId == submissionId).ToList();
+            return result;
         }
 
         public void UpdateTests(IList<TestResult> tests, IList<SubmissionExecutionResult> executionResults)
         {
-            for (int i = 0; i < executionResults.Count; i++)
+            using (this.efData)
             {
-                var execResult = executionResults[i];
-                var testResult = tests[i];
-
-                testResult.CompileError = execResult.CompileError;
-                testResult.RuntimeException = execResult.RuntimeException;
-                testResult.IsEvaluated = true;
-
-                if (testResult.Test.Challenge.TimeInMs > execResult.TimeExecution)
+                for (int i = 0; i < executionResults.Count; i++)
                 {
-                    testResult.TimeLimited = true;
+                    var execResult = executionResults[i];
+                    var testResult = tests[i];
+
+                    testResult.CompileError = execResult.CompileError;
+                    testResult.RuntimeException = execResult.RuntimeException;
+                    testResult.IsEvaluated = true;
+
+                    if (testResult.Test.Challenge.TimeInMs < execResult.TimeExecution)
+                    {
+                        testResult.TimeLimited = true;
+                    }
+
+                    testResult.IsPassed = testResult.Test.Output == execResult.Output.Trim();
+
+                    this.testResultsRepository.Update(testResult);
                 }
 
-                testResult.IsPassed = testResult.Test.Output == execResult.Output.Trim();
-
-                this.testResultsRepository.Update(testResult);
                 this.efData.Commit();
             }
         }

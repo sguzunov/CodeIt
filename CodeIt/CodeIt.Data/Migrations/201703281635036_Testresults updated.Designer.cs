@@ -7,13 +7,13 @@ namespace CodeIt.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class TestResultstableupdate : IMigrationMetadata
+    public sealed partial class Testresultsupdated : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(TestResultstableupdate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Testresultsupdated));
         
         string IMigrationMetadata.Id
         {
-            get { return "201703281142420_TestResults table update"; }
+            get { return "201703281635036_Testresults updated"; }
         }
         
         string IMigrationMetadata.Source

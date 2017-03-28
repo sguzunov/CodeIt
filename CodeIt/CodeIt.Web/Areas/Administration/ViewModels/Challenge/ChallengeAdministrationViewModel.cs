@@ -37,7 +37,7 @@ namespace CodeIt.Web.Areas.Administration.ViewModels.Challenge
         [Required]
         [Display(Name = "Time limit in ms")]
         [MinValue(ValidationConstants.MinimumMemoryInKb)]
-        public int TimeLimitInMs { get; set; }
+        public double TimeLimitInMs { get; set; }
 
         [Required]
         [Display(Name = "Memory (KB)")]

@@ -48,7 +48,7 @@ namespace CodeIt.Services.Data
             string description,
             string categoryId,
             Language language,
-            int timeInMs,
+            double timeInMs,
             int memoryInKb,
             IEnumerable<Test> tests)
         {
@@ -87,7 +87,7 @@ namespace CodeIt.Services.Data
             string description,
             string categoryId,
             Language language,
-            int timeInMs,
+            double timeInMs,
             int memoryInKb,
             IEnumerable<Test> tests,
             string fileOriginalName,
@@ -148,7 +148,7 @@ namespace CodeIt.Services.Data
             return challenge;
         }
 
-        public void Update(string id, string title, Language language, int timeInMs, int memoryInKb)
+        public void Update(string id, string title, Language language, double timeInMs, int memoryInKb)
         {
             var idAsGuid = Guid.Parse(id);
             var challenge = this.challengesRepository.GetById(idAsGuid);

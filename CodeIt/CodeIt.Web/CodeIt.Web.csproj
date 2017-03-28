@@ -777,7 +777,7 @@
     <Content Include="Views\Home\CategoriesByTrack.cshtml" />
     <Content Include="Views\Templates\DisplayTemplates\ChallengeSimple.cshtml" />
     <Content Include="Views\Home\_ChallengeList.cshtml" />
-    <Content Include="Views\Challenge\Submissions.cshtml" />
+    <Content Include="Views\Shared\Submissions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

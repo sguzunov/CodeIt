@@ -10,7 +10,7 @@ namespace CodeIt.Web.ViewModels.Challenge
 
         public bool IsPassed { get; set; }
 
-        public bool TimeLimitted { get; set; }
+        public bool TimeLimited { get; set; }
 
         public bool HasRuntimeException { get; set; }
 

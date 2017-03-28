@@ -9,6 +9,8 @@ namespace CodeIt.Web.ViewModels.Challenge
     {
         public Guid Id { get; set; }
 
+        public string ChallengeTitle { get; set; }
+
         public bool IsRun { get; set; }
 
         public DateTime CreatedOn { get; set; }

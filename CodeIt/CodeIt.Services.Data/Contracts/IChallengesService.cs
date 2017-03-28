@@ -6,14 +6,14 @@ namespace CodeIt.Services.Data.Contracts
 {
     public interface IChallengesService : IDataService
     {
-        Challenge Create(string title, string description, string categoryId, Language language, int timeInMs, int memoryInKb, IEnumerable<Test> tests);
+        Challenge Create(string title, string description, string categoryId, Language language, double timeInMs, int memoryInKb, IEnumerable<Test> tests);
 
         Challenge CreateWithFileDescription(
             string title,
             string description,
             string categoryId,
             Language language,
-            int timeInMs,
+            double timeInMs,
             int memoryInKb,
             IEnumerable<Test> tests,
             string fileOriginalName,
@@ -22,7 +22,7 @@ namespace CodeIt.Services.Data.Contracts
 
         IEnumerable<TDestination> GetAll<TDestination>();
 
-        void Update(string id, string title, Language language, int timeInMs, int memoryInKb);
+        void Update(string id, string title, Language language, double timeInMs, int memoryInKb);
 
         TDestination GetByTitle<TDestination>(string title);
 

@@ -9,5 +9,7 @@ namespace CodeIt.Services.Data.Contracts
         Submission Create(User creator, Guid challengeId, string sourceCode);
 
         IEnumerable<TDestination> GetUserSubmissionByChallenge<TDestination>(string userId, string challengeTitle);
+
+        void RunSubmission(Guid id);
     }
 }

@@ -72,9 +72,22 @@ namespace CodeIt.Services.Data
             var result = this.mapper.ProjectTo<Submission, TDestination>(
                 this.submissionRepository
                 .All
-                .Where(x => x.User.Id == userId && x.Challenge.Title == challengeTitle));
+                .Where(x => x.User.Id == userId && x.Challenge.Title == challengeTitle)
+                .OrderByDescending(x => x.CreatedOn));
 
             return result;
+        }
+
+        public void RunSubmission(Guid id)
+        {
+            using (this.efData)
+            {
+                var submission = this.submissionRepository.GetById(id);
+                submission.IsRun = true;
+
+                this.submissionRepository.Update(submission);
+                this.efData.Commit();
+            }
         }
     }
 }

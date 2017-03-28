@@ -4,6 +4,7 @@
     <table class="table table-striped">
         <thead>
             <tr>
+                <th>Challenge Title</th>
                 <th>Submitted On</th>
                 <th>Is Submission Run</th>
                 <th>Tests Reuslts</th>
@@ -15,7 +16,8 @@
                 foreach (var sbm in Model)
                 {
                     <tr>
-                        <td>@sbm.CreatedOn.ToString()</td>
+                        <td>@sbm.ChallengeTitle</td>
+                        <td>@sbm.CreatedOn.ToLocalTime()</td>
                         <td>@sbm.IsRun</td>
                         <td>
                             @if (!sbm.IsRun)
@@ -30,7 +32,7 @@
                                     {
                                         <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                     }
-                                    else if (test.TimeLimitted)
+                                    else if (test.TimeLimited)
                                     {
                                         <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                                     }
@@ -50,7 +52,7 @@
                             }
                         </td>
                         <td>
-                            <input data-uid="@sbm.Id" class="btn btn-default run-tests-btn" type="button" id="run-tests" value="Run" />
+                            <input data-uid="@sbm.Id" class="btn btn-default run-tests-btn" type="button" value="Run" />
                         </td>
                     </tr>
                 }
@@ -62,24 +64,48 @@
 <script type="text/javascript">
     $(document).ready(function () {
         function reloadSubmissions() {
-            $('#submissions-link').click();
+            $("#submissions-link").click();
         }
 
-        $('input.run-tests-btn').on('click', function (ev) {
-            var sbmId = $(ev.target).attr('data-uid');
-            console.log('IN');
-            console.log(sbmId);
+        $('.run-tests-btn').on('click', function (ev) {
+            var sbmId = $(this).attr('data-uid');
             $.ajax({
                 method: "Get",
                 url: `/submission/RunSubmissionTests/${sbmId}`,
                 contentType: 'application/json; charset=utf-8',
                 success: function () {
-                    reloadSubmissions();
+                    //reloadSubmissions();
+                    console.log('run');
                 },
-                error: {
-                    reloadSubmissions();
+                error: (err) => {
+                    //reloadSubmissions();
+                    console.log('not run');
                 }
             });
         });
     });
+
+
+    //$(document).ready(function () {
+    //    function reloadSubmissions() {
+    //        $('#submissions-link').click();
+    //    }
+
+    //    $('input.run-tests-btn').on('click', function (ev) {
+    //        var sbmId = $(ev.target).attr('data-uid');
+    //        console.log('IN');
+    //        console.log(sbmId);
+    //        $.ajax({
+    //            method: "Get",
+    //            url: `/submission/RunSubmissionTests/${sbmId}`,
+    //            contentType: 'application/json; charset=utf-8',
+    //            success: function () {
+    //                reloadSubmissions();
+    //            },
+    //            error: {
+    //                reloadSubmissions();
+    //            }
+    //        });
+    //    });
+    //});
 </script>
