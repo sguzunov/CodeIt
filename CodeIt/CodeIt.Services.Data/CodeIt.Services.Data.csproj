@@ -71,6 +71,10 @@
     <Compile Include="UsersService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CodeIt.CodeExecution\CodeIt.CodeExecution.csproj">
+      <Project>{C3308208-9E0F-4F73-BC10-34ECB01D12AB}</Project>
+      <Name>CodeIt.CodeExecution</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CodeIt.Data.Models\CodeIt.Data.Models.csproj">
       <Project>{9736bce1-4e36-4ab5-bb35-066f8fad2061}</Project>
       <Name>CodeIt.Data.Models</Name>

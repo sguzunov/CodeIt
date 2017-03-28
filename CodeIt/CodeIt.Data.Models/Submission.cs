@@ -23,6 +23,8 @@ namespace CodeIt.Data.Models
         [Required]
         public User User { get; set; }
 
+        public bool IsRun { get; set; }
+
         [Required]
         public DateTime CreatedOn { get; set; }
 

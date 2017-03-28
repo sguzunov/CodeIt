@@ -33,23 +33,17 @@ namespace CodeIt.Web.Controllers
         [HttpGet]
         public ActionResult Index(string title)
         {
+            this.ViewBag.ChallengeTitle = title;
+            return this.View("~/Views/Challenge/ChallengeLayout.cshtml");
+        }
+
+        [HttpGet]
+        public ActionResult Problem(string title)
+        {
             var challenge = this.challenges.GetByTitle<ChallengeViewModel>(title);
             challenge.Description = this.htmlSanitizer.SanitizeContent(challenge.Description);
 
-            return this.View(challenge);
-        }
-
-        [HttpPost]
-        public ActionResult Submit(SubmissionViewModel submission)
-        {
-            if (!this.ModelState.IsValid)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            this.submissions.Create(this.LoggedUser, Guid.Parse(submission.ChallengeId), submission.SourceCode);
-
-            return new HttpStatusCodeResult(HttpStatusCode.OK);
+            return this.PartialView(challenge);
         }
 
         [HttpGet]

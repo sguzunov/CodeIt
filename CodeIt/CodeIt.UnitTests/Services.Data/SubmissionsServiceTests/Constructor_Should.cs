@@ -5,6 +5,7 @@ using CodeIt.Data.Models;
 using CodeIt.Data.Contracts;
 using CodeIt.Services.Logic.Contracts;
 using CodeIt.Services.Data;
+using CodeIt.Services.Logic;
 
 namespace CodeIt.UnitTests.Services.Data.SubmissionsServiceTests
 {
@@ -19,10 +20,11 @@ namespace CodeIt.UnitTests.Services.Data.SubmissionsServiceTests
             var challengeRepoFake = new Mock<IEfRepository<Challenge>>();
             var efDataFake = new Mock<IEfData>();
             var timeFake = new Mock<ITimeProvider>();
+            var mapperFake = new Mock<IMappingProvider>();
 
             // Act and Assert
             Assert.Throws<ArgumentNullException>(() => new SubmissionsService(submisionsRepo, challengeRepoFake.Object, efDataFake.Object,
-                timeFake.Object));
+                timeFake.Object, mapperFake.Object));
         }
 
         [Test]
@@ -33,10 +35,11 @@ namespace CodeIt.UnitTests.Services.Data.SubmissionsServiceTests
             IEfRepository<Challenge> challengeRepo = null;
             var efData = new Mock<IEfData>();
             var timeFake = new Mock<ITimeProvider>();
+            var mapperFake = new Mock<IMappingProvider>();
 
             // Act and Assert
             Assert.Throws<ArgumentNullException>(() => new SubmissionsService(submisionsRepoFake.Object, challengeRepo, efData.Object,
-                timeFake.Object));
+                timeFake.Object, mapperFake.Object));
         }
 
         [Test]
@@ -47,10 +50,11 @@ namespace CodeIt.UnitTests.Services.Data.SubmissionsServiceTests
             var challengeRepoFake = new Mock<IEfRepository<Challenge>>();
             IEfData efData = null;
             var timeFake = new Mock<ITimeProvider>();
+            var mapperFake = new Mock<IMappingProvider>();
 
             // Act and Assert
             Assert.Throws<ArgumentNullException>(() => new SubmissionsService(submisionsRepoFake.Object, challengeRepoFake.Object, efData,
-                timeFake.Object));
+                timeFake.Object, mapperFake.Object));
         }
 
         [Test]
@@ -59,12 +63,13 @@ namespace CodeIt.UnitTests.Services.Data.SubmissionsServiceTests
             // Arrange
             var submisionsRepoFake = new Mock<IEfRepository<Submission>>();
             var challengeRepoFake = new Mock<IEfRepository<Challenge>>();
-            IEfData efDataFake = null;
+            var efDataFake = new Mock<IEfData>();
             ITimeProvider time = null;
+            var mapperFake = new Mock<IMappingProvider>();
 
             // Act and Assert
-            Assert.Throws<ArgumentNullException>(() => new SubmissionsService(submisionsRepoFake.Object, challengeRepoFake.Object, efDataFake,
-                time));
+            Assert.Throws<ArgumentNullException>(() => new SubmissionsService(submisionsRepoFake.Object, challengeRepoFake.Object, efDataFake.Object,
+                time, mapperFake.Object));
         }
     }
 }

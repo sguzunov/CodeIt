@@ -4,6 +4,9 @@ using CodeIt.Data.Models;
 using CodeIt.Data.Contracts;
 using Bytes2you.Validation;
 using CodeIt.Services.Logic.Contracts;
+using System.Collections.Generic;
+using CodeIt.Services.Logic;
+using System.Linq;
 
 namespace CodeIt.Services.Data
 {
@@ -13,22 +16,26 @@ namespace CodeIt.Services.Data
         private readonly IEfRepository<Challenge> challengeRepository;
         private readonly IEfData efData;
         private readonly ITimeProvider timeProvider;
+        private readonly IMappingProvider mapper;
 
         public SubmissionsService(
             IEfRepository<Submission> submissionRepository,
             IEfRepository<Challenge> challengeRepository,
-            IEfData efData, 
-            ITimeProvider timeProvider)
+            IEfData efData,
+            ITimeProvider timeProvider,
+            IMappingProvider mapper)
         {
             Guard.WhenArgument(submissionRepository, nameof(submissionRepository)).IsNull().Throw();
             Guard.WhenArgument(challengeRepository, nameof(challengeRepository)).IsNull().Throw();
             Guard.WhenArgument(efData, nameof(efData)).IsNull().Throw();
             Guard.WhenArgument(timeProvider, nameof(timeProvider)).IsNull().Throw();
+            Guard.WhenArgument(mapper, nameof(mapper)).IsNull().Throw();
 
             this.submissionRepository = submissionRepository;
             this.challengeRepository = challengeRepository;
             this.efData = efData;
             this.timeProvider = timeProvider;
+            this.mapper = mapper;
         }
 
         public Submission Create(User creator, Guid challengeId, string sourceCode)
@@ -58,6 +65,16 @@ namespace CodeIt.Services.Data
             }
 
             return submission;
+        }
+
+        public IEnumerable<TDestination> GetUserSubmissionByChallenge<TDestination>(string userId, string challengeTitle)
+        {
+            var result = this.mapper.ProjectTo<Submission, TDestination>(
+                this.submissionRepository
+                .All
+                .Where(x => x.User.Id == userId && x.Challenge.Title == challengeTitle));
+
+            return result;
         }
     }
 }

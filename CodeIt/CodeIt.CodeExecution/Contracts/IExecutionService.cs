@@ -11,5 +11,7 @@ namespace CodeIt.CodeExecution.Contracts
     public interface IExecutionService
     {
         Task<IEnumerable<SubmissionIdentifier>> EvaluateTests(string sourceCode, Language lang, IEnumerable<string> inputs);
+
+        Task<IEnumerable<SubmissionExecutionResult>> GetExecutionResults(IEnumerable<int> inputs);
     }
 }

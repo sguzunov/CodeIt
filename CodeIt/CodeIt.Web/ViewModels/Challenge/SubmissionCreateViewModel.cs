@@ -2,7 +2,7 @@
 
 namespace CodeIt.Web.ViewModels.Challenge
 {
-    public class SubmissionViewModel
+    public class SubmissionCreateViewModel
     {
         [Required]
         public string ChallengeId { get; set; }

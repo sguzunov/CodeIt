@@ -1,8 +1,4 @@
-﻿@{
-    Layout = "./ChallengeLayout.cshtml";
-}
-
-@using CodeIt.Web.ViewModels.Challenge;
+﻿@using CodeIt.Web.ViewModels.Challenge;
 
 @model ChallengeViewModel
 
@@ -18,7 +14,6 @@
     <input type="button" id="btnSubmitCode" class="btn btn-info" value="Submit" />
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/ace-code-editor")
-    @Scripts.Render("~/Scripts/Submission/submission.js")
-}
+
+@Scripts.Render("~/bundles/ace-code-editor")
+@Scripts.Render("~/Scripts/Submission/submission.js")

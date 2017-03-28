@@ -1,0 +1,85 @@
+﻿@model IEnumerable<CodeIt.Web.ViewModels.Challenge.SubmissionListViewModel>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Submitted On</th>
+                <th>Is Submission Run</th>
+                <th>Tests Reuslts</th>
+                <th>Run Tests</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var sbm in Model)
+                {
+                    <tr>
+                        <td>@sbm.CreatedOn.ToString()</td>
+                        <td>@sbm.IsRun</td>
+                        <td>
+                            @if (!sbm.IsRun)
+                            {
+                                <span>Run tests</span>
+                            }
+                            else
+                            {
+                                foreach (var test in sbm.Results)
+                                {
+                                    if (test.IsPassed)
+                                    {
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    }
+                                    else if (test.TimeLimitted)
+                                    {
+                                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                    }
+                                    else if (test.HasCompileError)
+                                    {
+                                        <span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
+                                    }
+                                    else if (test.HasRuntimeException)
+                                    {
+                                        <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+                                    }
+                                    else
+                                    {
+                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            <input data-uid="@sbm.Id" class="btn btn-default run-tests-btn" type="button" id="run-tests" value="Run" />
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function reloadSubmissions() {
+            $('#submissions-link').click();
+        }
+
+        $('input.run-tests-btn').on('click', function (ev) {
+            var sbmId = $(ev.target).attr('data-uid');
+            console.log('IN');
+            console.log(sbmId);
+            $.ajax({
+                method: "Get",
+                url: `/submission/RunSubmissionTests/${sbmId}`,
+                contentType: 'application/json; charset=utf-8',
+                success: function () {
+                    reloadSubmissions();
+                },
+                error: {
+                    reloadSubmissions();
+                }
+            });
+        });
+    });
+</script>

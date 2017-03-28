@@ -1,6 +1,7 @@
 ﻿using CodeIt.Data.Contracts;
 using CodeIt.Data.Models;
 using CodeIt.Services.Data;
+using CodeIt.Services.Logic;
 using CodeIt.Services.Logic.Contracts;
 using Moq;
 using NUnit.Framework;
@@ -23,9 +24,10 @@ namespace CodeIt.UnitTests.Services.Data.SubmissionsServiceTests
             var challengeRepoFake = new Mock<IEfRepository<Challenge>>();
             var efDataFake = new Mock<IEfData>();
             var timeFake = new Mock<ITimeProvider>();
+            var mapperFake = new Mock<IMappingProvider>();
 
             var service = new SubmissionsService(submisionsRepo.Object, challengeRepoFake.Object, efDataFake.Object,
-                timeFake.Object);
+                timeFake.Object, mapperFake.Object);
 
             Assert.Throws<ArgumentNullException>(() => service.Create(null, It.IsAny<Guid>(), It.IsAny<string>()));
         }
@@ -38,9 +40,10 @@ namespace CodeIt.UnitTests.Services.Data.SubmissionsServiceTests
             var challengeRepoFake = new Mock<IEfRepository<Challenge>>();
             var efDataFake = new Mock<IEfData>();
             var timeFake = new Mock<ITimeProvider>();
+            var mapperFake = new Mock<IMappingProvider>();
 
             var service = new SubmissionsService(submisionsRepo.Object, challengeRepoFake.Object, efDataFake.Object,
-                timeFake.Object);
+                timeFake.Object, mapperFake.Object);
 
             Assert.Throws<ArgumentNullException>(() => service.Create(null, It.IsAny<Guid>(), It.IsAny<string>()));
         }

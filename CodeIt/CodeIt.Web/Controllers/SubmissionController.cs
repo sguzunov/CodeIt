@@ -33,7 +33,7 @@ namespace CodeIt.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Submit(SubmissionViewModel submission)
+        public async Task<ActionResult> Submit(SubmissionCreateViewModel submission)
         {
             if (!this.ModelState.IsValid)
             {
@@ -47,6 +47,23 @@ namespace CodeIt.Web.Controllers
             var testsResultIdentifiers = await this.executionService.EvaluateTests(dbSubmission.SourceCode, dbSubmission.Challenge.Language, tests.Select(x => x.Input));
 
             this.testResults.CreateTestResults(dbSubmission, tests.ToList(), testsResultIdentifiers.Select(x => x.Id).ToList());
+
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
+        }
+
+        [HttpGet]
+        public ActionResult SubmissionsByChallenge(string title)
+        {
+            var result = this.submissions.GetUserSubmissionByChallenge<SubmissionListViewModel>(this.LoggedUser.Id, title);
+
+            return this.PartialView("~/Views/Challenge/Submissions.cshtml", result);
+        }
+
+        public async Task<ActionResult> RunSubmissionTests(string id)
+        {
+            var results = this.testResults.GetBySubmission(Guid.Parse(id));
+            var apiIds = results.Select(x => x.ApiIdentifier.Identifier).ToList();
+            var executionResults = await this.executionService.GetExecutionResults(apiIds);
 
             return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
