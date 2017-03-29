@@ -10,10 +10,11 @@
     @Styles.Render("~/Content/kendo/css")
 
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/kendo");
+    @Scripts.Render("~/bundles/jqueryunobtrusive")
+    @Scripts.Render("~/bundles/kendo")
 </head>
 <body>
-    @Html.Partial("_NavigationPartial");
+    @Html.Partial("_NavigationPartial")
     @RenderBody()
     <hr />
     <footer>

@@ -1,0 +1,19 @@
+﻿@using CodeIt.Web.ViewModels.Challenge;
+
+@model ChallengeViewModel
+
+<h1>@Model.Title</h1>
+<div>
+    <text>
+        @Html.Raw(@Model.Description);
+    </text>
+</div>
+<div id="code-editor"></div>
+<div>
+    <input type="hidden" id="challengeId" value="@Model.Id" />
+    <input type="button" id="btnSubmitCode" class="btn btn-info" value="Submit" />
+</div>
+
+
+@Scripts.Render("~/bundles/ace-code-editor")
+@Scripts.Render("~/Scripts/Submission/submission.js")

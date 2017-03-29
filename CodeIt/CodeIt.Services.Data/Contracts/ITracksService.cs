@@ -9,6 +9,8 @@ namespace CodeIt.Services.Data.Contracts
     {
         IEnumerable<Track> GetAll();
 
+        IEnumerable<T> GetAll<T>();
+
         IEnumerable<Category> GetCategoriesByTrackId(Guid id);
     }
 }

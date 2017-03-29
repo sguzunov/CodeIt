@@ -9,7 +9,7 @@ using Microsoft.AspNet.Identity;
 
 namespace CodeIt.Web.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public abstract class BaseAuthorizationController : Controller
     {
         private readonly IUsersService users;
@@ -28,7 +28,6 @@ namespace CodeIt.Web.Controllers
             var identityUser = requestContext.HttpContext.User;
             if (this.LoggedUser == null && identityUser.Identity.IsAuthenticated)
             {
-                //var userId = Guid.Parse(identityUser.Identity.GetUserId());
                 this.LoggedUser = this.users.GetById(identityUser.Identity.GetUserId());
             }
 

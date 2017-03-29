@@ -14,7 +14,7 @@ namespace CodeIt.Common.Attributes
 
         public override bool IsValid(object value)
         {
-            int castedValue = Convert.ToInt32(value);
+            double castedValue = Convert.ToDouble(value);
             return castedValue >= this.minValue;
         }
     }

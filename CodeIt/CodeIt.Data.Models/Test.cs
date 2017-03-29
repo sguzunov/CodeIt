@@ -17,6 +17,6 @@ namespace CodeIt.Data.Models
 
         public Guid ChallengeId { get; set; }
 
-        public Challenge Challenge { get; set; }
+        public virtual Challenge Challenge { get; set; }
     }
 }

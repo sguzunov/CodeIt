@@ -8,8 +8,8 @@ using CodeIt.Data.Models;
 using CodeIt.Services.Data.Contracts;
 using CodeIt.Services.Logic;
 using CodeIt.Services.Logic.Contracts;
-using CodeIt.Web.Infrastructure.FileSystem;
 using CodeIt.Web.Areas.Administration.ViewModels.Challenge;
+using CodeIt.Web.Infrastructure.FileSystem;
 
 namespace CodeIt.Web.Areas.Administration.Controllers
 {
@@ -73,7 +73,7 @@ namespace CodeIt.Web.Areas.Administration.Controllers
                 await this.fileSystem.SaveFileAsync(FileDescriptionSystemPath + dbChallenge.FileDecription.FileName + "." + fileExtension, file.InputStream);
             }
 
-            return this.Redirect("/");
+            return this.RedirectToAction(nameof(ChallengeController.Create), "Challenge");
         }
     }
 }

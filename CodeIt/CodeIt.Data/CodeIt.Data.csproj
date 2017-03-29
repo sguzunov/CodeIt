@@ -64,17 +64,9 @@
     <Compile Include="Contracts\IEfRepository.cs" />
     <Compile Include="EfData.cs" />
     <Compile Include="EfRepository.cs" />
-    <Compile Include="Migrations\201703251556001_New Models to support user%27s submissions.cs" />
-    <Compile Include="Migrations\201703251556001_New Models to support user%27s submissions.Designer.cs">
-      <DependentUpon>201703251556001_New Models to support user%27s submissions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703260838136_Added submissions table.cs" />
-    <Compile Include="Migrations\201703260838136_Added submissions table.Designer.cs">
-      <DependentUpon>201703260838136_Added submissions table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703260956474_Users has many submissions..cs" />
-    <Compile Include="Migrations\201703260956474_Users has many submissions..Designer.cs">
-      <DependentUpon>201703260956474_Users has many submissions..cs</DependentUpon>
+    <Compile Include="Migrations\201703281635036_Testresults updated.cs" />
+    <Compile Include="Migrations\201703281635036_Testresults updated.Designer.cs">
+      <DependentUpon>201703281635036_Testresults updated.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,14 +87,8 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703251556001_New Models to support user%27s submissions.resx">
-      <DependentUpon>201703251556001_New Models to support user%27s submissions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703260838136_Added submissions table.resx">
-      <DependentUpon>201703260838136_Added submissions table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703260956474_Users has many submissions..resx">
-      <DependentUpon>201703260956474_Users has many submissions..cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703281635036_Testresults updated.resx">
+      <DependentUpon>201703281635036_Testresults updated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

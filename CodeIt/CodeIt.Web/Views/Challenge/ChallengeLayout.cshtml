@@ -6,13 +6,30 @@
 
 <ul class="nav nav-tabs">
     <li class="nav-item">
-        @Html.ActionLink("Problem", nameof(ChallengeController.Index), new { title = Model.Title })
+        @Ajax.ActionLink("Problem", nameof(ChallengeController.Problem), "Challenge", new { title = ViewBag.ChallengeTitle }, new AjaxOptions()
+   {
+       HttpMethod = "GET",
+       AllowCache = true,
+       InsertionMode = InsertionMode.Replace,
+       UpdateTargetId = "challenge-panel"
+   }, new { id = "problem-link"})
+
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Submissions</a>
+        @Ajax.ActionLink("Submissions", nameof(SubmissionController.SubmissionsByChallenge), "Submission", new { title = ViewBag.ChallengeTitle }, new AjaxOptions()
+   {
+       HttpMethod = "GET",
+       AllowCache = true,
+       InsertionMode = InsertionMode.Replace,
+       UpdateTargetId = "challenge-panel"
+   }, new { id = "submissions-link" })
     </li>
 </ul>
 
-@RenderBody()
+<div id="challenge-panel"></div>
 
-@RenderSection("scripts", required: false)
+<script type="text/javascript">
+        $(document).ready(function () {
+            $('#problem-link').click();
+        });
+</script>

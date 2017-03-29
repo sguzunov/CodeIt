@@ -1,0 +1,26 @@
+﻿@using CodeIt.Web.Controllers;
+
+@model IEnumerable<CodeIt.Web.ViewModels.Home.TrackViewModel>
+
+<span>All Tracks</span>
+<div class="container marketing">
+    <hr class="featurette-divider" />
+    <div class="tracks-container row">
+        @{
+            foreach (var track in Model)
+            {
+                <div class="track-box col-lg-6">
+                    <img class="rounded-circle" src="@track.LogoPath" alt="Generic placeholder image" width="140" height="140">
+                    <h2 style="display:inline-block">@track.Name</h2>
+                    <p>
+                    <p>@track.NumberOfCateogries categories</p>
+                    @Html.ActionLink("View categories »",
+                           nameof(HomeController.CategoriesByTrack),
+                           new { @track = track.Name },
+                           new { @class = "btn btn-secondary" })
+                    </p>
+                </div>
+            }
+        }
+    </div>
+</div>

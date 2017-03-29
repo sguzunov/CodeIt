@@ -3,10 +3,7 @@ using CodeIt.Services.Data.Contracts;
 using CodeIt.Web.Infrastructure.HtmlSanitisation;
 using CodeIt.Web.ViewModels.Challenge;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 
 namespace CodeIt.Web.Controllers
@@ -33,25 +30,28 @@ namespace CodeIt.Web.Controllers
             this.htmlSanitizer = htmlSanitizer;
         }
 
+        [HttpGet]
         public ActionResult Index(string title)
+        {
+            this.ViewBag.ChallengeTitle = title;
+            return this.View("~/Views/Challenge/ChallengeLayout.cshtml");
+        }
+
+        [HttpGet]
+        public ActionResult Problem(string title)
         {
             var challenge = this.challenges.GetByTitle<ChallengeViewModel>(title);
             challenge.Description = this.htmlSanitizer.SanitizeContent(challenge.Description);
 
-            return this.View(challenge);
+            return this.PartialView(challenge);
         }
 
-        [HttpPost]
-        public ActionResult Submit(SubmissionViewModel submission)
+        [HttpGet]
+        public ActionResult ChallengesByCategoryName(string categoryId)
         {
-            if (!this.ModelState.IsValid)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            var result = this.challenges.GetByCateogryId<ChallengeListViewModel>(Guid.Parse(categoryId));
 
-            this.submissions.Create(this.LoggedUser, Guid.Parse(submission.ChallengeId), submission.SourceCode);
-
-            return new HttpStatusCodeResult(HttpStatusCode.OK);
+            return this.PartialView("~/Views/Home/_ChallengeList.cshtml", result);
         }
     }
 }

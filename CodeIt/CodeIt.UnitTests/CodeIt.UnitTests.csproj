@@ -101,10 +101,18 @@
     <Compile Include="Authentication\AuthenticationService\SignUpAsyncShould.cs" />
     <Compile Include="Authentication\Mocks\MockOwinContext.cs" />
     <Compile Include="Authentication\Mocks\MockUserManager.cs" />
+    <Compile Include="Services.Data\CategoriesServiceTests\Contructor_Should.cs" />
+    <Compile Include="Services.Data\CategoriesServiceTests\GetByTrack_Should.cs" />
     <Compile Include="Services.Data\ChallengesServiceTests\Constructor_Should.cs" />
     <Compile Include="Services.Data\ChallengesServiceTests\CreateWithFileDescription_Should.cs" />
     <Compile Include="Services.Data\ChallengesServiceTests\Create_Should.cs" />
     <Compile Include="Services.Data\ChallengesServiceTests\GetAll_Should.cs" />
+    <Compile Include="Services.Data\ChallengesServiceTests\GetByCateogryId_Should.cs" />
+    <Compile Include="Services.Data\ChallengesServiceTests\Update_Should.cs" />
+    <Compile Include="Services.Data\SubmissionsServiceTests\Constructor_Should.cs" />
+    <Compile Include="Services.Data\SubmissionsServiceTests\Create_Should.cs" />
+    <Compile Include="Services.Data\SubmissionsServiceTests\GetUserSubmissionByChallenge_Should.cs" />
+    <Compile Include="Services.Data\SubmissionsServiceTests\RunSubmission_Should.cs" />
     <Compile Include="Services.Data\TestsServiceTests\Constructor_Should.cs" />
     <Compile Include="Services.Data\TestsServiceTests\DeleteById_Should.cs" />
     <Compile Include="Services.Data\TestsServiceTests\Update_Should.cs" />
@@ -138,10 +146,19 @@
     <Compile Include="DbModels\UserTests\LastName_Should.cs" />
     <Compile Include="DbModels\UserTests\User_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services.Data\UsersServiceTests\Constructor_Should.cs" />
+    <Compile Include="Services.Data\UsersServiceTests\GetById_Should.cs" />
     <Compile Include="Web\AccountControllerTests\ConstructorShould.cs" />
     <Compile Include="Web\AccountControllerTests\SignInHttpGetShould.cs" />
     <Compile Include="Web\AccountControllerTests\SignInHttpPostShould.cs" />
     <Compile Include="Web\AccountControllerTests\SignUpHttpGetShould.cs" />
+    <Compile Include="Web\AdministrationTests\ChallengeControllerTests\Constructor_Should.cs" />
+    <Compile Include="Web\AdministrationTests\ChallengeControllerTests\Create_HttpGet_Should.cs" />
+    <Compile Include="Web\AdministrationTests\ChallengeControllerTests\Create_HttpPost_Should.cs" />
+    <Compile Include="Web\AdministrationTests\ChallengeGridControllerTests\Contructor_Should.cs" />
+    <Compile Include="Web\AdministrationTests\TestControllerTests\ByChallengeId_Should.cs" />
+    <Compile Include="Web\AdministrationTests\TestControllerTests\Constructor_Should.cs" />
+    <Compile Include="Web\AdministrationTests\TestControllerTests\Delete_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -170,6 +187,10 @@
     <ProjectReference Include="..\CodeIt.Web.Auth\CodeIt.Web.Auth.csproj">
       <Project>{6c412b2b-2e6c-400e-b415-1d2b02a78623}</Project>
       <Name>CodeIt.Web.Auth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CodeIt.Web.Infrastructure\CodeIt.Web.Infrastructure.csproj">
+      <Project>{ea2cebfb-de91-4192-876e-c172a667ed51}</Project>
+      <Name>CodeIt.Web.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\CodeIt.Web\CodeIt.Web.csproj">
       <Project>{1d6e60bf-c2d8-4971-b29e-0b57570438ef}</Project>

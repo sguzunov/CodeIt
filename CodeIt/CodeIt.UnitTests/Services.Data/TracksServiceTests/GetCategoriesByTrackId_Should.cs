@@ -6,6 +6,7 @@ using CodeIt.Data.Contracts;
 using CodeIt.Data.Models;
 using CodeIt.Services.Data;
 using Moq;
+using CodeIt.Services.Logic;
 
 namespace CodeIt.UnitTests.Services.Data.TracksServiceTests
 {
@@ -17,7 +18,8 @@ namespace CodeIt.UnitTests.Services.Data.TracksServiceTests
         {
             // Arrange
             var tracksRepositoryFake = new Mock<IEfRepository<Track>>();
-            var service = new TracksService(tracksRepositoryFake.Object);
+            var mapperFake = new Mock<IMappingProvider>();
+            var service = new TracksService(tracksRepositoryFake.Object, mapperFake.Object);
             var id = Guid.NewGuid();
             var trackFake = new Mock<Track>();
             var categoriesFake = new Mock<ICollection<Category>>();
@@ -37,7 +39,8 @@ namespace CodeIt.UnitTests.Services.Data.TracksServiceTests
         {
             // Arrange
             var tracksRepositoryFake = new Mock<IEfRepository<Track>>();
-            var service = new TracksService(tracksRepositoryFake.Object);
+            var mapperFake = new Mock<IMappingProvider>();
+            var service = new TracksService(tracksRepositoryFake.Object, mapperFake.Object);
             var id = Guid.NewGuid();
             var trackFake = new Mock<Track>();
             var categories = new List<Category>

@@ -5,16 +5,16 @@ namespace CodeIt.Data.Models
     public enum Language
     {
         [Display(Name = "C#")]
-        CSharp,
+        CSharp = 27,
         [Display(Name = "Java")]
-        Java,
+        Java = 55,
         [Display(Name = "C")]
-        C,
+        C = 11,
         [Display(Name = "C++")]
-        CPlusPlus,
+        CPlusPlus = 44,
         [Display(Name = "Haskell")]
-        Haskell,
+        Haskell = 21,
         [Display(Name = "Python")]
-        Python
+        Python = 116
     }
 }

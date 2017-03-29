@@ -7,6 +7,7 @@ using Bytes2you.Validation;
 
 using CodeIt.Web.Auth.Contracts;
 using CodeIt.Data.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace CodeIt.Web.Auth
 {
@@ -44,7 +45,9 @@ namespace CodeIt.Web.Auth
             var user = new User { UserName = username, Email = email };
             var userManager = this.owinContext.GetUserManager<CodeItUserManager>();
 
-            return await userManager.CreateAsync(user, password);
+            var result = await userManager.CreateAsync(user, password);
+            userManager.AddToRole(user.Id, "Normal");
+            return result;
         }
     }
 }

@@ -13,13 +13,13 @@ namespace CodeIt.UnitTests.DbModels.ChallengeTests
     public class TimeInMs_Should
     {
         [Test]
-        public void Be_OfTypeInt()
+        public void Be_OfTypeDouble()
         {
             // Arrange
             var challenge = new Challenge();
 
             // Act & Assert
-            Assert.IsTrue(challenge.TimeInMs.GetType() == typeof(int));
+            Assert.IsTrue(challenge.TimeInMs.GetType() == typeof(double));
         }
 
         [Test]

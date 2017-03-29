@@ -5,6 +5,8 @@ using CodeIt.Web.Infrastructure.FileSystem;
 using CodeIt.Web.Auth.Contracts;
 using CodeIt.Web.Auth;
 using CodeIt.Services.Logic.Contracts;
+using CodeIt.Web.Infrastructure.Caching;
+using Ninject.Web.Common;
 
 namespace CodeIt.Web.Infrastructure.Bindings
 {
@@ -18,6 +20,7 @@ namespace CodeIt.Web.Infrastructure.Bindings
             kernel.Bind<IMappingProvider>().To<MappingProvider>();
             kernel.Bind<IAuthenticationService>().To<AuthenticationService>();
             kernel.Bind<ITimeProvider>().To<TimeProvider>();
+            kernel.Bind<ICacheService>().To<HttpCacheService>().InRequestScope();
         }
     }
 }

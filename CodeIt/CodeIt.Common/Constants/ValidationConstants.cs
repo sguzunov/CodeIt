@@ -13,7 +13,7 @@
 
         public const int TrackNameMaxLength = 50;
 
-        public const int MinimumTimeLimitInMs = 1;
+        public const double MinimumTimeLimitInMs = 1;
         public const int MinimumMemoryInKb = 1;
     }
 }

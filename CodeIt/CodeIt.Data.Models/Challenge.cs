@@ -28,7 +28,7 @@ namespace CodeIt.Data.Models
         public Language Language { get; set; }
 
         [Required]
-        public int TimeInMs { get; set; }
+        public double TimeInMs { get; set; }
 
         [Required]
         public int MemoryInKb { get; set; }

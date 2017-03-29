@@ -8,6 +8,16 @@
         @Html.AntiForgeryToken()
 
         <ul class="nav navbar-nav navbar-right">
+            @if (@User.IsInRole("Admin"))
+            {
+                <li>
+                    <a href="/administration/" title="Administration">
+                        <i class="glyphicon glyphicon-king"></i>
+                        Administration
+                    </a>
+                </li>
+                
+            }
             <li>
                 <a href="/Manage" title="Manage">
                     <i class="glyphicon glyphicon-user"></i>

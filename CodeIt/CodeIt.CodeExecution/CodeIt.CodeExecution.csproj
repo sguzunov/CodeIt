@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CodeIt.CodeExecution</RootNamespace>
     <AssemblyName>CodeIt.CodeExecution</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,7 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IExecutionService.cs" />
+    <Compile Include="Contracts\ISphereEngineApiClient.cs" />
+    <Compile Include="Contracts\ISubmissionEvaluator.cs" />
+    <Compile Include="ExecutionService.cs" />
+    <Compile Include="Helpers\Contracts\IJsonUtils.cs" />
+    <Compile Include="Helpers\HttpRequester.cs" />
+    <Compile Include="Helpers\Contracts\IHttpRequester.cs" />
+    <Compile Include="Helpers\JsonUtils.cs" />
+    <Compile Include="Models\SubmissionExecutionResult.cs" />
+    <Compile Include="Models\SubmissionIdentifier.cs" />
+    <Compile Include="Models\SubmissionOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SphereEngineApiClient.cs" />
+    <Compile Include="SubmissionEvaluator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -51,6 +68,12 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeIt.Data.Models\CodeIt.Data.Models.csproj">
+      <Project>{9736bce1-4e36-4ab5-bb35-066f8fad2061}</Project>
+      <Name>CodeIt.Data.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

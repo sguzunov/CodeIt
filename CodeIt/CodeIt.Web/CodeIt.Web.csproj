@@ -87,8 +87,8 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
@@ -244,8 +244,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseAuthorizationController.cs" />
     <Compile Include="Controllers\ChallengeController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Config\GlimpseSecurityPolicy.cs" />
+    <Compile Include="Controllers\SubmissionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -253,13 +255,22 @@
     <Compile Include="ViewModels\Account\SignInViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\Challenge\ChallengeListViewModel.cs" />
     <Compile Include="ViewModels\Challenge\ChallengeViewModel.cs" />
-    <Compile Include="ViewModels\Challenge\SubmissionViewModel.cs" />
+    <Compile Include="ViewModels\Challenge\SubmissionCreateViewModel.cs" />
+    <Compile Include="ViewModels\Challenge\SubmissionListViewModel.cs" />
+    <Compile Include="ViewModels\Challenge\TestResultViewModel.cs" />
+    <Compile Include="ViewModels\Home\CategoryViewModel.cs" />
+    <Compile Include="ViewModels\Home\TrackViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Assets\brand.svg" />
     <Content Include="Content\Assets\codeit-logo.png" />
-    <Content Include="Content\Assets\front.jpeg" />
+    <Content Include="Content\Assets\devs-image.png" />
+    <Content Include="Content\Assets\Errors\cat-404.jpg" />
+    <Content Include="Content\Assets\Errors\cat-500.jpg" />
+    <Content Include="Content\Assets\front-computer.jpg" />
+    <Content Include="Content\Assets\front.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -718,6 +729,7 @@
     <Content Include="Content\Kendo\kendo.uniform.mobile.min.css.map" />
     <Content Include="Areas\Administration\Views\ChallengeGrid\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Test\ByChallengeId.cshtml" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\Admin\creating-challenge.js" />
@@ -750,9 +762,7 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\SignIn.cshtml" />
     <Content Include="Views\Account\SignUp.cshtml" />
@@ -764,11 +774,19 @@
     <Content Include="Scripts\Kendo\kendo.all.min.js.map" />
     <Content Include="Scripts\Kendo\kendo.aspnetmvc.min.js.map" />
     <Content Include="Scripts\Kendo\jquery.min.map" />
-    <Content Include="Views\Challenge\Index.cshtml" />
+    <Content Include="Views\Challenge\Problem.cshtml" />
     <Content Include="Views\Challenge\ChallengeLayout.cshtml" />
+    <Content Include="Views\Home\Tracks.cshtml" />
+    <Content Include="Views\Home\CategoriesByTrack.cshtml" />
+    <Content Include="Views\Templates\DisplayTemplates\ChallengeSimple.cshtml" />
+    <Content Include="Views\Home\_ChallengeList.cshtml" />
+    <Content Include="Views\Shared\Submissions.cshtml" />
+    <Content Include="Views\Error\Error404.cshtml" />
+    <Content Include="Views\Error\Error500.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Assets\TrackLogos\" />
     <Folder Include="Files\ChallengesDescription\" />
   </ItemGroup>
   <ItemGroup>
@@ -781,6 +799,10 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CodeIt.CodeExecution\CodeIt.CodeExecution.csproj">
+      <Project>{C3308208-9E0F-4F73-BC10-34ECB01D12AB}</Project>
+      <Name>CodeIt.CodeExecution</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CodeIt.Common\CodeIt.Common.csproj">
       <Project>{229627e1-1da4-4d34-844c-76b93b461ec4}</Project>
       <Name>CodeIt.Common</Name>

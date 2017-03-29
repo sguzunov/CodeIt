@@ -1,0 +1,14 @@
+﻿@using CodeIt.Web.ViewModels.Challenge;
+@using CodeIt.Web.Controllers;
+
+@model IEnumerable<ChallengeListViewModel>
+
+@{
+    foreach (var category in Model)
+    {
+        <div>
+            <span>@category.Title</span>
+            @Html.ActionLink("Solve", nameof(ChallengeController.Index), new { title = category.Title }, new { @class = "btn btn-success" })
+        </div>
+    }
+}

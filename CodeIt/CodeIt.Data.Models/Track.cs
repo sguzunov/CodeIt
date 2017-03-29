@@ -24,6 +24,8 @@ namespace CodeIt.Data.Models
         [MaxLength(ValidationConstants.TrackNameMaxLength)]
         public string Name { get; set; }
 
+        public TrackLogo Logo { get; set; }
+
         public virtual ICollection<Category> Categories
         {
             get { return this.categories; }

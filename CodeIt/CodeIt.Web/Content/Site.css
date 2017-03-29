@@ -28,12 +28,16 @@ textarea {
 
     .front-page.jumbotron img {
         width: 100%;
-        height: 600px
+        height: 500px
     }
 
-#main-nav a.navbar-brand {
-    padding-top: 0px;
+#main-nav {
+    margin-bottom: 0px;
 }
+
+    #main-nav a.navbar-brand {
+        padding-top: 0px;
+    }
 
 /* Account */
 .form-account {
@@ -83,4 +87,20 @@ select#langs-dropdown, select#categories-list, select#tracks-list {
     /*position: absolute;*/
     width: 100%;
     height: 250px;
+}
+
+.tracks-container {
+    padding-top: 50px;
+}
+
+.track-box {
+    margin-bottom: 50px;
+}
+
+.sidebar ul li.nav-item {
+    font-size: 16px;
+}
+
+#admin-nav.sidebar ul.nav{
+    margin-top: 20px;
 }

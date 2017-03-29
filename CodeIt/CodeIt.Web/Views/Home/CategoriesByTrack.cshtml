@@ -1,0 +1,26 @@
+﻿@using CodeIt.Web.Controllers
+@using CodeIt.Web.ViewModels.Home
+
+@model IEnumerable<CategoryViewModel>
+
+<nav class="col-sm-3 col-md-3 hidden-xs-down bg-faded sidebar">
+    <ul class="nav nav-pills flex-column">
+        @{
+            foreach (var category in Model)
+            {
+                <li class="nav-item">
+                    @Ajax.ActionLink(category.Name, nameof(ChallengeController.ChallengesByCategoryName), "Challenge", new { categoryId = category.Id }, new AjaxOptions()
+               {
+                   HttpMethod = "GET",
+                   AllowCache = true,
+                   InsertionMode = InsertionMode.ReplaceWith,
+                   UpdateTargetId = "challenges-list"
+               })
+                </li>
+            }
+        }
+    </ul>
+</nav>
+
+<div id="challenges-list">
+</div>

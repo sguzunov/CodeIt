@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Threading.Tasks;
 
@@ -25,6 +26,10 @@ namespace CodeIt.Data
         public IDbSet<Test> Tests { get; set; }
 
         public IDbSet<Track> Tracks { get; set; }
+
+        public IDbSet<TrackLogo> TrackLogos { get; set; }
+
+        public IDbSet<Submission> Submissions { get; set; }
 
         public static CodeItDbContext Create()
         {
@@ -61,6 +66,10 @@ namespace CodeIt.Data
             modelBuilder.Entity<Challenge>()
                 .HasOptional(x => x.FileDecription)
                 .WithRequired(x => x.Challenge);
+
+            modelBuilder.Entity<Track>()
+                .HasOptional(x => x.Logo)
+                .WithRequired(x => x.Track);
         }
     }
 }
