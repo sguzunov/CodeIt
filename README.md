@@ -4,10 +4,20 @@
 [![Coverage Status](https://coveralls.io/repos/github/sguzunov/CodeIt/badge.svg)](https://coveralls.io/github/sguzunov/CodeIt)
 
 # Main functionality
-- Users can solve programming tasks
-- After a task is solved the user can check his/her results
+- Users can solve programming challenge
+- Users can check their results
+- Users can select from different categories in different tracks
 - Admins can create new challenges
 - Admins can repear broken challenge
+
+# Technologies
+- ASP.NET MVC
+- Razor views
+- jQuery
+- SQL Server 2016
+- Entity Framework 6
+- Ninject (DI Container)
+- Automapper
 
 # Screenshots
 
