@@ -155,6 +155,7 @@
     <Compile Include="Web\AdministrationTests\ChallengeControllerTests\Constructor_Should.cs" />
     <Compile Include="Web\AdministrationTests\ChallengeControllerTests\Create_HttpGet_Should.cs" />
     <Compile Include="Web\AdministrationTests\ChallengeControllerTests\Create_HttpPost_Should.cs" />
+    <Compile Include="Web\AdministrationTests\ChallengeGridControllerTests\Contructor_Should.cs" />
     <Compile Include="Web\AdministrationTests\TestControllerTests\ByChallengeId_Should.cs" />
     <Compile Include="Web\AdministrationTests\TestControllerTests\Constructor_Should.cs" />
     <Compile Include="Web\AdministrationTests\TestControllerTests\Delete_Should.cs" />

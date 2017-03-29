@@ -244,6 +244,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseAuthorizationController.cs" />
     <Compile Include="Controllers\ChallengeController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Config\GlimpseSecurityPolicy.cs" />
     <Compile Include="Controllers\SubmissionController.cs" />
@@ -266,6 +267,8 @@
     <Content Include="Content\Assets\brand.svg" />
     <Content Include="Content\Assets\codeit-logo.png" />
     <Content Include="Content\Assets\devs-image.png" />
+    <Content Include="Content\Assets\Errors\cat-404.jpg" />
+    <Content Include="Content\Assets\Errors\cat-500.jpg" />
     <Content Include="Content\Assets\front-computer.jpg" />
     <Content Include="Content\Assets\front.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -758,7 +761,6 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\SignIn.cshtml" />
@@ -778,6 +780,8 @@
     <Content Include="Views\Templates\DisplayTemplates\ChallengeSimple.cshtml" />
     <Content Include="Views\Home\_ChallengeList.cshtml" />
     <Content Include="Views\Shared\Submissions.cshtml" />
+    <Content Include="Views\Error\Error404.cshtml" />
+    <Content Include="Views\Error\Error500.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

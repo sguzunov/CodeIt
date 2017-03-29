@@ -56,7 +56,7 @@ namespace CodeIt.Web.Controllers
         {
             var result = this.submissions.GetUserSubmissionByChallenge<SubmissionListViewModel>(this.LoggedUser.Id, title);
 
-            return this.PartialView("~/Views/Challenge/Submissions.cshtml", result);
+            return this.PartialView("~/Views/Shared/Submissions.cshtml", result);
         }
 
         public async Task<ActionResult> RunSubmissionTests(string id)
