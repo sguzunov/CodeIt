@@ -10,8 +10,8 @@ ASP.NET MVC Project
 # Screenshots
 
 
-|                                             |                                              |
-| -----------------------------------         |:--------------------------------------------:|   
-| ![alt tag](./Screenshots/home-page.png)     | ![alt tag](./Screenshots/tracks-page.png)    |
-| ![alt tag](./Screenshots/new-submission.png)| ![alt tag](./Screenshots/all-submissions.png)|
+|                                               |                                              |
+| -----------------------------------           |:--------------------------------------------:|   
+| ![alt tag](./Screenshots/home-page.png)       | ![alt tag](./Screenshots/tracks-page.png)    |
+| ![alt tag](./Screenshots/new-submission.png)  | ![alt tag](./Screenshots/all-submissions.png)|
 | ![alt tag](./Screenshots/admin.png)
