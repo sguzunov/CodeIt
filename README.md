@@ -1,11 +1,13 @@
 # CodeIt
-ASP.NET MVC Project
 
 [![Build status](https://ci.appveyor.com/api/projects/status/yp5y5xxabrgjsqh2?svg=true)](https://ci.appveyor.com/project/sguzunov/codeit)
-
 [![Coverage Status](https://coveralls.io/repos/github/sguzunov/CodeIt/badge.svg)](https://coveralls.io/github/sguzunov/CodeIt)
 
-
+# Main functionality
+- Users can solve programming tasks
+- After a task is solved the user can check his/her results
+- Admins can create new challenges
+- Admins can repear broken challenge
 
 # Screenshots
 
